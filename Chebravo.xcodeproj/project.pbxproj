@@ -1,0 +1,422 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1C4B54A02869DF2500D940CB /* TranslationOfWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4B549F2869DF2500D940CB /* TranslationOfWord.swift */; };
+		1C5C6AF92868789300609B38 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5C6AF82868789300609B38 /* SplashView.swift */; };
+		1C99542728689C6700C6B839 /* AllWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C99542628689C6700C6B839 /* AllWords.swift */; };
+		1C99542928689E3100C6B839 /* Verb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C99542828689E3100C6B839 /* Verb.swift */; };
+		1CE739A72867053100148371 /* ChebravoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE739A62867053100148371 /* ChebravoApp.swift */; };
+		1CE739A92867053100148371 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE739A82867053100148371 /* ContentView.swift */; };
+		1CE739AB2867053200148371 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CE739AA2867053200148371 /* Assets.xcassets */; };
+		1CE739AE2867053200148371 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CE739AD2867053200148371 /* Preview Assets.xcassets */; };
+		1CF6AD8B2868B802008BA670 /* TranslationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF6AD8A2868B802008BA670 /* TranslationManager.swift */; };
+		1CF6AD8E2868BA97008BA670 /* Word.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1CF6AD8C2868BA97008BA670 /* Word.xcdatamodeld */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1C4B549F2869DF2500D940CB /* TranslationOfWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationOfWord.swift; sourceTree = "<group>"; };
+		1C5C6AF82868789300609B38 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		1C99542628689C6700C6B839 /* AllWords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllWords.swift; sourceTree = "<group>"; };
+		1C99542828689E3100C6B839 /* Verb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verb.swift; sourceTree = "<group>"; };
+		1CE739A32867053100148371 /* Chebravo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chebravo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CE739A62867053100148371 /* ChebravoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChebravoApp.swift; sourceTree = "<group>"; };
+		1CE739A82867053100148371 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1CE739AA2867053200148371 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1CE739AD2867053200148371 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1CF6AD8A2868B802008BA670 /* TranslationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationManager.swift; sourceTree = "<group>"; };
+		1CF6AD8D2868BA97008BA670 /* Word.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Word.xcdatamodel; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1CE739A02867053100148371 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1C4B549E2869DF1200D940CB /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				1C4B549F2869DF2500D940CB /* TranslationOfWord.swift */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		1C5C6AFC28689B2F00609B38 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1C4B549E2869DF1200D940CB /* UIComponents */,
+				1CE739A82867053100148371 /* ContentView.swift */,
+				1C5C6AF82868789300609B38 /* SplashView.swift */,
+				1C99542628689C6700C6B839 /* AllWords.swift */,
+				1C99542828689E3100C6B839 /* Verb.swift */,
+				1CF6AD8A2868B802008BA670 /* TranslationManager.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1CE7399A2867053100148371 = {
+			isa = PBXGroup;
+			children = (
+				1CE739A52867053100148371 /* Chebravo */,
+				1CE739A42867053100148371 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1CE739A42867053100148371 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1CE739A32867053100148371 /* Chebravo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1CE739A52867053100148371 /* Chebravo */ = {
+			isa = PBXGroup;
+			children = (
+				1CE739A62867053100148371 /* ChebravoApp.swift */,
+				1CF6AD8C2868BA97008BA670 /* Word.xcdatamodeld */,
+				1C5C6AFC28689B2F00609B38 /* Views */,
+				1CE739AA2867053200148371 /* Assets.xcassets */,
+				1CE739AC2867053200148371 /* Preview Content */,
+			);
+			path = Chebravo;
+			sourceTree = "<group>";
+		};
+		1CE739AC2867053200148371 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				1CE739AD2867053200148371 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1CE739A22867053100148371 /* Chebravo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1CE739B12867053200148371 /* Build configuration list for PBXNativeTarget "Chebravo" */;
+			buildPhases = (
+				1CE7399F2867053100148371 /* Sources */,
+				1CE739A02867053100148371 /* Frameworks */,
+				1CE739A12867053100148371 /* Resources */,
+				1C5C6AFB28689AC600609B38 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Chebravo;
+			productName = Chebravo;
+			productReference = 1CE739A32867053100148371 /* Chebravo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1CE7399B2867053100148371 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					1CE739A22867053100148371 = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 1CE7399E2867053100148371 /* Build configuration list for PBXProject "Chebravo" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1CE7399A2867053100148371;
+			productRefGroup = 1CE739A42867053100148371 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1CE739A22867053100148371 /* Chebravo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1CE739A12867053100148371 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CE739AE2867053200148371 /* Preview Assets.xcassets in Resources */,
+				1CE739AB2867053200148371 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1C5C6AFB28689AC600609B38 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nTAGS=\"TODO:|FIXME:\"\nERRORTAG=\"ERROR:\"\nfind \"${SRCROOT}\" \\( -name \"*.h\" -or -name \"*.m\" -or -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$|($ERRORTAG).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\" | perl -p -e \"s/($ERRORTAG)/ error: \\$1/\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1CE7399F2867053100148371 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CF6AD8E2868BA97008BA670 /* Word.xcdatamodeld in Sources */,
+				1CE739A92867053100148371 /* ContentView.swift in Sources */,
+				1C4B54A02869DF2500D940CB /* TranslationOfWord.swift in Sources */,
+				1CF6AD8B2868B802008BA670 /* TranslationManager.swift in Sources */,
+				1C99542928689E3100C6B839 /* Verb.swift in Sources */,
+				1C99542728689C6700C6B839 /* AllWords.swift in Sources */,
+				1CE739A72867053100148371 /* ChebravoApp.swift in Sources */,
+				1C5C6AF92868789300609B38 /* SplashView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1CE739AF2867053200148371 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = NO;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1CE739B02867053200148371 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = NO;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1CE739B22867053200148371 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Chebravo/Preview Content\"";
+				DEVELOPMENT_TEAM = R5R4TG65JY;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Phil.Chebravo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		1CE739B32867053200148371 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Chebravo/Preview Content\"";
+				DEVELOPMENT_TEAM = R5R4TG65JY;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Phil.Chebravo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1CE7399E2867053100148371 /* Build configuration list for PBXProject "Chebravo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1CE739AF2867053200148371 /* Debug */,
+				1CE739B02867053200148371 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1CE739B12867053200148371 /* Build configuration list for PBXNativeTarget "Chebravo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1CE739B22867053200148371 /* Debug */,
+				1CE739B32867053200148371 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1CF6AD8C2868BA97008BA670 /* Word.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1CF6AD8D2868BA97008BA670 /* Word.xcdatamodel */,
+			);
+			currentVersion = 1CF6AD8D2868BA97008BA670 /* Word.xcdatamodel */;
+			path = Word.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 1CE7399B2867053100148371 /* Project object */;
+}
