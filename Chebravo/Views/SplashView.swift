@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SplashView: View {
     @State var isSplashActive = true
+    @StateObject private var CDController = CoreDataController()
     
     var body: some View {
         ZStack {
@@ -20,6 +21,7 @@ struct SplashView: View {
                     SplashGraphics()
                 } else {
                     ContentView()
+                        .environment(\.managedObjectContext, CDController.modelContainer.viewContext)
                 }
             }
             .onAppear() {

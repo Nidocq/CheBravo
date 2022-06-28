@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C0245A5286B180D00AD2A5A /* AllWordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0245A4286B180D00AD2A5A /* AllWordsViewController.swift */; };
 		1C207C842869F89A00847EB2 /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C207C832869F89A00847EB2 /* CoreDataController.swift */; };
 		1C207C872869FAA300847EB2 /* WordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C207C862869FAA300847EB2 /* WordController.swift */; };
 		1C4B54A02869DF2500D940CB /* TranslationOfWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4B549F2869DF2500D940CB /* TranslationOfWord.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C0245A4286B180D00AD2A5A /* AllWordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AllWordsViewController.swift; path = ../Views/AllWordsViewController.swift; sourceTree = "<group>"; };
 		1C207C832869F89A00847EB2 /* CoreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
 		1C207C862869FAA300847EB2 /* WordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordController.swift; sourceTree = "<group>"; };
 		1C4B549F2869DF2500D940CB /* TranslationOfWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationOfWord.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				1C207C862869FAA300847EB2 /* WordController.swift */,
+				1C0245A4286B180D00AD2A5A /* AllWordsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -104,9 +107,9 @@
 		1CE739A52867053100148371 /* Chebravo */ = {
 			isa = PBXGroup;
 			children = (
+				1CE739A62867053100148371 /* ChebravoApp.swift */,
 				1C207C852869FA7F00847EB2 /* ViewControllers */,
 				1C207C822869F87F00847EB2 /* CoreData */,
-				1CE739A62867053100148371 /* ChebravoApp.swift */,
 				1CF6AD8C2868BA97008BA670 /* WordCore.xcdatamodeld */,
 				1C5C6AFC28689B2F00609B38 /* Views */,
 				1CE739AA2867053200148371 /* Assets.xcassets */,
@@ -224,6 +227,7 @@
 				1C99542728689C6700C6B839 /* AllWords.swift in Sources */,
 				1CE739A72867053100148371 /* ChebravoApp.swift in Sources */,
 				1C5C6AF92868789300609B38 /* SplashView.swift in Sources */,
+				1C0245A5286B180D00AD2A5A /* AllWordsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

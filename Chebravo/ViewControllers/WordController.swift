@@ -10,14 +10,20 @@ import SwiftUI
 import CoreData
 
 
-class WordController {
+class WordController : ObservableObject {
     @Environment(\.managedObjectContext) var modelContainer
     
+    init() {
+        let word = Word(context: modelContainer)
+        word.name = "Hello"
+        try? modelContainer.save()
+    }
     
     
-    func GetWords() -> NSFetchRequest<Word> {
-        let fetchRequest: NSFetchRequest<Word> = Word.fetchRequest()
-        return fetchRequest
+    
+    func GetWords() -> FetchedResults<Word> {
+        @FetchRequest(sortDescriptors: []) var words : FetchedResults<Word>
+        return words
     }
     
     func SaveWord() {
@@ -26,13 +32,6 @@ class WordController {
     
     func LogWordsInConsole() {
         
-    }
-    
-    init() {
-        let word = Word(context: modelContainer)
-        word.name = "Hello"
-        try? modelContainer.save()
-        print(GetWords())
     }
 
 }

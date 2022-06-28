@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct AllWords: View {
-    @State var words : [String] = ["Mangiare", "Sapere", "Avere"]
+//    @State var words : [String] = ["Mangiare", "Sapere", "Avere"]
+    
+//    @StateObject var WordCon = WordController()
+    
     @Environment(\.managedObjectContext) var modelContainer
+    @FetchRequest(sortDescriptors: []) var words: FetchedResults<Word>
+    
     @State var isActive = true
     var body: some View {
         NavigationView {
@@ -18,8 +23,15 @@ struct AllWords: View {
                     .ignoresSafeArea()
                 ScrollView {
                     ForEach(words, id: \.self) { word in
-                        NavigationLink(destination: Verb(Name: word, WordType: "adj.", ConjugationProcess: "re.")) {
-                            TranslationOfWord(Name: word, WordType: "Verb.", ConjugationProcess: "re.")
+                        NavigationLink(
+                            destination:
+                                // When clicked go to Verb View
+                                Verb(Name: word.name ?? "Unkown",
+                                     WordType: "adj.",
+                                     ConjugationProcess: "re.")
+                        ) {
+                            // Style of the navigation link
+                            TranslationOfWord(Name: word.name ?? ";)", WordType: "Verb.", ConjugationProcess: "re.")
                             .padding()
                             .background(.white)
                             .cornerRadius(10)
@@ -35,6 +47,10 @@ struct AllWords: View {
                     withAnimation {
                         isActive.toggle()
                     }
+                    var newWord = Word(context: modelContainer)
+                    try? modelContainer.save()
+                    
+                    
                 } label: {
                     Image(systemName: "plus")
                         .foregroundColor(isActive ? Color("SecondaryColor") : .black)
@@ -50,3 +66,4 @@ struct AllWords_Previews: PreviewProvider {
     }
 }
 
+// MARK: COMPONENTS

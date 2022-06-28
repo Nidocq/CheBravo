@@ -12,7 +12,6 @@ struct ChebravoApp: App {
     var body: some Scene {
         WindowGroup {
             SplashView()
-//            Verb(Name: "Mangiare", WordType: "Verb.", ConjugationProcess: "Re.")
         }
     }
 }

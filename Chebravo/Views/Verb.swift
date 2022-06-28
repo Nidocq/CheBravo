@@ -17,6 +17,8 @@ struct Verb: View {
     var ConjugationProcess: String
     
     
+    // TODO: Add a date so the coredata can sort by date (Prefferably by default)
+    
     var body: some View {
         ZStack {
             Color("PrimaryColor")
