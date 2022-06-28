@@ -10,15 +10,5 @@ import Foundation
 
 struct AllWordsViewController {
     var WordCon = WordController()
-    
-    
-    
-    func GetListOfWords() {
-        let fetchedRequest = WordCon.GetWords()
-        
-        for ele in fetchedRequest {
-            print(ele.name ?? "NaN")
-        }
-        
-    }
+
 }

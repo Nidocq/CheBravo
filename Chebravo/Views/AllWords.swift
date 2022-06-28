@@ -12,8 +12,19 @@ struct AllWords: View {
     
 //    @StateObject var WordCon = WordController()
     
-    @Environment(\.managedObjectContext) var modelContainer
+    @Environment(\.managedObjectContext) var viewContext
+
     @FetchRequest(sortDescriptors: []) var words: FetchedResults<Word>
+    
+    
+    // TODO: MOVE THIS **** OUT OF THIS CLASS!
+    func addItem() {
+        withAnimation {
+            let newWord = Word(context: viewContext)
+            newWord.name = "Hello there"
+            try? viewContext.save()
+        }
+    }
     
     @State var isActive = true
     var body: some View {
@@ -26,7 +37,7 @@ struct AllWords: View {
                         NavigationLink(
                             destination:
                                 // When clicked go to Verb View
-                                Verb(Name: word.name ?? "Unkown",
+                            Verb(Name: word.name ?? "Unkown",
                                      WordType: "adj.",
                                      ConjugationProcess: "re.")
                         ) {
@@ -47,9 +58,7 @@ struct AllWords: View {
                     withAnimation {
                         isActive.toggle()
                     }
-                    var newWord = Word(context: modelContainer)
-                    try? modelContainer.save()
-                    
+                    addItem()
                     
                 } label: {
                     Image(systemName: "plus")
@@ -66,4 +75,3 @@ struct AllWords_Previews: PreviewProvider {
     }
 }
 
-// MARK: COMPONENTS

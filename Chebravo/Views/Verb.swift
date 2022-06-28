@@ -125,6 +125,7 @@ struct WordSpecification: View {
     var body: some View {
         Text(text)
             .opacity(0.5)
+            .font(.system(size: 11))
     }
 }
 

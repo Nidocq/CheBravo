@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import SwiftUI
 
 class CoreDataController: ObservableObject {
     let modelContainer = NSPersistentContainer(name: "WordCore")
@@ -17,6 +18,11 @@ class CoreDataController: ObservableObject {
                 print("Core data failed to load data \(error.localizedDescription)")
             }
         }
+    }
+    
+    func FetchWords() -> FetchedResults<Word> {
+        @FetchRequest(sortDescriptors: []) var words : FetchedResults<Word>
+        return words
     }
     
     
