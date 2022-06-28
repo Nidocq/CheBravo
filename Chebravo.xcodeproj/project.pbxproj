@@ -48,12 +48,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1C207C822869F87F00847EB2 /* tmep */ = {
+		1C207C822869F87F00847EB2 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
 				1C207C832869F89A00847EB2 /* CoreDataController.swift */,
 			);
-			path = tmep;
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		1C207C852869FA7F00847EB2 /* ViewControllers */ = {
@@ -105,7 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				1C207C852869FA7F00847EB2 /* ViewControllers */,
-				1C207C822869F87F00847EB2 /* tmep */,
+				1C207C822869F87F00847EB2 /* CoreData */,
 				1CE739A62867053100148371 /* ChebravoApp.swift */,
 				1CF6AD8C2868BA97008BA670 /* WordCore.xcdatamodeld */,
 				1C5C6AFC28689B2F00609B38 /* Views */,
