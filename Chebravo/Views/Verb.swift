@@ -23,7 +23,7 @@ struct Verb: View {
                 .ignoresSafeArea()
             
             // All Components
-            VStack {
+            ScrollView {
                 
                 // White box with word and translation
                 VStack {
@@ -70,9 +70,17 @@ struct Verb: View {
                 VStack {
                     SubTitle(name: "Tenses")
                 }
+                Spacer()
                 
             }
             .frame(maxWidth: .infinity)
+        }
+        .toolbar {
+            Button {
+                
+            } label: {
+                Image(systemName: "plus")
+            }
         }
     }
 }

@@ -11,7 +11,7 @@ import SwiftUI
 struct ChebravoApp: App {
     var body: some Scene {
         WindowGroup {
-            AllWords()
+            SplashView()
 //            Verb(Name: "Mangiare", WordType: "Verb.", ConjugationProcess: "Re.")
         }
     }

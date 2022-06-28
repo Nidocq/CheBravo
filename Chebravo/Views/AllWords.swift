@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AllWords: View {
     @State var words : [String] = ["Mangiare", "Sapere", "Avere"]
+    @Environment(\.managedObjectContext) var modelContainer
     @State var isActive = true
     var body: some View {
         NavigationView {

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C207C842869F89A00847EB2 /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C207C832869F89A00847EB2 /* CoreDataController.swift */; };
+		1C207C872869FAA300847EB2 /* WordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C207C862869FAA300847EB2 /* WordController.swift */; };
 		1C4B54A02869DF2500D940CB /* TranslationOfWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4B549F2869DF2500D940CB /* TranslationOfWord.swift */; };
 		1C5C6AF92868789300609B38 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5C6AF82868789300609B38 /* SplashView.swift */; };
 		1C99542728689C6700C6B839 /* AllWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C99542628689C6700C6B839 /* AllWords.swift */; };
@@ -16,10 +18,12 @@
 		1CE739AB2867053200148371 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CE739AA2867053200148371 /* Assets.xcassets */; };
 		1CE739AE2867053200148371 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CE739AD2867053200148371 /* Preview Assets.xcassets */; };
 		1CF6AD8B2868B802008BA670 /* TranslationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF6AD8A2868B802008BA670 /* TranslationManager.swift */; };
-		1CF6AD8E2868BA97008BA670 /* Word.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1CF6AD8C2868BA97008BA670 /* Word.xcdatamodeld */; };
+		1CF6AD8E2868BA97008BA670 /* WordCore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1CF6AD8C2868BA97008BA670 /* WordCore.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C207C832869F89A00847EB2 /* CoreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
+		1C207C862869FAA300847EB2 /* WordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordController.swift; sourceTree = "<group>"; };
 		1C4B549F2869DF2500D940CB /* TranslationOfWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationOfWord.swift; sourceTree = "<group>"; };
 		1C5C6AF82868789300609B38 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		1C99542628689C6700C6B839 /* AllWords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllWords.swift; sourceTree = "<group>"; };
@@ -44,6 +48,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C207C822869F87F00847EB2 /* tmep */ = {
+			isa = PBXGroup;
+			children = (
+				1C207C832869F89A00847EB2 /* CoreDataController.swift */,
+			);
+			path = tmep;
+			sourceTree = "<group>";
+		};
+		1C207C852869FA7F00847EB2 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1C207C862869FAA300847EB2 /* WordController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		1C4B549E2869DF1200D940CB /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
@@ -84,8 +104,10 @@
 		1CE739A52867053100148371 /* Chebravo */ = {
 			isa = PBXGroup;
 			children = (
+				1C207C852869FA7F00847EB2 /* ViewControllers */,
+				1C207C822869F87F00847EB2 /* tmep */,
 				1CE739A62867053100148371 /* ChebravoApp.swift */,
-				1CF6AD8C2868BA97008BA670 /* Word.xcdatamodeld */,
+				1CF6AD8C2868BA97008BA670 /* WordCore.xcdatamodeld */,
 				1C5C6AFC28689B2F00609B38 /* Views */,
 				1CE739AA2867053200148371 /* Assets.xcassets */,
 				1CE739AC2867053200148371 /* Preview Content */,
@@ -192,10 +214,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1CF6AD8E2868BA97008BA670 /* Word.xcdatamodeld in Sources */,
+				1CF6AD8E2868BA97008BA670 /* WordCore.xcdatamodeld in Sources */,
+				1C207C872869FAA300847EB2 /* WordController.swift in Sources */,
 				1CE739A92867053100148371 /* ContentView.swift in Sources */,
 				1C4B54A02869DF2500D940CB /* TranslationOfWord.swift in Sources */,
 				1CF6AD8B2868B802008BA670 /* TranslationManager.swift in Sources */,
+				1C207C842869F89A00847EB2 /* CoreDataController.swift in Sources */,
 				1C99542928689E3100C6B839 /* Verb.swift in Sources */,
 				1C99542728689C6700C6B839 /* AllWords.swift in Sources */,
 				1CE739A72867053100148371 /* ChebravoApp.swift in Sources */,
@@ -406,13 +430,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		1CF6AD8C2868BA97008BA670 /* Word.xcdatamodeld */ = {
+		1CF6AD8C2868BA97008BA670 /* WordCore.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				1CF6AD8D2868BA97008BA670 /* Word.xcdatamodel */,
 			);
 			currentVersion = 1CF6AD8D2868BA97008BA670 /* Word.xcdatamodel */;
-			path = Word.xcdatamodeld;
+			path = WordCore.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
