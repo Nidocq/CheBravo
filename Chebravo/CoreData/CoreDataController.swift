@@ -20,11 +20,5 @@ class CoreDataController: ObservableObject {
         }
     }
     
-    func FetchWords() -> FetchedResults<Word> {
-        @FetchRequest(sortDescriptors: []) var words : FetchedResults<Word>
-        return words
-    }
-    
-    
     
 }

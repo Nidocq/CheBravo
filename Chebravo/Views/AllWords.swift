@@ -8,10 +8,6 @@
 import SwiftUI
 
 struct AllWords: View {
-//    @State var words : [String] = ["Mangiare", "Sapere", "Avere"]
-    
-//    @StateObject var WordCon = WordController()
-    
     @Environment(\.managedObjectContext) var viewContext
 
     @FetchRequest(sortDescriptors: []) var words: FetchedResults<Word>

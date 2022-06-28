@@ -10,6 +10,7 @@
 import SwiftUI
 
 struct Verb: View {
+    
     var Name: String
     
     // TODO: Need to make this an enum to better represent this.
@@ -73,6 +74,12 @@ struct Verb: View {
                     SubTitle(name: "Tenses")
                 }
                 Spacer()
+                
+                Button() {
+                    
+                } label: {
+                  DeleteButton()
+                }
                 
             }
             .frame(maxWidth: .infinity)
@@ -144,6 +151,17 @@ struct ExampleTranslation: View {
             .foregroundColor(.white)
             
         }
+    }
+}
+
+struct DeleteButton: View {
+    var body: some View {
+        Text("Delete word")
+            .foregroundColor(.black)
+            .padding()
+            .background(Color("SecondaryColor"))
+            .cornerRadius(22)
+            .frame(maxWidth: 300)
     }
 }
 
