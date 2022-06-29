@@ -22,7 +22,7 @@ struct AllWords: View {
                     .ignoresSafeArea()
                 
                 VStack {
-                    InputField(input: $input)
+                    InputField(input: $input, wordController: wordController)
                     ScrollView {
                         
                         ForEach(words, id: \.self) { word in
@@ -49,8 +49,9 @@ struct AllWords: View {
                     withAnimation {
                         isActive.toggle()
                     }
-                    wordController.addItem(viewContext: viewContext)
                     
+                    
+                                        
                 } label: {
                     Image(systemName: "plus")
                         .foregroundColor(isActive ? Color("SecondaryColor") : .black)
@@ -62,13 +63,20 @@ struct AllWords: View {
 }
 
 struct InputField : View {
+    @Environment(\.managedObjectContext) var viewContext
+
     @Binding var input : String
+    var wordController : WordController
     let cornerRadiusAmount : CGFloat = 10
     let paddingTopBottom : CGFloat = 30
     var body: some View {
         VStack {
             
             //TODO: Watch a Video on textfields to remove the prewritten text when pressing it
+            // Requirement:
+            // * Text needs to be removed when
+            // * The Typing needs to go down
+            // (* go to the view to see a preview)
             TextField("Input a word", text: $input) {
                 AddWord()
             }
@@ -79,7 +87,8 @@ struct InputField : View {
             .cornerRadius(cornerRadiusAmount)
             .padding(.top, paddingTopBottom)
             Button() {
-                print("hello")
+                wordController.addItem(viewContext: viewContext, Wordname: input)
+                input = ""
             } label: {
                 Text("ADD WORD")
                     .frame(maxWidth: .infinity)
