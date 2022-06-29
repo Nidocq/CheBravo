@@ -12,11 +12,14 @@ import CoreData
 
 class WordController : ObservableObject {
     
-    func addItem(viewContext : NSManagedObjectContext) {
+    
+    ///
+    /// <arg="viewContext"> </arg>
+    func addItem(viewContext : NSManagedObjectContext, Wordname : String) {
+        guard (Wordname != "") else { return }
         withAnimation {
-            print("Hello there ia m been made")
             let newWord = Word(context: viewContext)
-            newWord.name = "Hello there"
+            newWord.name = Wordname
             try? viewContext.save()
         }
     }
