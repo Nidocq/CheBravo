@@ -13,8 +13,6 @@ import CoreData
 
 
 class WordController : ObservableObject {
-    @Environment(\.managedObjectContext) var viewContext
-    
     
     func addItem(viewContext : NSManagedObjectContext) {
         withAnimation {
@@ -22,6 +20,12 @@ class WordController : ObservableObject {
             let newWord = VerbWord(context: viewContext)
             newWord.name = "Hello there"
             try? viewContext.save()
+        }
+    }
+    
+    func removeItem(viewContext : NSManagedObjectContext, word : Word) {
+        withAnimation {
+            viewContext.delete(word)
         }
     }
 }

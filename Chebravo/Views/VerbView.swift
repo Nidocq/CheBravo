@@ -10,7 +10,7 @@
 import SwiftUI
 
 struct VerbView: View {
-    let word : VerbWord
+    let word : Word
     
     // TODO: Add a date so the coredata can sort by date (Prefferably by default)
     var body: some View {
@@ -27,12 +27,12 @@ struct VerbView: View {
                     
                     // Word and translation
                     VStack(alignment: .leading) {
-//                        TranslationOfWord(
-//                            Name: self.word.name
-//                            WordType: WordType.verb.rawValue,
-//                            ConjugationProcess: ConjugationProcess.second.rawValue
-//
-//                        )
+                        TranslationOfWord(
+                            Name: self.word.name ?? "Unkown",
+                            WordType: WordType.verb.rawValue,
+                            ConjugationProcess: ConjugationProcess.second.rawValue
+
+                        )
                     }
                         .padding([.leading, .trailing], 40)
                         .padding([.top, .bottom], 16)

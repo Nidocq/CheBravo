@@ -9,12 +9,10 @@ import SwiftUI
 
 struct AllWords: View {
     @Environment(\.managedObjectContext) var viewContext
+    @State var input : String = "Hello there "
     var wordController = WordController()
     
-//    init() {
-//        self.wordController = WordController()
-//
-//    }
+
 
     @FetchRequest(sortDescriptors: []) var words: FetchedResults<Word>
     
@@ -25,21 +23,25 @@ struct AllWords: View {
                 Color("PrimaryColor")
                     .ignoresSafeArea()
                 ScrollView {
+                    TextField("Hello ", text: $input) {
+                        print("I saved")
+                    }
+                    
                     ForEach(words, id: \.self) { word in
                         Text(word.name ?? "Not Found")
-//                        NavigationLink(
-//                            destination:
-//                                // When clicked go to Verb View
-//                            VerbView(word: Word)
-//                        ) {
-//                            // Style of the navigation link
-//                            TranslationOfWord(Name: word.name ?? ";)", WordType: "Verb.", ConjugationProcess: "re.")
-//                            .padding()
-//                            .background(.white)
-//                            .cornerRadius(10)
-//                            .padding([.leading, .trailing], 10)
-//                            .foregroundColor(.black)
-//                        }
+                        NavigationLink(
+                            destination:
+                                // When clicked go to Verb View
+                            VerbView(word: word)
+                        ) {
+                            // Style of the navigation link
+                            TranslationOfWord(Name: word.name ?? ";)", WordType: "Verb.", ConjugationProcess: "re.")
+                            .padding()
+                            .background(.white)
+                            .cornerRadius(10)
+                            .padding([.leading, .trailing], 10)
+                            .foregroundColor(.black)
+                        }
                     }
                 }
             }
