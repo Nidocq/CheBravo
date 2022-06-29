@@ -10,7 +10,14 @@
 import SwiftUI
 
 struct VerbView: View {
-    let word : Word
+
+    var word : Word
+    
+    init(word : Word) {
+        self.word = word
+    }
+    
+    
     
     // TODO: Add a date so the coredata can sort by date (Prefferably by default)
     var body: some View {
@@ -66,7 +73,7 @@ struct VerbView: View {
                 }
                 Spacer()
                 
-                DeleteButton()
+                DeleteButton(word: self.word)
             }
             .frame(maxWidth: .infinity)
         }
@@ -129,9 +136,16 @@ struct ExampleTranslation: View {
 }
 
 struct DeleteButton: View {
+    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.managedObjectContext) var viewContext
+    var wordController = WordController()
+    var word : Word
+
     var body: some View {
         
         Button {
+            presentationMode.wrappedValue.dismiss()
+            wordController.removeItem(viewContext: viewContext, word: word)
             
         } label : {
             Text("Delete word")
