@@ -24,6 +24,7 @@ class WordController : ObservableObject {
     func removeItem(viewContext : NSManagedObjectContext, word : Word) {
         withAnimation {
             viewContext.delete(word)
+            try? viewContext.save()
         }
     }
 }
