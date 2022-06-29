@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 /// Word type
 enum WordType : String {
@@ -20,9 +21,8 @@ enum ConjugationProcess : String {
     case third = "ire"
 }
 
-struct VerbModel : WordModel {
-    var name: String
-    
-    var wordType : WordType
-    var conjugationProcess : ConjugationProcess
+struct VerbModel {
+    @Environment(\.managedObjectContext) var viewContext
+    let verbWord : VerbWord
+
 }

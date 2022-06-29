@@ -13,12 +13,15 @@ import CoreData
 
 
 class WordController : ObservableObject {
-    @Environment(\.managedObjectContext) var modelContainer
-//    var wordModel : WordModel
+    @Environment(\.managedObjectContext) var viewContext
     
-    init() {
-        
+    
+    func addItem(viewContext : NSManagedObjectContext) {
+        withAnimation {
+            print("Hello there ia m been made")
+            let newWord = VerbWord(context: viewContext)
+            newWord.name = "Hello there"
+            try? viewContext.save()
+        }
     }
-    
-    
 }

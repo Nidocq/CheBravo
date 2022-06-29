@@ -9,18 +9,14 @@ import SwiftUI
 
 struct AllWords: View {
     @Environment(\.managedObjectContext) var viewContext
+    var wordController = WordController()
+    
+//    init() {
+//        self.wordController = WordController()
+//
+//    }
 
     @FetchRequest(sortDescriptors: []) var words: FetchedResults<Word>
-    
-    
-    // TODO: MOVE THIS **** OUT OF THIS CLASS!
-    func addItem() {
-        withAnimation {
-            let newWord = Word(context: viewContext)
-            newWord.name = "Hello there"
-            try? viewContext.save()
-        }
-    }
     
     @State var isActive = true
     var body: some View {
@@ -30,21 +26,20 @@ struct AllWords: View {
                     .ignoresSafeArea()
                 ScrollView {
                     ForEach(words, id: \.self) { word in
-                        NavigationLink(
-                            destination:
-                                // When clicked go to Verb View
-                            Verb(Name: word.name ?? "Unkown",
-                                     WordType: "adj.",
-                                     ConjugationProcess: "re.")
-                        ) {
-                            // Style of the navigation link
-                            TranslationOfWord(Name: word.name ?? ";)", WordType: "Verb.", ConjugationProcess: "re.")
-                            .padding()
-                            .background(.white)
-                            .cornerRadius(10)
-                            .padding([.leading, .trailing], 10)
-                            .foregroundColor(.black)
-                        }
+                        Text(word.name ?? "Not Found")
+//                        NavigationLink(
+//                            destination:
+//                                // When clicked go to Verb View
+//                            VerbView(word: Word)
+//                        ) {
+//                            // Style of the navigation link
+//                            TranslationOfWord(Name: word.name ?? ";)", WordType: "Verb.", ConjugationProcess: "re.")
+//                            .padding()
+//                            .background(.white)
+//                            .cornerRadius(10)
+//                            .padding([.leading, .trailing], 10)
+//                            .foregroundColor(.black)
+//                        }
                     }
                 }
             }
@@ -54,7 +49,7 @@ struct AllWords: View {
                     withAnimation {
                         isActive.toggle()
                     }
-                    addItem()
+                    wordController.addItem(viewContext: viewContext)
                     
                 } label: {
                     Image(systemName: "plus")

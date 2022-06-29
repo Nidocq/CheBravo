@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21C52" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Word" representedClassName="Word" syncable="YES" codeGenerationType="class">
+    <entity name="VerbWord" representedClassName="VerbWord" parentEntity="Word" syncable="YES" codeGenerationType="class">
+        <attribute name="conjugationProcess" optional="YES" attributeType="String"/>
+        <attribute name="wordType" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Word" representedClassName="Word" isAbstract="YES" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Word" positionX="-63" positionY="-18" width="128" height="44"/>
+        <element name="Word" positionX="-63" positionY="-18" width="128" height="59"/>
+        <element name="VerbWord" positionX="-52.4921875" positionY="203.859375" width="128" height="73"/>
     </elements>
 </model>

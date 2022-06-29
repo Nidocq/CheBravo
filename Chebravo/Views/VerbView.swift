@@ -9,17 +9,10 @@
 
 import SwiftUI
 
-struct Verb: View {
-    
-    var Name: String
-    
-    // TODO: Need to make this an enum to better represent this.
-    var WordType: String
-    var ConjugationProcess: String
-    
+struct VerbView: View {
+    let word : VerbWord
     
     // TODO: Add a date so the coredata can sort by date (Prefferably by default)
-    
     var body: some View {
         ZStack {
             Color("PrimaryColor")
@@ -34,12 +27,12 @@ struct Verb: View {
                     
                     // Word and translation
                     VStack(alignment: .leading) {
-                        TranslationOfWord(
-                            Name: self.Name,
-                            WordType: self.WordType,
-                            ConjugationProcess: self.ConjugationProcess
-                            
-                        )
+//                        TranslationOfWord(
+//                            Name: self.word.name
+//                            WordType: WordType.verb.rawValue,
+//                            ConjugationProcess: ConjugationProcess.second.rawValue
+//
+//                        )
                     }
                         .padding([.leading, .trailing], 40)
                         .padding([.top, .bottom], 16)
@@ -65,8 +58,6 @@ struct Verb: View {
                 VStack {
                     SubTitle(name: "Conjugation")
                     
-                    
-                    
                 }
                 
                 // Tenses
@@ -75,21 +66,9 @@ struct Verb: View {
                 }
                 Spacer()
                 
-                Button() {
-                    
-                } label: {
-                  DeleteButton()
-                }
-                
+                DeleteButton()
             }
             .frame(maxWidth: .infinity)
-        }
-        .toolbar {
-            Button {
-                
-            } label: {
-                Image(systemName: "plus")
-            }
         }
     }
 }
@@ -98,11 +77,6 @@ struct Verb: View {
 
 
 // MARK: COMPONENTS
-
-extension Verb {
-    
-}
-
 
 struct SubTitle: View {
     var name : String
@@ -156,19 +130,24 @@ struct ExampleTranslation: View {
 
 struct DeleteButton: View {
     var body: some View {
-        Text("Delete word")
-            .foregroundColor(.black)
-            .padding()
-            .background(Color("SecondaryColor"))
-            .cornerRadius(22)
-            .frame(maxWidth: 300)
+        
+        Button {
+            
+        } label : {
+            Text("Delete word")
+                .foregroundColor(.black)
+                .padding()
+                .background(Color("SecondaryColor"))
+                .cornerRadius(22)
+                .frame(maxWidth: 300)
+        }
     }
 }
 
 
 //MARK: PREVIEW
-struct Verb_Previews: PreviewProvider {
-    static var previews: some View {
-        Verb(Name : "Mangiare", WordType: "Verb.", ConjugationProcess: "re.")
-    }
-}
+//struct VerbView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        VerbView(word: wor)
+//    }
+//}
