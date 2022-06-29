@@ -23,9 +23,11 @@ struct AllWords: View {
                 Color("PrimaryColor")
                     .ignoresSafeArea()
                 ScrollView {
+                    // TODO: Make this into struct and style it
                     TextField("Hello ", text: $input) {
                         print("I saved")
                     }
+                    
                     
                     ForEach(words, id: \.self) { word in
                         NavigationLink(
@@ -57,7 +59,7 @@ struct AllWords: View {
                         .foregroundColor(isActive ? Color("SecondaryColor") : .black)
                 }
             }
-//            .navigationBarHidden(true)
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }

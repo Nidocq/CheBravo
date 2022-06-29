@@ -20,6 +20,7 @@ struct TranslationOfWord: View {
                 WordSpecification(text: ConjugationProcess)
                     .frame(maxWidth: .infinity, alignment: .trailing)
             }
+                .foregroundColor(.black)
             Spacer()
             
             // This VStack is the balance the space between the italian word
@@ -28,6 +29,8 @@ struct TranslationOfWord: View {
                 WordName(name: self.Name)
             }
             .frame(maxWidth: .infinity, alignment: .trailing)
+            .foregroundColor(.black)
+
             // ---
         }
     }
