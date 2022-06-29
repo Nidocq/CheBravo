@@ -47,7 +47,8 @@ struct SplashGraphics: View {
     var body: some View {
         HStack {
             // TODO: Add picture with sparkles and the logo afterwards
-            Text("CheBravə")
+            // CheBravə
+            Text("CheBravo")
                 .font(.system(size: 32))
                 .foregroundColor(Color("SecondaryColor"))
                 .bold()
