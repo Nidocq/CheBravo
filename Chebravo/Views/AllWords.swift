@@ -28,7 +28,6 @@ struct AllWords: View {
                     }
                     
                     ForEach(words, id: \.self) { word in
-                        Text(word.name ?? "Not Found")
                         NavigationLink(
                             destination:
                                 // When clicked go to Verb View

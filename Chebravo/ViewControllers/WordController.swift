@@ -17,7 +17,7 @@ class WordController : ObservableObject {
     func addItem(viewContext : NSManagedObjectContext) {
         withAnimation {
             print("Hello there ia m been made")
-            let newWord = VerbWord(context: viewContext)
+            let newWord = Word(context: viewContext)
             newWord.name = "Hello there"
             try? viewContext.save()
         }

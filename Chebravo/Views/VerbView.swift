@@ -13,8 +13,9 @@ struct VerbView: View {
 
     var word : Word
     
-    init(word : Word) {
+    init(word: Word) {
         self.word = word
+        
     }
     
     
