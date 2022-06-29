@@ -9,11 +9,9 @@ import SwiftUI
 
 struct AllWords: View {
     @Environment(\.managedObjectContext) var viewContext
-    @State var input : String = "Hello there "
+    @State var input : String = "Type in a word ..."
     var wordController = WordController()
     
-
-
     @FetchRequest(sortDescriptors: []) var words: FetchedResults<Word>
     
     @State var isActive = true
@@ -22,26 +20,25 @@ struct AllWords: View {
             ZStack {
                 Color("PrimaryColor")
                     .ignoresSafeArea()
-                ScrollView {
-                    // TODO: Make this into struct and style it
-                    TextField("Hello ", text: $input) {
-                        print("I saved")
-                    }
-                    
-                    
-                    ForEach(words, id: \.self) { word in
-                        NavigationLink(
-                            destination:
-                                // When clicked go to Verb View
-                            VerbView(word: word)
-                        ) {
-                            // Style of the navigation link
-                            TranslationOfWord(Name: word.name ?? ";)", WordType: "Verb.", ConjugationProcess: "re.")
-                            .padding()
-                            .background(.white)
-                            .cornerRadius(10)
-                            .padding([.leading, .trailing], 10)
-                            .foregroundColor(.black)
+                
+                VStack {
+                    InputField(input: $input)
+                    ScrollView {
+                        
+                        ForEach(words, id: \.self) { word in
+                            NavigationLink(
+                                destination:
+                                    // When clicked go to Verb View
+                                VerbView(word: word)
+                            ) {
+                                // Style of the navigation link
+                                TranslationOfWord(Name: word.name ?? ";)", WordType: "Verb.", ConjugationProcess: "re.")
+                                .padding()
+                                .background(.white)
+                                .cornerRadius(10)
+                                .padding([.leading, .trailing], 10)
+                                .foregroundColor(.black)
+                            }
                         }
                     }
                 }
@@ -61,6 +58,39 @@ struct AllWords: View {
             }
             .navigationBarTitleDisplayMode(.inline)
         }
+    }
+}
+
+struct InputField : View {
+    @Binding var input : String
+    let cornerRadiusAmount : CGFloat = 10
+    let paddingTopBottom : CGFloat = 30
+    var body: some View {
+        VStack {
+            
+            //TODO: Watch a Video on textfields to remove the prewritten text when pressing it
+            TextField("Input a word", text: $input) {
+                AddWord()
+            }
+            .foregroundColor(.black)
+            .frame(maxWidth: .infinity)
+            .padding()
+            .background(.white)
+            .cornerRadius(cornerRadiusAmount)
+            .padding(.top, paddingTopBottom)
+            Button() {
+                print("hello")
+            } label: {
+                Text("ADD WORD")
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(Color("SecondaryColor"))
+                    .cornerRadius(cornerRadiusAmount)
+                    .foregroundColor(.black)
+            }
+        }
+        .padding([.leading, .trailing], 10)
+        .padding(.bottom, paddingTopBottom)
     }
 }
 

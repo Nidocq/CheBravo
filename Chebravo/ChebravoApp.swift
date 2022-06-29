@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+// TODO: Make a anti-hero animation when there are no words Something like -> "No words added, try adding one uphere *hint*
 @main
 struct ChebravoApp: App {
     @Environment(\.colorScheme) var colorScheme
