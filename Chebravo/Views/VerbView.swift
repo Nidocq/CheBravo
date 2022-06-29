@@ -10,11 +10,18 @@
 import SwiftUI
 
 struct VerbView: View {
-
+    @Environment(\.presentationMode) var presentationMode
     var word : Word
     
     init(word: Word) {
         self.word = word
+        let navBarAppearance = UINavigationBarAppearance()
+        navBarAppearance.backgroundColor = .white
+        navBarAppearance.shadowColor = .clear
+        UINavigationBar.appearance().standardAppearance = navBarAppearance
+        UINavigationBar.appearance().compactAppearance = navBarAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
+        UINavigationBar.appearance().tintColor = .blue
         
     }
     
@@ -31,7 +38,7 @@ struct VerbView: View {
                 
                 // White box with word and translation
                 VStack {
-                    SubTitle(name: "Translation")
+//                    SubTitle(name: "Translation")
                     
                     // Word and translation
                     VStack(alignment: .leading) {
@@ -78,6 +85,35 @@ struct VerbView: View {
             }
             .frame(maxWidth: .infinity)
         }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                HStack {
+                    Image(systemName: "chevron.backward")
+                    Button("Back") {
+                        presentationMode.wrappedValue.dismiss()
+                        print("I was pressed")
+                    }
+                }
+                .foregroundColor(Color("SecondaryColor"))
+            }
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    print("I have a question")
+                } label: {
+                    Image(systemName: "questionmark.circle")
+                        .foregroundColor(Color("SecondaryColor"))
+                    
+                }
+            }
+        }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarHidden(false)
+        .navigationTitle("")
+        
+        //TODO: BUG: When swiping up, the background color can be seen if navigationBarTitleDisplayMode(.inline) is set. If there IS a title
+        // the color of the title goes all the way up and no background color can be seen.
+//        .navigationBarTitleDisplayMode(.inline)
+        
     }
 }
 
@@ -95,6 +131,7 @@ struct SubTitle: View {
             .bold()
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.leading)
+            .padding(.top, 10)
     }
 }
 

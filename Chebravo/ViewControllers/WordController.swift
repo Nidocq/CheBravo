@@ -10,8 +10,6 @@ import SwiftUI
 import CoreData
 
 
-
-
 class WordController : ObservableObject {
     
     func addItem(viewContext : NSManagedObjectContext) {

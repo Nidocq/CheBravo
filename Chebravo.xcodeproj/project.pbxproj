@@ -16,6 +16,7 @@
 		1C5C6AF92868789300609B38 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5C6AF82868789300609B38 /* SplashView.swift */; };
 		1C99542728689C6700C6B839 /* AllWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C99542628689C6700C6B839 /* AllWords.swift */; };
 		1C99542928689E3100C6B839 /* VerbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C99542828689E3100C6B839 /* VerbView.swift */; };
+		1C9CB422286C20090082ECB8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9CB421286C20090082ECB8 /* Extensions.swift */; };
 		1CE739A72867053100148371 /* ChebravoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE739A62867053100148371 /* ChebravoApp.swift */; };
 		1CE739A92867053100148371 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE739A82867053100148371 /* ContentView.swift */; };
 		1CE739AB2867053200148371 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CE739AA2867053200148371 /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 		1C5C6AF82868789300609B38 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		1C99542628689C6700C6B839 /* AllWords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllWords.swift; sourceTree = "<group>"; };
 		1C99542828689E3100C6B839 /* VerbView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbView.swift; sourceTree = "<group>"; };
+		1C9CB421286C20090082ECB8 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		1CE739A32867053100148371 /* Chebravo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chebravo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CE739A62867053100148371 /* ChebravoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChebravoApp.swift; sourceTree = "<group>"; };
 		1CE739A82867053100148371 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				1CE739A62867053100148371 /* ChebravoApp.swift */,
+				1C9CB421286C20090082ECB8 /* Extensions.swift */,
 				1C0245A6286B66BE00AD2A5A /* Model */,
 				1C207C852869FA7F00847EB2 /* ViewControllers */,
 				1C207C822869F87F00847EB2 /* CoreData */,
@@ -229,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CF6AD8E2868BA97008BA670 /* WordCore.xcdatamodeld in Sources */,
+				1C9CB422286C20090082ECB8 /* Extensions.swift in Sources */,
 				1C0245AC286B6DAB00AD2A5A /* AddWord.swift in Sources */,
 				1C207C872869FAA300847EB2 /* WordController.swift in Sources */,
 				1CE739A92867053100148371 /* ContentView.swift in Sources */,

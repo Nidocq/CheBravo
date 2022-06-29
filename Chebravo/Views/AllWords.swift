@@ -57,6 +57,7 @@ struct AllWords: View {
                         .foregroundColor(isActive ? Color("SecondaryColor") : .black)
                 }
             }
+//            .navigationBarHidden(true)
         }
     }
 }
