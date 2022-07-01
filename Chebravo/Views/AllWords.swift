@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// <summary> Showcases all the Words the user has saved so far, Data is saved with CoreData </summary>
 struct AllWords: View {
     @Environment(\.managedObjectContext) var viewContext
     @State var input : String = "Type in a word ..."
@@ -49,9 +50,6 @@ struct AllWords: View {
                     withAnimation {
                         isActive.toggle()
                     }
-                    
-                    
-                                        
                 } label: {
                     Image(systemName: "plus")
                         .foregroundColor(isActive ? Color("SecondaryColor") : .black)

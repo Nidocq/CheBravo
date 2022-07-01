@@ -9,11 +9,13 @@
 
 import SwiftUI
 
+/// <summary> Displays information about the Verb that the user has saved </summary>
 struct VerbView: View {
     @Environment(\.presentationMode) var presentationMode
     var word : Word
     
     init(word: Word) {
+        // In order to syle the NavigationBar background color
         self.word = word
         let navBarAppearance = UINavigationBarAppearance()
         navBarAppearance.backgroundColor = .white
@@ -86,6 +88,7 @@ struct VerbView: View {
             .frame(maxWidth: .infinity)
         }
         .toolbar {
+            // Toolbar back button
             ToolbarItem(placement: .navigationBarLeading) {
                 HStack {
                     Image(systemName: "chevron.backward")
@@ -96,6 +99,7 @@ struct VerbView: View {
                 }
                 .foregroundColor(Color("SecondaryColor"))
             }
+            // Toolbar Question popup
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
                     print("I have a question")
@@ -121,7 +125,8 @@ struct VerbView: View {
 
 
 // MARK: COMPONENTS
-
+/// <summary> Titles that descripe the information </summary>
+/// <param arg="name"> Text of title </param>
 struct SubTitle: View {
     var name : String
     var body: some View {
@@ -135,26 +140,8 @@ struct SubTitle: View {
     }
 }
 
-
-struct WordName: View {
-    var name: String
-    var body: some View {
-        Text(self.name)
-            .font(.system(size: 24))
-    }
-}
-
-/// Used to describe the classes and attributes of the word
-/// e.g. if it is a verb, irregular or regular conjugated
-struct WordSpecification: View {
-    var text: String
-    var body: some View {
-        Text(text)
-            .opacity(0.5)
-            .font(.system(size: 11))
-    }
-}
-
+/// <summary> Gives a translates with the word as example <summary>
+/// <remarks> Not yet implemented </remarks>
 struct ExampleTranslation: View {
     // TODO: Create some translation manager that can translate quotes
     var body: some View {
@@ -173,6 +160,8 @@ struct ExampleTranslation: View {
     }
 }
 
+/// <summary> Deletes the current word from the CoreData database when the user clicks on it </summary>
+/// <param name="word"> The specified word that needs to be deleted from the CoreData database </param>
 struct DeleteButton: View {
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.managedObjectContext) var viewContext
