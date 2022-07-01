@@ -12,7 +12,7 @@
 		1C0245AC286B6DAB00AD2A5A /* AddWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0245AB286B6DAB00AD2A5A /* AddWord.swift */; };
 		1C207C842869F89A00847EB2 /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C207C832869F89A00847EB2 /* CoreDataController.swift */; };
 		1C207C872869FAA300847EB2 /* WordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C207C862869FAA300847EB2 /* WordController.swift */; };
-		1C4B54A02869DF2500D940CB /* TranslationOfWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4B549F2869DF2500D940CB /* TranslationOfWord.swift */; };
+		1C401EFC286F8AF400827BFB /* WordComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C401EFB286F8AF400827BFB /* WordComponents.swift */; };
 		1C5C6AF92868789300609B38 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5C6AF82868789300609B38 /* SplashView.swift */; };
 		1C99542728689C6700C6B839 /* AllWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C99542628689C6700C6B839 /* AllWords.swift */; };
 		1C99542928689E3100C6B839 /* VerbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C99542828689E3100C6B839 /* VerbView.swift */; };
@@ -30,7 +30,7 @@
 		1C0245AB286B6DAB00AD2A5A /* AddWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWord.swift; sourceTree = "<group>"; };
 		1C207C832869F89A00847EB2 /* CoreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
 		1C207C862869FAA300847EB2 /* WordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordController.swift; sourceTree = "<group>"; };
-		1C4B549F2869DF2500D940CB /* TranslationOfWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationOfWord.swift; sourceTree = "<group>"; };
+		1C401EFB286F8AF400827BFB /* WordComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordComponents.swift; sourceTree = "<group>"; };
 		1C5C6AF82868789300609B38 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		1C99542628689C6700C6B839 /* AllWords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllWords.swift; sourceTree = "<group>"; };
 		1C99542828689E3100C6B839 /* VerbView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbView.swift; sourceTree = "<group>"; };
@@ -82,8 +82,8 @@
 		1C4B549E2869DF1200D940CB /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
-				1C4B549F2869DF2500D940CB /* TranslationOfWord.swift */,
 				1C0245AB286B6DAB00AD2A5A /* AddWord.swift */,
+				1C401EFB286F8AF400827BFB /* WordComponents.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -92,7 +92,6 @@
 			isa = PBXGroup;
 			children = (
 				1C4B549E2869DF1200D940CB /* UIComponents */,
-				1CE739A82867053100148371 /* ContentView.swift */,
 				1C5C6AF82868789300609B38 /* SplashView.swift */,
 				1C99542628689C6700C6B839 /* AllWords.swift */,
 				1C99542828689E3100C6B839 /* VerbView.swift */,
@@ -120,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				1CE739A62867053100148371 /* ChebravoApp.swift */,
+				1CE739A82867053100148371 /* ContentView.swift */,
 				1C9CB421286C20090082ECB8 /* Extensions.swift */,
 				1C0245A6286B66BE00AD2A5A /* Model */,
 				1C207C852869FA7F00847EB2 /* ViewControllers */,
@@ -236,11 +236,11 @@
 				1C0245AC286B6DAB00AD2A5A /* AddWord.swift in Sources */,
 				1C207C872869FAA300847EB2 /* WordController.swift in Sources */,
 				1CE739A92867053100148371 /* ContentView.swift in Sources */,
-				1C4B54A02869DF2500D940CB /* TranslationOfWord.swift in Sources */,
 				1C207C842869F89A00847EB2 /* CoreDataController.swift in Sources */,
 				1C99542928689E3100C6B839 /* VerbView.swift in Sources */,
 				1C99542728689C6700C6B839 /* AllWords.swift in Sources */,
 				1C0245A8286B66C600AD2A5A /* WordModel.swift in Sources */,
+				1C401EFC286F8AF400827BFB /* WordComponents.swift in Sources */,
 				1CE739A72867053100148371 /* ChebravoApp.swift in Sources */,
 				1C5C6AF92868789300609B38 /* SplashView.swift in Sources */,
 				1C0245AA286B6A6300AD2A5A /* VerbModel.swift in Sources */,
