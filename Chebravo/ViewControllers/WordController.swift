@@ -22,6 +22,7 @@ class WordController : ObservableObject {
         withAnimation {
             let newWord = Word(context: viewContext)
             newWord.name = Wordname
+            newWord.date = Date.now
             try? viewContext.save()
         }
     }

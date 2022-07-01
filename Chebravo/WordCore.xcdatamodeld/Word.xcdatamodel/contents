@@ -5,11 +5,12 @@
         <attribute name="wordType" optional="YES" attributeType="String"/>
     </entity>
     <entity name="Word" representedClassName="Word" isAbstract="YES" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Word" positionX="-63" positionY="-18" width="128" height="59"/>
         <element name="VerbWord" positionX="-52.4921875" positionY="203.859375" width="128" height="73"/>
+        <element name="Word" positionX="-63" positionY="-18" width="128" height="88"/>
     </elements>
 </model>
