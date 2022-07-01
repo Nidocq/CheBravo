@@ -12,6 +12,7 @@ import SwiftUI
 /// <summary> Displays information about the Verb that the user has saved </summary>
 struct VerbView: View {
     @Environment(\.presentationMode) var presentationMode
+    @State var isSheetPresent : Bool = false
     var word : Word
     
     init(word: Word) {
@@ -82,8 +83,6 @@ struct VerbView: View {
                     SubTitle(name: "Tenses")
                 }
                 Spacer()
-                
-                DeleteButton(word: self.word)
             }
             .frame(maxWidth: .infinity)
         }
@@ -99,14 +98,21 @@ struct VerbView: View {
                 }
                 .foregroundColor(Color("SecondaryColor"))
             }
-            // Toolbar Question popup
+            // Toolbar settings popup
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
-                    print("I have a question")
+                    isSheetPresent = true
+                    // TODO: Make a settings app
+                        // Make a sheet that displays infoormation
+                            // See when the word was created
+                            // Delete words
                 } label: {
-                    Image(systemName: "questionmark.circle")
+                    Image(systemName: "gearshape.fill")
                         .foregroundColor(Color("SecondaryColor"))
                     
+                }
+                .sheet(isPresented: $isSheetPresent) {
+                    VerbViewSettings(word: word)
                 }
             }
         }
