@@ -9,3 +9,15 @@ import Foundation
 import SwiftUI
 
 
+/// Word type
+enum WordType : String {
+    case adjective = "Adjective"
+    case noun = "Noun"
+    case verb = "Verb"
+}
+
+enum ConjugationProcess : String {
+    case fist = "are"
+    case second = "ere"
+    case third = "ire"
+}

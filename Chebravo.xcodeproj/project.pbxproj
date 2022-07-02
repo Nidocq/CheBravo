@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1C0245A8286B66C600AD2A5A /* WordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0245A7286B66C600AD2A5A /* WordModel.swift */; };
-		1C0245AA286B6A6300AD2A5A /* VerbModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0245A9286B6A6300AD2A5A /* VerbModel.swift */; };
 		1C0245AC286B6DAB00AD2A5A /* AddWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0245AB286B6DAB00AD2A5A /* AddWord.swift */; };
 		1C207C842869F89A00847EB2 /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C207C832869F89A00847EB2 /* CoreDataController.swift */; };
 		1C207C872869FAA300847EB2 /* WordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C207C862869FAA300847EB2 /* WordController.swift */; };
@@ -26,8 +24,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1C0245A7286B66C600AD2A5A /* WordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordModel.swift; sourceTree = "<group>"; };
-		1C0245A9286B6A6300AD2A5A /* VerbModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbModel.swift; sourceTree = "<group>"; };
 		1C0245AB286B6DAB00AD2A5A /* AddWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWord.swift; sourceTree = "<group>"; };
 		1C207C832869F89A00847EB2 /* CoreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
 		1C207C862869FAA300847EB2 /* WordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordController.swift; sourceTree = "<group>"; };
@@ -59,8 +55,6 @@
 		1C0245A6286B66BE00AD2A5A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1C0245A7286B66C600AD2A5A /* WordModel.swift */,
-				1C0245A9286B6A6300AD2A5A /* VerbModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -242,12 +236,10 @@
 				1C207C842869F89A00847EB2 /* CoreDataController.swift in Sources */,
 				1C99542928689E3100C6B839 /* VerbView.swift in Sources */,
 				1C99542728689C6700C6B839 /* AllWords.swift in Sources */,
-				1C0245A8286B66C600AD2A5A /* WordModel.swift in Sources */,
 				1C401EFC286F8AF400827BFB /* WordComponents.swift in Sources */,
 				1C401EFE286F8FAB00827BFB /* VerbViewSettings.swift in Sources */,
 				1CE739A72867053100148371 /* ChebravoApp.swift in Sources */,
 				1C5C6AF92868789300609B38 /* SplashView.swift in Sources */,
-				1C0245AA286B6A6300AD2A5A /* VerbModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
