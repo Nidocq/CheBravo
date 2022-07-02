@@ -19,7 +19,7 @@ class WordController : ObservableObject {
     /// <param name="WordName"> The name of the word that needs to be saved to the viewContext</param>
     func addItem(viewContext : NSManagedObjectContext, Wordname : String) {
         guard (Wordname != "") else { return }
-        withAnimation {
+        withAnimation(.easeInOut) {
             let newWord = Word(context: viewContext)
             newWord.name = Wordname
             newWord.date = Date.now
