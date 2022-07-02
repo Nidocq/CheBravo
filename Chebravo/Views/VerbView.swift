@@ -10,6 +10,8 @@
 import SwiftUI
 
 /// <summary> Displays information about the Verb that the user has saved </summary>
+
+// TODO: Make it able to swipe back in view so you don't have to press back all the time
 struct VerbView: View {
     @Environment(\.presentationMode) var presentationMode
     @State var isSheetPresent : Bool = false
@@ -30,7 +32,6 @@ struct VerbView: View {
     
     
     
-    // TODO: Add a date so the coredata can sort by date (Prefferably by default)
     var body: some View {
         ZStack {
             Color("PrimaryColor")

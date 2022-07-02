@@ -14,9 +14,11 @@ struct AllWords: View {
     let paddingLeadingTrailing : CGFloat = 18
     var wordController = WordController()
     
-    @FetchRequest(sortDescriptors: []) var words: FetchedResults<Word>
+    // TODO: Add a date so the coredata can sort by date (Prefferably by default)
+    @FetchRequest(sortDescriptors: [
+        SortDescriptor(\.date)
+    ]) var words: FetchedResults<Word>
     
-    @State var isActive = true
     var body: some View {
         NavigationView {
             ZStack {
@@ -46,15 +48,17 @@ struct AllWords: View {
                 }
             }
             .toolbar {
-                Button {
-                    // TODO: Make the button add a new word
-                    withAnimation {
-                        isActive.toggle()
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        // TODO: Make the button explain how to use the app
+                        print("Need help")
+                    } label : {
+                        Image(systemName: "questionmark.circle")
+                            .foregroundColor(Color("SecondaryColor"))
                     }
-                } label: {
-                    Image(systemName: "plus")
-                        .foregroundColor(isActive ? Color("SecondaryColor") : .black)
+          
                 }
+            
             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle("CheBravo")
@@ -76,7 +80,6 @@ struct InputField : View {
             
             //TODO: Watch a Video on textfields to remove the prewritten text when pressing it
             // Requirement:
-            // * Text needs to be removed when
             // * The Typing needs to go down
             // (* go to the view to see a preview)
             // BUG: the background doesn't work for TextField. Make Rect with a textfield on top of it
