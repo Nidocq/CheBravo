@@ -17,7 +17,7 @@ struct AllWords: View {
     // TODO: Add a date so the coredata can sort by date (Prefferably by default)
     @FetchRequest(sortDescriptors: [
         SortDescriptor(\.date)
-    ]) var words: FetchedResults<Word>
+    ].reversed()) var words: FetchedResults<Word>
     
     var body: some View {
         NavigationView {
@@ -70,6 +70,7 @@ struct AllWords: View {
 struct InputField : View {
     @Environment(\.managedObjectContext) var viewContext
     @Binding var input : String
+    @FocusState private var inputFocused : Bool
     
     var wordController : WordController
     let paddingLeadingTrailing : CGFloat = 18
@@ -84,16 +85,17 @@ struct InputField : View {
             // (* go to the view to see a preview)
             // BUG: the background doesn't work for TextField. Make Rect with a textfield on top of it
             TextField("Type in a word ...", text: $input)
-                .foregroundColor(.white)
                 .disableAutocorrection(true)
                 .frame(maxWidth: .infinity, maxHeight: 24)
                 .padding()
                 .background(.white)
                 .cornerRadius(cornerRadiusAmount)
                 .foregroundColor(.black)
+                .focused($inputFocused)
             Button() {
                 wordController.addItem(viewContext: viewContext, Wordname: input)
                 input = ""
+                inputFocused = false 
             } label: {
                 Text("ADD WORD")
                     .frame(maxWidth: .infinity)
