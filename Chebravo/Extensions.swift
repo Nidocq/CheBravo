@@ -17,7 +17,7 @@ enum WordType : String {
 }
 
 enum ConjugationProcess : String {
-    case fist = "are"
+    case first = "are"
     case second = "ere"
     case third = "ire"
 }

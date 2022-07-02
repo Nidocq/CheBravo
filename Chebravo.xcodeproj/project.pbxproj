@@ -18,6 +18,7 @@
 		1C9CB422286C20090082ECB8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9CB421286C20090082ECB8 /* Extensions.swift */; };
 		1CAEE4A52870DAE0007CAD1F /* TranslationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAEE4A42870DAE0007CAD1F /* TranslationController.swift */; };
 		1CAEE4A72870DEA2007CAD1F /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAEE4A62870DEA2007CAD1F /* APIKey.swift */; };
+		1CAEE4A92870F0F9007CAD1F /* TranslationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAEE4A82870F0F9007CAD1F /* TranslationResponse.swift */; };
 		1CE739A72867053100148371 /* ChebravoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE739A62867053100148371 /* ChebravoApp.swift */; };
 		1CE739A92867053100148371 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE739A82867053100148371 /* ContentView.swift */; };
 		1CE739AB2867053200148371 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CE739AA2867053200148371 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 		1C9CB421286C20090082ECB8 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		1CAEE4A42870DAE0007CAD1F /* TranslationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationController.swift; sourceTree = "<group>"; };
 		1CAEE4A62870DEA2007CAD1F /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		1CAEE4A82870F0F9007CAD1F /* TranslationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationResponse.swift; sourceTree = "<group>"; };
 		1CE739A32867053100148371 /* Chebravo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chebravo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CE739A62867053100148371 /* ChebravoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChebravoApp.swift; sourceTree = "<group>"; };
 		1CE739A82867053100148371 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 		1C0245A6286B66BE00AD2A5A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1CAEE4A82870F0F9007CAD1F /* TranslationResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CF6AD8E2868BA97008BA670 /* WordCore.xcdatamodeld in Sources */,
+				1CAEE4A92870F0F9007CAD1F /* TranslationResponse.swift in Sources */,
 				1C9CB422286C20090082ECB8 /* Extensions.swift in Sources */,
 				1CAEE4A52870DAE0007CAD1F /* TranslationController.swift in Sources */,
 				1C0245AC286B6DAB00AD2A5A /* AddWord.swift in Sources */,
