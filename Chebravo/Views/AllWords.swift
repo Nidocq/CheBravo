@@ -17,7 +17,7 @@ struct AllWords: View {
     // TODO: Add a date so the coredata can sort by date (Prefferably by default)
     @FetchRequest(sortDescriptors: [
         SortDescriptor(\.date)
-    ].reversed()) var words: FetchedResults<Word>
+    ]) var words: FetchedResults<Word>
     
     var body: some View {
         NavigationView {
