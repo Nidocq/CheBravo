@@ -10,7 +10,8 @@ import SwiftUI
 /// <summary> Showcases all the Words the user has saved so far, Data is saved with CoreData </summary>
 struct AllWords: View {
     @Environment(\.managedObjectContext) var viewContext
-    @State var input : String = "Type in a word ..."
+    @State var input : String = ""
+    let paddingLeadingTrailing : CGFloat = 18
     var wordController = WordController()
     
     @FetchRequest(sortDescriptors: []) var words: FetchedResults<Word>
@@ -37,7 +38,7 @@ struct AllWords: View {
                                 .padding()
                                 .background(.white)
                                 .cornerRadius(10)
-                                .padding([.leading, .trailing], 10)
+                                .padding([.leading, .trailing], paddingLeadingTrailing)
                                 .foregroundColor(.black)
                             }
                         }
@@ -56,17 +57,20 @@ struct AllWords: View {
                 }
             }
             .navigationBarTitleDisplayMode(.inline)
+            .navigationTitle("CheBravo")
+                .foregroundColor(Color("SecondaryColor"))
         }
     }
 }
 
 struct InputField : View {
     @Environment(\.managedObjectContext) var viewContext
-
     @Binding var input : String
+    
     var wordController : WordController
+    let paddingLeadingTrailing : CGFloat = 18
     let cornerRadiusAmount : CGFloat = 10
-    let paddingTopBottom : CGFloat = 30
+    let paddingTopBottom : CGFloat = 22
     var body: some View {
         VStack {
             
@@ -75,15 +79,15 @@ struct InputField : View {
             // * Text needs to be removed when
             // * The Typing needs to go down
             // (* go to the view to see a preview)
-            TextField("Input a word", text: $input) {
-                AddWord()
-            }
-            .foregroundColor(.black)
-            .frame(maxWidth: .infinity)
-            .padding()
-            .background(.white)
-            .cornerRadius(cornerRadiusAmount)
-            .padding(.top, paddingTopBottom)
+            // BUG: the background doesn't work for TextField. Make Rect with a textfield on top of it
+            TextField("Type in a word ...", text: $input)
+                .foregroundColor(.white)
+                .disableAutocorrection(true)
+                .frame(maxWidth: .infinity, maxHeight: 24)
+                .padding()
+                .background(.white)
+                .cornerRadius(cornerRadiusAmount)
+                .foregroundColor(.black)
             Button() {
                 wordController.addItem(viewContext: viewContext, Wordname: input)
                 input = ""
@@ -96,8 +100,8 @@ struct InputField : View {
                     .foregroundColor(.black)
             }
         }
-        .padding([.leading, .trailing], 10)
-        .padding(.bottom, paddingTopBottom)
+        .padding([.leading, .trailing], paddingLeadingTrailing)
+        .padding([.bottom, .top], paddingTopBottom)
     }
 }
 
