@@ -14,8 +14,6 @@ import CoreData
 /// it probably would b better </remarks>
 class WordController : ObservableObject {
     
-    var translationController = TranslationController()
-    
     /// <summary> Creates and adds a specified item to the NSManagedObjectContext. </summary>
     /// <param name="viewContext"> The NSManagedObjectContext given in which the item needs to be saved to</param>
     /// <param name="WordName"> The name of the word that needs to be saved to the viewContext</param>
@@ -25,7 +23,7 @@ class WordController : ObservableObject {
             let newWord = Word(context: viewContext)
             newWord.name = Wordname
             newWord.date = Date.now
-            newWord.translationToEnglish = translationController.translateText(text: Wordname)
+            newWord.translationToEnglish = TranslationController.translateText(text: Wordname)
             try? viewContext.save()
         }
     }
