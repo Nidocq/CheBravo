@@ -32,16 +32,15 @@ struct WordSpecification: View {
 
 /// <summary> Subview UIComponent that displays an italian word and its represented translated word </summary>
 struct TranslationOfWord: View {
-    var Name : String
-    var WordType : String
-    var ConjugationProcess : String
+    var word : Word
     var body: some View {
         HStack {
             // ---
             VStack(alignment: .leading) {
-                WordSpecification(text: WordType)
-                WordName(name: self.Name)
-                WordSpecification(text: ConjugationProcess)
+                // TODO: WrodType and WordSpecification are static!!
+                WordSpecification(text: WordType.verb.rawValue)
+                WordName(name: self.word.name ?? "Unkown")
+                WordSpecification(text: ConjugationProcess.first.rawValue)
                     .frame(maxWidth: .infinity, alignment: .trailing)
             }
                 .foregroundColor(.black)
@@ -50,7 +49,7 @@ struct TranslationOfWord: View {
             // This VStack is the balance the space between the italian word
             // and the english translated word
             VStack {
-                WordName(name: self.Name)
+                WordName(name: self.word.translationToEnglish ?? "Unkown")
             }
             .frame(maxWidth: .infinity, alignment: .trailing)
             .foregroundColor(.black)

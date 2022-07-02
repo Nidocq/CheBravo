@@ -46,12 +46,7 @@ struct VerbView: View {
                     
                     // Word and translation
                     VStack(alignment: .leading) {
-                        TranslationOfWord(
-                            Name: self.word.name ?? "Unkown",
-                            WordType: WordType.verb.rawValue,
-                            ConjugationProcess: ConjugationProcess.second.rawValue
-
-                        )
+                        TranslationOfWord(word: word)
                     }
                         .padding([.leading, .trailing], 40)
                         .padding([.top, .bottom], 16)

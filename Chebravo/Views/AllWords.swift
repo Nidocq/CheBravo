@@ -36,7 +36,7 @@ struct AllWords: View {
                                 VerbView(word: word)
                             ) {
                                 // Style of the navigation link
-                                TranslationOfWord(Name: word.name ?? ";)", WordType: "Verb.", ConjugationProcess: "re.")
+                                TranslationOfWord(word: word)
                                 .padding()
                                 .background(.white)
                                 .cornerRadius(10)
