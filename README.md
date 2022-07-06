@@ -22,7 +22,7 @@ We all learn in different ways, therefore CheBravo enables you to manage your ow
 
 
 ### Updates
-Jul 6 : 
+Jul 6 : \
 <img src="./assets/updatejul6.png" width="180">
 
 CheBravo uses API from [DeepL](https://www.deepl.com/translator) in order to effectively translate words.
