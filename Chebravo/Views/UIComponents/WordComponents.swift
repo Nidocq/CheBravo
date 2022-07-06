@@ -41,6 +41,7 @@ struct TranslationOfWord: View {
                 WordName(name: self.word.name ?? "Unkown")
                 WordSpecification(text: ConjugationProcess.first.rawValue)
                     .frame(maxWidth: .infinity, alignment: .trailing)
+                    //TODO: fix the alignment of the word conjugationProcess
                     .offset(x: -42)
             }
                 .foregroundColor(.black)
