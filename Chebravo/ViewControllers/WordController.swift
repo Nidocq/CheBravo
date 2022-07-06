@@ -13,19 +13,18 @@ import CoreData
 /// <remarks> I can't instantiate the NSManagedObjectContext with this class for some reason, even though
 /// it probably would b better </remarks>
 class WordController : ObservableObject {
-    
+        
     /// <summary> Creates and adds a specified item to the NSManagedObjectContext. </summary>
     /// <param name="viewContext"> The NSManagedObjectContext given in which the item needs to be saved to</param>
     /// <param name="WordName"> The name of the word that needs to be saved to the viewContext</param>
-    func addItem(viewContext : NSManagedObjectContext, Wordname : String) {
+    func addItem(viewContext : NSManagedObjectContext, Wordname : String) async {
         guard (Wordname != "") else { return }
-        withAnimation(.easeInOut) {
             let newWord = Word(context: viewContext)
             newWord.name = Wordname
             newWord.date = Date.now
-            newWord.translationToEnglish = TranslationController.translateText(text: Wordname)
+            // TODO: Nullcheck translation of word
+            newWord.translationToEnglish = await TranslationController.translateText(text: Wordname)
             try? viewContext.save()
-        }
     }
     
     

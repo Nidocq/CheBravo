@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+struct TranslationResponse: Decodable {
+    let translations: [Translation]
+}
+
+struct Translation : Decodable {
+    let detectedSourceLanguage, text: String
+}

@@ -13,7 +13,7 @@ struct WordName: View {
     var name: String
     var body: some View {
         Text(self.name)
-            .font(.system(size: 24))
+            .font(.system(size: 18))
     }
 }
 
@@ -32,7 +32,7 @@ struct WordSpecification: View {
 
 /// <summary> Subview UIComponent that displays an italian word and its represented translated word </summary>
 struct TranslationOfWord: View {
-    var word : Word
+    @ObservedObject var word : Word
     var body: some View {
         HStack {
             // ---
@@ -42,6 +42,7 @@ struct TranslationOfWord: View {
                 WordName(name: self.word.name ?? "Unkown")
                 WordSpecification(text: ConjugationProcess.first.rawValue)
                     .frame(maxWidth: .infinity, alignment: .trailing)
+                    .offset(x: -42)
             }
                 .foregroundColor(.black)
             Spacer()
@@ -49,7 +50,7 @@ struct TranslationOfWord: View {
             // This VStack is the balance the space between the italian word
             // and the english translated word
             VStack {
-                WordName(name: self.word.translationToEnglish ?? "Unkown")
+                WordName(name: self.word.translationToEnglish ?? "Loading..")
             }
             .frame(maxWidth: .infinity, alignment: .trailing)
             .foregroundColor(.black)

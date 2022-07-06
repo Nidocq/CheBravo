@@ -10,7 +10,7 @@ import SwiftUI
 /// <summary> Settings view that displays common settings and information of a word </summary>
 struct VerbViewSettings: View {
     @Environment(\.dismiss) var dismiss
-    var word : Word
+    @ObservedObject var word : Word
     
     var body: some View {
         ZStack {

@@ -19,6 +19,13 @@ struct AllWords: View {
         SortDescriptor(\.date)
     ]) var words: FetchedResults<Word>
     
+    func refreshWords() -> FetchedResults<Word> {
+        @FetchRequest(sortDescriptors: [
+            SortDescriptor(\.date)
+        ]) var words: FetchedResults<Word>
+       return words
+    }
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -64,6 +71,7 @@ struct AllWords: View {
             .navigationTitle("CheBravo")
                 .foregroundColor(Color("SecondaryColor"))
         }
+
     }
 }
 
@@ -76,14 +84,18 @@ struct InputField : View {
     let paddingLeadingTrailing : CGFloat = 18
     let cornerRadiusAmount : CGFloat = 10
     let paddingTopBottom : CGFloat = 22
+        
+    func AddNewWord() async {
+        await wordController.addItem(viewContext: viewContext, Wordname: input)
+        input = ""
+        inputFocused = false
+    }
+
     var body: some View {
         VStack {
             
-            //TODO: Watch a Video on textfields to remove the prewritten text when pressing it
             // Requirement:
-            // * The Typing needs to go down
             // (* go to the view to see a preview)
-            // BUG: the background doesn't work for TextField. Make Rect with a textfield on top of it
             TextField("Type in a word ...", text: $input)
                 .disableAutocorrection(true)
                 .frame(maxWidth: .infinity, maxHeight: 24)
@@ -92,10 +104,16 @@ struct InputField : View {
                 .cornerRadius(cornerRadiusAmount)
                 .foregroundColor(.black)
                 .focused($inputFocused)
+                .onChange(of: input) { newValue in
+                    input = input.replacingOccurrences(of: " ", with: "")
+                }
+            
             Button() {
-                wordController.addItem(viewContext: viewContext, Wordname: input)
-                input = ""
-                inputFocused = false 
+                Task {
+                    do {
+                        await AddNewWord()
+                    }
+                }
             } label: {
                 Text("ADD WORD")
                     .frame(maxWidth: .infinity)
@@ -115,4 +133,6 @@ struct AllWords_Previews: PreviewProvider {
         AllWords()
     }
 }
+
+// MARK: FUNCTIONS
 

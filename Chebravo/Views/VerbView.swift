@@ -15,7 +15,7 @@ import SwiftUI
 struct VerbView: View {
     @Environment(\.presentationMode) var presentationMode
     @State var isSheetPresent : Bool = false
-    var word : Word
+    @ObservedObject var word : Word
     
     init(word: Word) {
         // In order to syle the NavigationBar background color
@@ -168,7 +168,7 @@ struct DeleteButton: View {
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.managedObjectContext) var viewContext
     var wordController = WordController()
-    var word : Word
+    @ObservedObject var word : Word
 
     var body: some View {
         
