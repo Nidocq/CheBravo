@@ -67,7 +67,7 @@ struct AllWords: View {
                 }
             
             }
-            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarTitleDisplayMode(.large)
             .navigationTitle("CheBravo")
                 .foregroundColor(Color("SecondaryColor"))
         }
