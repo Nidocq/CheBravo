@@ -11,10 +11,10 @@ import SwiftUI
 struct AllWords: View {
     @Environment(\.managedObjectContext) var viewContext
     @State var input : String = ""
+    @State private var IsHelpSheetActive = false
     let paddingLeadingTrailing : CGFloat = 18
     var wordController = WordController()
     
-    // TODO: Add a date so the coredata can sort by date (Prefferably by default)
     @FetchRequest(sortDescriptors: [
         SortDescriptor(\.date)
     ]) var words: FetchedResults<Word>
@@ -57,8 +57,8 @@ struct AllWords: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-                        // TODO: Make the button explain how to use the app
-                        print("Need help")
+                        IsHelpSheetActive = true
+                        
                     } label : {
                         Image(systemName: "questionmark.circle")
                             .foregroundColor(Color("SecondaryColor"))
@@ -70,6 +70,10 @@ struct AllWords: View {
             .navigationBarTitleDisplayMode(.large)
             .navigationTitle("CheBravo")
                 .foregroundColor(Color("SecondaryColor"))
+        }
+        .sheet(isPresented: $IsHelpSheetActive) {
+            //TODO: Make the tutorial for how to use the application
+            Text("Hello")
         }
 
     }
