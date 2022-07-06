@@ -20,13 +20,9 @@ struct VerbView: View {
     init(word: Word) {
         // In order to syle the NavigationBar background color
         self.word = word
-//        let navBarAppearance = UINavigationBarAppearance()
-//        navBarAppearance.backgroundColor = .white
-//        navBarAppearance.shadowColor = .clear
-//        UINavigationBar.appearance().standardAppearance = navBarAppearance
-//        UINavigationBar.appearance().compactAppearance = navBarAppearance
-//        UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
-//        UINavigationBar.appearance().tintColor = .blue
+        let navBarAppearance = UINavigationBar.appearance()
+        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor(Color("SecondaryColor"))]
+        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor(Color("SecondaryColor"))]
         
     }
     
