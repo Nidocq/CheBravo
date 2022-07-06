@@ -85,14 +85,16 @@ struct VerbView: View {
         .toolbar {
             // Toolbar back button
             ToolbarItem(placement: .navigationBarLeading) {
-                HStack {
-                    Image(systemName: "chevron.backward")
-                    Button("Back") {
-                        presentationMode.wrappedValue.dismiss()
-                        print("I was pressed")
+                Button {
+                    presentationMode.wrappedValue.dismiss()
+                    print("I was pressed")
+                } label: {
+                    HStack {
+                        Image(systemName: "chevron.backward")
+                        Text("Back")
                     }
+                    .foregroundColor(Color("SecondaryColor"))
                 }
-                .foregroundColor(Color("SecondaryColor"))
             }
             // Toolbar settings popup
             ToolbarItem(placement: .navigationBarTrailing) {
