@@ -37,7 +37,6 @@ struct TranslationOfWord: View {
         HStack {
             // ---
             VStack(alignment: .leading) {
-                // TODO: WrodType and WordSpecification are static!!
                 WordSpecification(text: WordType.verb.rawValue)
                 WordName(name: self.word.name ?? "Unkown")
                 WordSpecification(text: ConjugationProcess.first.rawValue)
