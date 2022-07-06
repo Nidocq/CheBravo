@@ -98,10 +98,6 @@ struct VerbView: View {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
                     isSheetPresent = true
-                    // TODO: Make a settings app
-                        // Make a sheet that displays infoormation
-                            // See when the word was created
-                            // Delete words
                 } label: {
                     Image(systemName: "gearshape.fill")
                         .foregroundColor(Color("SecondaryColor"))
@@ -115,9 +111,7 @@ struct VerbView: View {
         .navigationBarBackButtonHidden(true)
         .navigationBarHidden(false)
         .navigationTitle("")
-        //TODO: BUG: When swiping up, the background color can be seen if navigationBarTitleDisplayMode(.inline) is set. If there IS a title
-        // the color of the title goes all the way up and no background color can be seen.
-        .navigationBarTitleDisplayMode(.large)
+        .navigationBarTitleDisplayMode(.inline)
         
         
     }
