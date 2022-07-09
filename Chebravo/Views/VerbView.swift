@@ -34,7 +34,7 @@ struct VerbView: View {
                 .ignoresSafeArea()
             
             // All Components
-            ScrollView {
+            VStack {
                 
                 // White box with word and translation
                 VStack {
@@ -56,27 +56,30 @@ struct VerbView: View {
                 
                 // Example of word
                 // TODO: Make several examples pop-up with this.name
-                VStack {
-                    SubTitle(name: "Example")
-                    ExampleTranslation()
-                   
+                ScrollView {
+                        
+                    VStack {
+                        SubTitle(name: "Example")
+                        ExampleTranslation()
+                       
+                    }
+                    .frame(maxWidth: .infinity)
+                    
+                    
+                    // Groups
+                    VStack {
+                        SubTitle(name: "Conjugation")
+                        
+                    }
+                    
+                    // Tenses
+                    VStack {
+                        SubTitle(name: "Tenses")
+                    }
+                    Spacer()
                 }
                 .frame(maxWidth: .infinity)
-                
-                
-                // Groups
-                VStack {
-                    SubTitle(name: "Conjugation")
-                    
-                }
-                
-                // Tenses
-                VStack {
-                    SubTitle(name: "Tenses")
-                }
-                Spacer()
             }
-            .frame(maxWidth: .infinity)
         }
         .toolbar {
             // Toolbar back button
