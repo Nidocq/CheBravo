@@ -18,27 +18,39 @@ struct VerbViewSettings: View {
                 .ignoresSafeArea()
             
             VStack {
+                Spacer()
                 Text(word.name ?? "Unkown name")
                     .font(.system(size: 44))
-                Text(word.date ?? Date(timeIntervalSinceReferenceDate: 0), style: .date)
+                    .foregroundColor(.white)
+                HStack {
+                    Text("Date added:")
+                    Text(word.date ?? Date(timeIntervalSinceReferenceDate: 0), style: .date)
+                }
                     .font(.system(size: 24))
-                    .foregroundColor(.gray)
-                Button {
-                   dismiss()
-                } label: {
-                    DeleteButton(word: word)
-                }
-                
-                Button {
-                    dismiss()
-                } label: {
-                    Text("Go back")
-                    .background(Color("SecondaryColor"))
-                    .frame(maxWidth: .infinity, maxHeight: 42)
-                    .padding()
+                    .foregroundColor(.white)
+                    .opacity(0.8)
+                Spacer()
+                HStack {
+                    Spacer()
+                    Button {
+                       dismiss()
+                    } label: {
+                        DeleteButton(word: word)
+                    }
                     
-
+                    Button {
+                        dismiss()
+                    } label: {
+                        Text("Go back")
+                            .foregroundColor(.black)
+                            .padding()
+                            .background(Color("SecondaryColor"))
+                            .cornerRadius(22)
+                            .frame(maxWidth: 300)
+                    }
+                    Spacer()
                 }
+                .padding(.bottom, 30)
             }
         }
     }
@@ -60,7 +72,7 @@ struct DeleteButton: View {
             
         } label : {
             Text("Delete word")
-                .foregroundColor(.black)
+                .foregroundColor(.red)
                 .padding()
                 .background(Color("SecondaryColor"))
                 .cornerRadius(22)
