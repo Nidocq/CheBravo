@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1C0245AC286B6DAB00AD2A5A /* AddWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0245AB286B6DAB00AD2A5A /* AddWord.swift */; };
+		1C0DEC8F2879B6410071BEC7 /* ChebravoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0DEC8E2879B6410071BEC7 /* ChebravoTests.swift */; };
+		1C0DEC962879B71D0071BEC7 /* WordControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0DEC952879B71D0071BEC7 /* WordControllerTest.swift */; };
 		1C207C842869F89A00847EB2 /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C207C832869F89A00847EB2 /* CoreDataController.swift */; };
 		1C207C872869FAA300847EB2 /* WordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C207C862869FAA300847EB2 /* WordController.swift */; };
 		1C401EFC286F8AF400827BFB /* WordComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C401EFB286F8AF400827BFB /* WordComponents.swift */; };
@@ -26,8 +28,21 @@
 		1CF6AD8E2868BA97008BA670 /* WordCore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1CF6AD8C2868BA97008BA670 /* WordCore.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		1C0DEC902879B6410071BEC7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1CE7399B2867053100148371 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1CE739A22867053100148371;
+			remoteInfo = Chebravo;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		1C0245AB286B6DAB00AD2A5A /* AddWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWord.swift; sourceTree = "<group>"; };
+		1C0DEC8C2879B6410071BEC7 /* ChebravoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChebravoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C0DEC8E2879B6410071BEC7 /* ChebravoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChebravoTests.swift; sourceTree = "<group>"; };
+		1C0DEC952879B71D0071BEC7 /* WordControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordControllerTest.swift; sourceTree = "<group>"; };
 		1C207C832869F89A00847EB2 /* CoreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
 		1C207C862869FAA300847EB2 /* WordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordController.swift; sourceTree = "<group>"; };
 		1C401EFB286F8AF400827BFB /* WordComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordComponents.swift; sourceTree = "<group>"; };
@@ -48,6 +63,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1C0DEC892879B6410071BEC7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1CE739A02867053100148371 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -64,6 +86,15 @@
 				1CAEE4A82870F0F9007CAD1F /* TranslationResponse.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		1C0DEC8D2879B6410071BEC7 /* ChebravoTests */ = {
+			isa = PBXGroup;
+			children = (
+				1C0DEC8E2879B6410071BEC7 /* ChebravoTests.swift */,
+				1C0DEC952879B71D0071BEC7 /* WordControllerTest.swift */,
+			);
+			path = ChebravoTests;
 			sourceTree = "<group>";
 		};
 		1C207C822869F87F00847EB2 /* CoreData */ = {
@@ -108,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				1CE739A52867053100148371 /* Chebravo */,
+				1C0DEC8D2879B6410071BEC7 /* ChebravoTests */,
 				1CE739A42867053100148371 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -116,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				1CE739A32867053100148371 /* Chebravo.app */,
+				1C0DEC8C2879B6410071BEC7 /* ChebravoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -149,6 +182,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1C0DEC8B2879B6410071BEC7 /* ChebravoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1C0DEC942879B6410071BEC7 /* Build configuration list for PBXNativeTarget "ChebravoTests" */;
+			buildPhases = (
+				1C0DEC882879B6410071BEC7 /* Sources */,
+				1C0DEC892879B6410071BEC7 /* Frameworks */,
+				1C0DEC8A2879B6410071BEC7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1C0DEC912879B6410071BEC7 /* PBXTargetDependency */,
+			);
+			name = ChebravoTests;
+			productName = ChebravoTests;
+			productReference = 1C0DEC8C2879B6410071BEC7 /* ChebravoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		1CE739A22867053100148371 /* Chebravo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1CE739B12867053200148371 /* Build configuration list for PBXNativeTarget "Chebravo" */;
@@ -177,6 +228,10 @@
 				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
+					1C0DEC8B2879B6410071BEC7 = {
+						CreatedOnToolsVersion = 13.3.1;
+						TestTargetID = 1CE739A22867053100148371;
+					};
 					1CE739A22867053100148371 = {
 						CreatedOnToolsVersion = 13.3.1;
 					};
@@ -196,11 +251,19 @@
 			projectRoot = "";
 			targets = (
 				1CE739A22867053100148371 /* Chebravo */,
+				1C0DEC8B2879B6410071BEC7 /* ChebravoTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1C0DEC8A2879B6410071BEC7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1CE739A12867053100148371 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -233,6 +296,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1C0DEC882879B6410071BEC7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C0DEC8F2879B6410071BEC7 /* ChebravoTests.swift in Sources */,
+				1C0DEC962879B71D0071BEC7 /* WordControllerTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1CE7399F2867053100148371 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -257,7 +329,51 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		1C0DEC912879B6410071BEC7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1CE739A22867053100148371 /* Chebravo */;
+			targetProxy = 1C0DEC902879B6410071BEC7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		1C0DEC922879B6410071BEC7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = R5R4TG65JY;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Phil.ChebravoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Chebravo.app/Chebravo";
+			};
+			name = Debug;
+		};
+		1C0DEC932879B6410071BEC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = R5R4TG65JY;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Phil.ChebravoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Chebravo.app/Chebravo";
+			};
+			name = Release;
+		};
 		1CE739AF2867053200148371 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -437,6 +553,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1C0DEC942879B6410071BEC7 /* Build configuration list for PBXNativeTarget "ChebravoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C0DEC922879B6410071BEC7 /* Debug */,
+				1C0DEC932879B6410071BEC7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		1CE7399E2867053100148371 /* Build configuration list for PBXProject "Chebravo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
