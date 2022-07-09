@@ -10,7 +10,7 @@ import SwiftUI
 
 /// <summary> The representing screen right when you open the app after it has been closed </summary>
 struct SplashView: View {
-    @State var isSplashActive = true
+    @State var isSplashActive = false
     @StateObject private var CDController = CoreDataController()
     
     var body: some View {

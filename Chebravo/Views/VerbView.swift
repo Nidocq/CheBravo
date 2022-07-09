@@ -42,7 +42,7 @@ struct VerbView: View {
                     
                     // Word and translation
                     VStack(alignment: .leading) {
-                        TranslationOfWord(word: word, ViewOptionType: ViewOptions.translation)
+                        WordDisplay(word: word, ViewOptionType: ViewOptions.translation)
                     }
                         .padding([.leading, .trailing], 40)
                         .padding([.top, .bottom], 16)
@@ -86,7 +86,6 @@ struct VerbView: View {
             ToolbarItem(placement: .navigationBarLeading) {
                 Button {
                     presentationMode.wrappedValue.dismiss()
-                    print("I was pressed")
                 } label: {
                     HStack {
                         Image(systemName: "chevron.backward")

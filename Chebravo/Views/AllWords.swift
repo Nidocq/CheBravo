@@ -49,9 +49,6 @@ struct AllWords: View {
                             TranslatedViewOption(words: words, paddingLeadingTrailing: paddingLeadingTrailing)
                         case ViewOptions.compact:
                             CompactViewOption(paddingLeadingTrailing: paddingLeadingTrailing, words: words)
-                        default:
-                            Text("Default")
-
                     }
                     
 
@@ -165,7 +162,7 @@ struct TranslatedViewOption : View {
                         VerbView(word: word)
                 ) {
                     // Style of the navigation link
-                    TranslationOfWord(word: word, ViewOptionType: ViewOptions.translation)
+                    WordDisplay(word: word, ViewOptionType: ViewOptions.translation)
                         .padding()
                         .background(.white)
                         .cornerRadius(10)
@@ -181,11 +178,18 @@ struct TranslatedViewOption : View {
 struct CompactViewOption : View {
     let paddingLeadingTrailing : CGFloat
     var words : FetchedResults<Word>
-
+    
+//    let columns : [GridItem] = [
+//        GridItem(.adaptive(minimum: 50, maximum: 50))
+//    ]
+    
+    let columns : [GridItem] = [
+        GridItem(.adaptive(minimum: 114))
+    ]
     
     var body: some View {
         ScrollView {
-            LazyVGrid(columns: [GridItem(.flexible(minimum: UIScreen.main.bounds.size.width/5))], spacing: 0) {
+            LazyVGrid(columns: columns, spacing: 10) {
                 ForEach(words, id: \.self) { word in
                     NavigationLink(
                         destination:
@@ -193,7 +197,7 @@ struct CompactViewOption : View {
                             VerbView(word: word)
                     ) {
                         // Style of the navigation link
-                        TranslationOfWord(word: word, ViewOptionType: .compact)
+                        WordDisplay(word: word, ViewOptionType: .compact)
                             .padding()
                             .background(.white)
                             .cornerRadius(10)
@@ -201,7 +205,9 @@ struct CompactViewOption : View {
                             .foregroundColor(.black)
                     }
                 }
+                    
             }
+                .padding([.leading, .trailing], paddingLeadingTrailing)
         }
     }
 }

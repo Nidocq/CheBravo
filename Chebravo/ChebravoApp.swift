@@ -19,6 +19,8 @@ import SwiftUI
 //      * Articles
 //      * Masculine and feminine and their conjugation
 
+// TODO: Have counter of current "Words you know!"
+
 @main
 struct ChebravoApp: App {
     @Environment(\.colorScheme) var colorScheme

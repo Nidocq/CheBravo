@@ -31,7 +31,7 @@ struct WordSpecification: View {
 }
 
 /// <summary> Subview UIComponent that displays an italian word and its represented translated word </summary>
-struct TranslationOfWord: View {
+struct WordDisplay: View {
     @ObservedObject var word : Word
     var ViewOptionType : ViewOptions
     
@@ -45,9 +45,7 @@ struct TranslationOfWord: View {
                         WordSpecification(text: WordType.verb.rawValue)
                         WordName(name: self.word.name ?? "Unkown")
                         WordSpecification(text: ConjugationProcess.first.rawValue)
-                            .frame(maxWidth: .infinity, alignment: .trailing)
-                            //TODO: fix the alignment of the word conjugationProcess
-                            .offset(x: -42)
+                            .frame(maxWidth: .infinity, alignment: .leading)
                     }
                         .frame(maxWidth: .infinity, alignment: .trailing)
                         .foregroundColor(.black)
@@ -63,14 +61,17 @@ struct TranslationOfWord: View {
 
                     // ---
                 }
+                .lineLimit(1) // To not wrap text
+            
             case .compact:
                 VStack(alignment: .leading) {
                     WordSpecification(text: WordType.verb.rawValue)
                     WordName(name: self.word.name ?? "Unkown")
                     WordSpecification(text: ConjugationProcess.first.rawValue)
                         .frame(alignment: .trailing)
-                        //TODO: fix the alignment of the word conjugationProcess
                 }
+                .lineLimit(1) // To not wrap text
+                .frame(minWidth: 140, maxWidth: .infinity, minHeight: 40,  maxHeight: .infinity)
                 .foregroundColor(.black)
         }
     }
