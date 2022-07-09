@@ -39,38 +39,24 @@ struct AllWords: View {
                         paddingTopBottom: cornerRadiusAmount
                     )
                     
-                    ViewOption(
+                    ViewSelection(
                         selectedViewOption: $selectedViewOption,
                         paddingLeadingTrailing: paddingLeadingTrailing
                     )
                     
                     switch selectedViewOption {
-                    case ViewOptions.translation:
-                        Text("Translation")
-                    case ViewOptions.compact:
-                        Text("Compact")
-                    default:
-                        Text("Default")
+                        case ViewOptions.translation:
+                            TranslatedViewOption(words: words, paddingLeadingTrailing: paddingLeadingTrailing)
+                        case ViewOptions.compact:
+                            Spacer()
+                            Text("Compact")
+                            Spacer()
+                        default:
+                            Text("Default")
 
                     }
                     
-//                    ScrollView {
-//                        ForEach(words, id: \.self) { word in
-//                            NavigationLink(
-//                                destination:
-//                                    // When clicked go to Verb View
-//                                VerbView(word: word)
-//                            ) {
-//                                // Style of the navigation link
-//                                TranslationOfWord(word: word)
-//                                .padding()
-//                                .background(.white)
-//                                .cornerRadius(10)
-//                                .padding([.leading, .trailing], paddingLeadingTrailing)
-//                                .foregroundColor(.black)
-//                            }
-//                        }
-//                    }
+
                 }
             }
             .toolbar {
@@ -151,10 +137,11 @@ struct InputField : View {
     }
 }
 
-struct ViewOption : View {
-    
+struct ViewSelection : View {
     @Binding var selectedViewOption : ViewOptions
-    var paddingLeadingTrailing: CGFloat
+    
+    // TODO: Styling the ViewPicker
+    let paddingLeadingTrailing: CGFloat
     var body: some View {
         Picker("View Options", selection: $selectedViewOption) {
             ForEach(ViewOptions.allCases, id:\.self) { opt in
@@ -164,6 +151,31 @@ struct ViewOption : View {
             .pickerStyle(.segmented)
             .padding([.leading, .trailing], paddingLeadingTrailing)
             .padding(.bottom, 14)
+    }
+}
+
+struct TranslatedViewOption : View {
+    var words : FetchedResults<Word>
+    let paddingLeadingTrailing : CGFloat
+    
+    var body: some View {
+        ScrollView {
+            ForEach(words, id: \.self) { word in
+                NavigationLink(
+                    destination:
+                    // When clicked go to Verb View
+                        VerbView(word: word)
+                ) {
+                    // Style of the navigation link
+                    TranslationOfWord(word: word)
+                        .padding()
+                        .background(.white)
+                        .cornerRadius(10)
+                        .padding([.leading, .trailing], paddingLeadingTrailing)
+                        .foregroundColor(.black)
+                }
+            }
+        }
     }
 }
 

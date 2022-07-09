@@ -23,8 +23,9 @@ enum ConjugationProcess : String {
 }
 
 enum ViewOptions: String, CaseIterable {
-    case compact = "compact"
-    case translation = "translation"
+    case translation = "Translation"
+    case compact = "Compact"
+
 }
 
 // For reference, fixing the swiping feature if the NavigationView is hidden
