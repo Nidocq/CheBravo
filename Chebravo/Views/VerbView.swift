@@ -42,7 +42,7 @@ struct VerbView: View {
                     
                     // Word and translation
                     VStack(alignment: .leading) {
-                        TranslationOfWord(word: word)
+                        TranslationOfWord(word: word, ViewOptionType: ViewOptions.translation)
                     }
                         .padding([.leading, .trailing], 40)
                         .padding([.top, .bottom], 16)

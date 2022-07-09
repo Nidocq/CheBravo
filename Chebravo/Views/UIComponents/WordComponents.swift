@@ -33,29 +33,45 @@ struct WordSpecification: View {
 /// <summary> Subview UIComponent that displays an italian word and its represented translated word </summary>
 struct TranslationOfWord: View {
     @ObservedObject var word : Word
+    var ViewOptionType : ViewOptions
+    
     var body: some View {
-        HStack {
-            // ---
-            VStack(alignment: .leading) {
-                WordSpecification(text: WordType.verb.rawValue)
-                WordName(name: self.word.name ?? "Unkown")
-                WordSpecification(text: ConjugationProcess.first.rawValue)
+        
+        switch ViewOptionType {
+            case .translation:
+                HStack {
+                    // ---
+                    VStack(alignment: .leading) {
+                        WordSpecification(text: WordType.verb.rawValue)
+                        WordName(name: self.word.name ?? "Unkown")
+                        WordSpecification(text: ConjugationProcess.first.rawValue)
+                            .frame(maxWidth: .infinity, alignment: .trailing)
+                            //TODO: fix the alignment of the word conjugationProcess
+                            .offset(x: -42)
+                    }
+                        .foregroundColor(.black)
+                    Spacer()
+                    
+                    // This VStack is the balance the space between the italian word
+                    // and the english translated word
+                    VStack {
+                        WordName(name: self.word.translationToEnglish ?? "Loading..")
+                    }
                     .frame(maxWidth: .infinity, alignment: .trailing)
-                    //TODO: fix the alignment of the word conjugationProcess
-                    .offset(x: -42)
-            }
-                .foregroundColor(.black)
-            Spacer()
-            
-            // This VStack is the balance the space between the italian word
-            // and the english translated word
-            VStack {
-                WordName(name: self.word.translationToEnglish ?? "Loading..")
-            }
-            .frame(maxWidth: .infinity, alignment: .trailing)
-            .foregroundColor(.black)
+                    .foregroundColor(.black)
 
-            // ---
+                    // ---
+                }
+            case .compact:
+                VStack(alignment: .leading) {
+                    WordSpecification(text: WordType.verb.rawValue)
+                    WordName(name: self.word.name ?? "Unkown")
+                    WordSpecification(text: ConjugationProcess.first.rawValue)
+                        .frame(alignment: .trailing)
+                        //TODO: fix the alignment of the word conjugationProcess
+                }
+                    .foregroundColor(.black)
         }
     }
 }
+

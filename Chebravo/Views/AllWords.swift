@@ -48,9 +48,7 @@ struct AllWords: View {
                         case ViewOptions.translation:
                             TranslatedViewOption(words: words, paddingLeadingTrailing: paddingLeadingTrailing)
                         case ViewOptions.compact:
-                            Spacer()
-                            Text("Compact")
-                            Spacer()
+                            CompactViewOption(paddingLeadingTrailing: paddingLeadingTrailing, words: words)
                         default:
                             Text("Default")
 
@@ -167,7 +165,7 @@ struct TranslatedViewOption : View {
                         VerbView(word: word)
                 ) {
                     // Style of the navigation link
-                    TranslationOfWord(word: word)
+                    TranslationOfWord(word: word, ViewOptionType: ViewOptions.translation)
                         .padding()
                         .background(.white)
                         .cornerRadius(10)
@@ -178,6 +176,36 @@ struct TranslatedViewOption : View {
         }
     }
 }
+
+
+struct CompactViewOption : View {
+    let paddingLeadingTrailing : CGFloat
+    var words : FetchedResults<Word>
+
+    
+    var body: some View {
+        ScrollView {
+            LazyVStack {
+                ForEach(words, id: \.self) { word in
+                    NavigationLink(
+                        destination:
+                        // When clicked go to Verb View
+                            VerbView(word: word)
+                    ) {
+                        // Style of the navigation link
+                        TranslationOfWord(word: word, ViewOptionType: .compact)
+                            .padding()
+                            .background(.white)
+                            .cornerRadius(10)
+                            .padding([.leading, .trailing], paddingLeadingTrailing)
+                            .foregroundColor(.black)
+                    }
+                }
+            }
+        }
+    }
+}
+
 
 struct AllWords_Previews: PreviewProvider {
     static var previews: some View {
