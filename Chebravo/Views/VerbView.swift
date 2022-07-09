@@ -157,30 +157,7 @@ struct ExampleTranslation: View {
     }
 }
 
-/// <summary> Deletes the current word from the CoreData database when the user clicks on it </summary>
-/// <param name="word"> The specified word that needs to be deleted from the CoreData database </param>
-struct DeleteButton: View {
-    @Environment(\.presentationMode) var presentationMode
-    @Environment(\.managedObjectContext) var viewContext
-    var wordController = WordController()
-    @ObservedObject var word : Word
 
-    var body: some View {
-        
-        Button {
-            presentationMode.wrappedValue.dismiss()
-            wordController.removeItem(viewContext: viewContext, word: word)
-            
-        } label : {
-            Text("Delete word")
-                .foregroundColor(.black)
-                .padding()
-                .background(Color("SecondaryColor"))
-                .cornerRadius(22)
-                .frame(maxWidth: 300)
-        }
-    }
-}
 
 
 //MARK: PREVIEW
