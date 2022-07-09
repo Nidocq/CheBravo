@@ -61,7 +61,7 @@ struct WordDisplay: View {
 
                     // ---
                 }
-                .lineLimit(1) // To not wrap text
+                .lineLimit(1) // To not wrap text if word is too long
             
             case .compact:
                 VStack(alignment: .leading) {
@@ -70,7 +70,7 @@ struct WordDisplay: View {
                     WordSpecification(text: ConjugationProcess.first.rawValue)
                         .frame(alignment: .trailing)
                 }
-                .lineLimit(1) // To not wrap text
+                .lineLimit(1) 
                 .frame(minWidth: 140, maxWidth: .infinity, minHeight: 40,  maxHeight: .infinity)
                 .foregroundColor(.black)
         }

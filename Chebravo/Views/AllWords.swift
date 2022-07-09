@@ -179,11 +179,8 @@ struct CompactViewOption : View {
     let paddingLeadingTrailing : CGFloat
     var words : FetchedResults<Word>
     
-//    let columns : [GridItem] = [
-//        GridItem(.adaptive(minimum: 50, maximum: 50))
-//    ]
-    
     let columns : [GridItem] = [
+        // Size of the width of the word in WordComponent - case .translation:
         GridItem(.adaptive(minimum: 114))
     ]
     
