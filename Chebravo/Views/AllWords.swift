@@ -12,7 +12,12 @@ struct AllWords: View {
     @Environment(\.managedObjectContext) var viewContext
     @State var input : String = ""
     @State private var IsHelpSheetActive = false
+    @State var selectedViewOption : ViewOptions = ViewOptions.translation
+
+    
     let paddingLeadingTrailing : CGFloat = 18
+    let cornerRadiusAmount : CGFloat = 10
+    let paddingTopBottom : CGFloat = 14
     var wordController = WordController()
     
     @FetchRequest(sortDescriptors: [
@@ -26,32 +31,46 @@ struct AllWords: View {
                     .ignoresSafeArea()
                 
                 VStack {
-                    InputField(input: $input, wordController: wordController)
-                    ViewOption(paddingLeadingTrailing: paddingLeadingTrailing)
-//                    switch ViewOptions {
-//                    case ViewOptions.translation:
-//                    case ViewOptions.compact:
-//                    case default:
-//
-//                    }
+                    InputField(
+                        input: $input,
+                        wordController: wordController,
+                        paddingLeadingTrailing: paddingLeadingTrailing,
+                        cornerRadiusAmount: cornerRadiusAmount,
+                        paddingTopBottom: cornerRadiusAmount
+                    )
                     
-                    ScrollView {
-                        ForEach(words, id: \.self) { word in
-                            NavigationLink(
-                                destination:
-                                    // When clicked go to Verb View
-                                VerbView(word: word)
-                            ) {
-                                // Style of the navigation link
-                                TranslationOfWord(word: word)
-                                .padding()
-                                .background(.white)
-                                .cornerRadius(10)
-                                .padding([.leading, .trailing], paddingLeadingTrailing)
-                                .foregroundColor(.black)
-                            }
-                        }
+                    ViewOption(
+                        selectedViewOption: $selectedViewOption,
+                        paddingLeadingTrailing: paddingLeadingTrailing
+                    )
+                    
+                    switch selectedViewOption {
+                    case ViewOptions.translation:
+                        Text("Translation")
+                    case ViewOptions.compact:
+                        Text("Compact")
+                    default:
+                        Text("Default")
+
                     }
+                    
+//                    ScrollView {
+//                        ForEach(words, id: \.self) { word in
+//                            NavigationLink(
+//                                destination:
+//                                    // When clicked go to Verb View
+//                                VerbView(word: word)
+//                            ) {
+//                                // Style of the navigation link
+//                                TranslationOfWord(word: word)
+//                                .padding()
+//                                .background(.white)
+//                                .cornerRadius(10)
+//                                .padding([.leading, .trailing], paddingLeadingTrailing)
+//                                .foregroundColor(.black)
+//                            }
+//                        }
+//                    }
                 }
             }
             .toolbar {
@@ -85,9 +104,9 @@ struct InputField : View {
     @FocusState private var inputFocused : Bool
     
     var wordController : WordController
-    let paddingLeadingTrailing : CGFloat = 18
-    let cornerRadiusAmount : CGFloat = 10
-    let paddingTopBottom : CGFloat = 14
+    let paddingLeadingTrailing : CGFloat
+    let cornerRadiusAmount : CGFloat
+    let paddingTopBottom : CGFloat
         
     func AddNewWord() async {
         await wordController.addItem(viewContext: viewContext, Wordname: input)
@@ -133,9 +152,8 @@ struct InputField : View {
 }
 
 struct ViewOption : View {
-
     
-    @State var selectedViewOption : ViewOptions = ViewOptions.translation
+    @Binding var selectedViewOption : ViewOptions
     var paddingLeadingTrailing: CGFloat
     var body: some View {
         Picker("View Options", selection: $selectedViewOption) {
