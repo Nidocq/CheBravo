@@ -22,6 +22,8 @@ enum ConjugationProcess : String {
     case third = "ire"
 }
 
+// For reference, fixing the swiping feature if the NavigationView is hidden
+// https://stackoverflow.com/questions/59921239/hide-navigation-bar-without-losing-swipe-back-gesture-in-swiftui
 extension UINavigationController: UIGestureRecognizerDelegate {
     override open func viewDidLoad() {
         super.viewDidLoad()
