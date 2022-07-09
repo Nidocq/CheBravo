@@ -22,6 +22,11 @@ enum ConjugationProcess : String {
     case third = "ire"
 }
 
+enum ViewOptions: String, CaseIterable {
+    case compact = "compact"
+    case translation = "translation"
+}
+
 // For reference, fixing the swiping feature if the NavigationView is hidden
 // https://stackoverflow.com/questions/59921239/hide-navigation-bar-without-losing-swipe-back-gesture-in-swiftui
 extension UINavigationController: UIGestureRecognizerDelegate {

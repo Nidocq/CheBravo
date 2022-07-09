@@ -19,13 +19,6 @@ struct AllWords: View {
         SortDescriptor(\.date)
     ]) var words: FetchedResults<Word>
     
-    func refreshWords() -> FetchedResults<Word> {
-        @FetchRequest(sortDescriptors: [
-            SortDescriptor(\.date)
-        ]) var words: FetchedResults<Word>
-       return words
-    }
-    
     var body: some View {
         NavigationView {
             ZStack {
@@ -34,8 +27,15 @@ struct AllWords: View {
                 
                 VStack {
                     InputField(input: $input, wordController: wordController)
+                    ViewOption(paddingLeadingTrailing: paddingLeadingTrailing)
+//                    switch ViewOptions {
+//                    case ViewOptions.translation:
+//                    case ViewOptions.compact:
+//                    case default:
+//
+//                    }
+                    
                     ScrollView {
-                        
                         ForEach(words, id: \.self) { word in
                             NavigationLink(
                                 destination:
@@ -87,7 +87,7 @@ struct InputField : View {
     var wordController : WordController
     let paddingLeadingTrailing : CGFloat = 18
     let cornerRadiusAmount : CGFloat = 10
-    let paddingTopBottom : CGFloat = 22
+    let paddingTopBottom : CGFloat = 14
         
     func AddNewWord() async {
         await wordController.addItem(viewContext: viewContext, Wordname: input)
@@ -129,6 +129,23 @@ struct InputField : View {
         }
         .padding([.leading, .trailing], paddingLeadingTrailing)
         .padding([.bottom, .top], paddingTopBottom)
+    }
+}
+
+struct ViewOption : View {
+
+    
+    @State var selectedViewOption : ViewOptions = ViewOptions.translation
+    var paddingLeadingTrailing: CGFloat
+    var body: some View {
+        Picker("View Options", selection: $selectedViewOption) {
+            ForEach(ViewOptions.allCases, id:\.self) { opt in
+                Text(opt.rawValue)
+            }
+        }
+            .pickerStyle(.segmented)
+            .padding([.leading, .trailing], paddingLeadingTrailing)
+            .padding(.bottom, 14)
     }
 }
 
