@@ -49,6 +49,7 @@ struct TranslationOfWord: View {
                             //TODO: fix the alignment of the word conjugationProcess
                             .offset(x: -42)
                     }
+                        .frame(maxWidth: .infinity, alignment: .trailing)
                         .foregroundColor(.black)
                     Spacer()
                     
@@ -70,7 +71,7 @@ struct TranslationOfWord: View {
                         .frame(alignment: .trailing)
                         //TODO: fix the alignment of the word conjugationProcess
                 }
-                    .foregroundColor(.black)
+                .foregroundColor(.black)
         }
     }
 }

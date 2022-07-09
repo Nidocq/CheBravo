@@ -185,7 +185,7 @@ struct CompactViewOption : View {
     
     var body: some View {
         ScrollView {
-            LazyVStack {
+            LazyVGrid(columns: [GridItem(.flexible(minimum: UIScreen.main.bounds.size.width/5))], spacing: 0) {
                 ForEach(words, id: \.self) { word in
                     NavigationLink(
                         destination:
