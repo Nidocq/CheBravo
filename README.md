@@ -47,13 +47,13 @@ struct APIKey {
 5. Connect you IPhone to your computer so XCode can talk with your Phone
 6. In the top of XCode select your own device
 <div>
-<img src="./assets/sc1.png" height="50">\
-<img src="./assets/sc2.png" height="50">
+<img src="./assets/sc1.png" height="50"> <br />
+<img src="./assets/sc2.png" height="50"> <br />
 </div>
-7. When you are installing the app, you have to give your phone permission -> Settings/General/VPN & Device Management\
-8. Under the VPN & Device Management press on "Apple Development: xxx@email.com"\
-9. Approve apps\
-10. Rerun the application in Xcode\
+7. When you are installing the app, you have to give your phone permission -> Settings/General/VPN & Device Management <br />
+8. Under the VPN & Device Management press on "Apple Development: xxx@email.com" <br />
+9. Approve apps <br />
+10. Rerun the application in Xcode <br />
 Enjoy
 
 
