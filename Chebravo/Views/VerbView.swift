@@ -26,8 +26,6 @@ struct VerbView: View {
         
     }
     
-    
-    
     var body: some View {
         ZStack {
             Color("PrimaryColor")

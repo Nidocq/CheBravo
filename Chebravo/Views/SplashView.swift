@@ -6,11 +6,11 @@
 //
 
 import SwiftUI
-// TODO: Make the title of CheBravo slide into the navigationtitle in the Contentview (AllWords view)
+Chebravo/Views/VerbView.swift// TODO: Make the title of CheBravo slide into the navigationtitle in the Contentview (AllWords view)
 
 /// <summary> The representing screen right when you open the app after it has been closed </summary>
 struct SplashView: View {
-    @State var isSplashActive = false
+    @State var isSplashActive = true
     @StateObject private var CDController = CoreDataController()
     
     var body: some View {
