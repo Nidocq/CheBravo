@@ -72,8 +72,7 @@ struct AllWords: View {
                 .foregroundColor(Color("SecondaryColor"))
         }
         .sheet(isPresented: $IsHelpSheetActive) {
-            //TODO: Make the tutorial for how to use the application
-            Text("Hello")
+            TutorialView()
         }
 
     }

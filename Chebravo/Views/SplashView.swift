@@ -6,13 +6,14 @@
 //
 
 import SwiftUI
-Chebravo/Views/VerbView.swift// TODO: Make the title of CheBravo slide into the navigationtitle in the Contentview (AllWords view)
+// TODO: Make the title of CheBravo slide into the navigationtitle in the Contentview (AllWords view)
 
 /// <summary> The representing screen right when you open the app after it has been closed </summary>
 struct SplashView: View {
     @State var isSplashActive = true
     @StateObject private var CDController = CoreDataController()
-    
+    @StateObject var ViewRouter = ViewRouterController()
+
     var body: some View {
         ZStack {
             Color("PrimaryColor")
@@ -22,7 +23,7 @@ struct SplashView: View {
                 if (self.isSplashActive) {
                     SplashGraphics()
                 } else {
-                    ContentView()
+                    NavigationBarView(ViewRouter: ViewRouter)
                         .environment(\.managedObjectContext, CDController.modelContainer.viewContext)
                 }
             }

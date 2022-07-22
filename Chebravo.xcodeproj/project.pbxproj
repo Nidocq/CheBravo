@@ -21,8 +21,13 @@
 		1CAEE4A52870DAE0007CAD1F /* TranslationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAEE4A42870DAE0007CAD1F /* TranslationController.swift */; };
 		1CAEE4A72870DEA2007CAD1F /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAEE4A62870DEA2007CAD1F /* APIKey.swift */; };
 		1CAEE4A92870F0F9007CAD1F /* TranslationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAEE4A82870F0F9007CAD1F /* TranslationResponse.swift */; };
+		1CBA3A3D288AE0F400777ADB /* ViewRouterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBA3A3C288AE0F400777ADB /* ViewRouterController.swift */; };
+		1CBA3A3F288AE23E00777ADB /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBA3A3E288AE23E00777ADB /* NavigationBarView.swift */; };
+		1CBA3A41288AE2FD00777ADB /* LearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBA3A40288AE2FD00777ADB /* LearnView.swift */; };
+		1CBA3A43288AE32800777ADB /* YourExamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBA3A42288AE32800777ADB /* YourExamples.swift */; };
+		1CBA3A45288AE67800777ADB /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBA3A44288AE67800777ADB /* TutorialView.swift */; };
+		1CBA3A47288AE78700777ADB /* NagivationBarIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBA3A46288AE78700777ADB /* NagivationBarIconView.swift */; };
 		1CE739A72867053100148371 /* ChebravoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE739A62867053100148371 /* ChebravoApp.swift */; };
-		1CE739A92867053100148371 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE739A82867053100148371 /* ContentView.swift */; };
 		1CE739AB2867053200148371 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CE739AA2867053200148371 /* Assets.xcassets */; };
 		1CE739AE2867053200148371 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CE739AD2867053200148371 /* Preview Assets.xcassets */; };
 		1CF6AD8E2868BA97008BA670 /* WordCore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1CF6AD8C2868BA97008BA670 /* WordCore.xcdatamodeld */; };
@@ -54,9 +59,14 @@
 		1CAEE4A42870DAE0007CAD1F /* TranslationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationController.swift; sourceTree = "<group>"; };
 		1CAEE4A62870DEA2007CAD1F /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		1CAEE4A82870F0F9007CAD1F /* TranslationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationResponse.swift; sourceTree = "<group>"; };
+		1CBA3A3C288AE0F400777ADB /* ViewRouterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouterController.swift; sourceTree = "<group>"; };
+		1CBA3A3E288AE23E00777ADB /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
+		1CBA3A40288AE2FD00777ADB /* LearnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnView.swift; sourceTree = "<group>"; };
+		1CBA3A42288AE32800777ADB /* YourExamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourExamples.swift; sourceTree = "<group>"; };
+		1CBA3A44288AE67800777ADB /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
+		1CBA3A46288AE78700777ADB /* NagivationBarIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NagivationBarIconView.swift; sourceTree = "<group>"; };
 		1CE739A32867053100148371 /* Chebravo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chebravo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CE739A62867053100148371 /* ChebravoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChebravoApp.swift; sourceTree = "<group>"; };
-		1CE739A82867053100148371 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1CE739AA2867053200148371 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1CE739AD2867053200148371 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1CF6AD8D2868BA97008BA670 /* Word.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Word.xcdatamodel; sourceTree = "<group>"; };
@@ -108,6 +118,7 @@
 		1C207C852869FA7F00847EB2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				1CBA3A3C288AE0F400777ADB /* ViewRouterController.swift */,
 				1C207C862869FAA300847EB2 /* WordController.swift */,
 				1CAEE4A42870DAE0007CAD1F /* TranslationController.swift */,
 			);
@@ -120,6 +131,8 @@
 				1C0245AB286B6DAB00AD2A5A /* AddWord.swift */,
 				1C401EFB286F8AF400827BFB /* WordComponents.swift */,
 				1C401EFD286F8FAB00827BFB /* VerbViewSettings.swift */,
+				1CBA3A3E288AE23E00777ADB /* NavigationBarView.swift */,
+				1CBA3A46288AE78700777ADB /* NagivationBarIconView.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -130,7 +143,10 @@
 				1C4B549E2869DF1200D940CB /* UIComponents */,
 				1C5C6AF82868789300609B38 /* SplashView.swift */,
 				1C99542628689C6700C6B839 /* AllWords.swift */,
+				1CBA3A44288AE67800777ADB /* TutorialView.swift */,
 				1C99542828689E3100C6B839 /* VerbView.swift */,
+				1CBA3A40288AE2FD00777ADB /* LearnView.swift */,
+				1CBA3A42288AE32800777ADB /* YourExamples.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -157,7 +173,6 @@
 			isa = PBXGroup;
 			children = (
 				1CE739A62867053100148371 /* ChebravoApp.swift */,
-				1CE739A82867053100148371 /* ContentView.swift */,
 				1C9CB421286C20090082ECB8 /* Extensions.swift */,
 				1CAEE4A62870DEA2007CAD1F /* APIKey.swift */,
 				1C0245A6286B66BE00AD2A5A /* Model */,
@@ -313,12 +328,17 @@
 				1CAEE4A92870F0F9007CAD1F /* TranslationResponse.swift in Sources */,
 				1C9CB422286C20090082ECB8 /* Extensions.swift in Sources */,
 				1CAEE4A52870DAE0007CAD1F /* TranslationController.swift in Sources */,
+				1CBA3A43288AE32800777ADB /* YourExamples.swift in Sources */,
+				1CBA3A45288AE67800777ADB /* TutorialView.swift in Sources */,
 				1C0245AC286B6DAB00AD2A5A /* AddWord.swift in Sources */,
+				1CBA3A3D288AE0F400777ADB /* ViewRouterController.swift in Sources */,
 				1C207C872869FAA300847EB2 /* WordController.swift in Sources */,
-				1CE739A92867053100148371 /* ContentView.swift in Sources */,
+				1CBA3A41288AE2FD00777ADB /* LearnView.swift in Sources */,
 				1C207C842869F89A00847EB2 /* CoreDataController.swift in Sources */,
 				1C99542928689E3100C6B839 /* VerbView.swift in Sources */,
 				1CAEE4A72870DEA2007CAD1F /* APIKey.swift in Sources */,
+				1CBA3A47288AE78700777ADB /* NagivationBarIconView.swift in Sources */,
+				1CBA3A3F288AE23E00777ADB /* NavigationBarView.swift in Sources */,
 				1C99542728689C6700C6B839 /* AllWords.swift in Sources */,
 				1C401EFC286F8AF400827BFB /* WordComponents.swift in Sources */,
 				1C401EFE286F8FAB00827BFB /* VerbViewSettings.swift in Sources */,

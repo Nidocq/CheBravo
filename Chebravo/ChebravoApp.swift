@@ -23,6 +23,7 @@ import SwiftUI
 
 @main
 struct ChebravoApp: App {
+    
     @Environment(\.colorScheme) var colorScheme
     var body: some Scene {
         WindowGroup {
