@@ -74,7 +74,7 @@ struct NavigationBarView: View {
                         )
                         Spacer()
                     }
-                    .frame(width: geo.size.width, height: geo.size.height/15)
+                    .frame(width: geo.size.width, height: geo.size.height/14)
                 }
                 .background(Color("SecondaryColor"))
                 
