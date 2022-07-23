@@ -20,6 +20,12 @@ struct AllWords: View {
     let paddingTopBottom : CGFloat = 14
     var wordController = WordController()
     
+    init() {
+        let navBarAppearance = UINavigationBar.appearance()
+        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor(Color("SecondaryColor"))]
+        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor(Color("SecondaryColor"))]
+    }
+    
     @FetchRequest(sortDescriptors: [
         SortDescriptor(\.date)
     ]) var words: FetchedResults<Word>
@@ -127,6 +133,8 @@ struct InputField : View {
                     .cornerRadius(cornerRadiusAmount)
                     .foregroundColor(.black)
             }
+            // TODO: Add disabling to the button when it is loading
+            // .disabled(true)
         }
         .padding([.leading, .trailing], paddingLeadingTrailing)
         .padding([.bottom, .top], paddingTopBottom)
