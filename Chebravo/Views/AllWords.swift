@@ -13,7 +13,7 @@ struct AllWords: View {
     @State var input : String = ""
     @State private var IsHelpSheetActive = false
     @State var selectedViewOption : ViewOptions = ViewOptions.translation
-
+    
     
     let paddingLeadingTrailing : CGFloat = 18
     let cornerRadiusAmount : CGFloat = 10
@@ -82,6 +82,7 @@ struct InputField : View {
     @Environment(\.managedObjectContext) var viewContext
     @Binding var input : String
     @FocusState private var inputFocused : Bool
+    var Haptic = UINotificationFeedbackGenerator()
     
     var wordController : WordController
     let paddingLeadingTrailing : CGFloat
@@ -113,6 +114,7 @@ struct InputField : View {
             
             Button() {
                 Task {
+                    Haptic.notificationOccurred(.success)
                     do {
                         await AddNewWord()
                     }
