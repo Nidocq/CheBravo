@@ -8,16 +8,37 @@
 import SwiftUI
 
 struct LearnView: View {
+    
+    init() {
+        let navBarAppearance = UINavigationBar.appearance()
+        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor(Color("SecondaryColor"))]
+        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor(Color("SecondaryColor"))]
+    }
+    
     var body: some View {
-        ZStack {
-            Color("PrimaryColor")
-                .ignoresSafeArea()
-            
-            
-            Text("Learning is fun!!")
-                .foregroundColor(.white)
+        NavigationView {
+            ZStack {
+                Color("PrimaryColor")
+                    .ignoresSafeArea()
+                
+                
+                Text("Learning is fun!!")
+                    .foregroundColor(.white)
+            }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .navigationTitle("Learning")
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button {
+                            
+                        } label: {
+                            Image(systemName: "list.bullet")
+                                .foregroundColor(Color("SecondaryColor"))
+                        }
+                    }
+                }
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
+       
     }
 }
 
