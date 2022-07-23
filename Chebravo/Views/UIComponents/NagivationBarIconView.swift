@@ -46,6 +46,7 @@ struct NavigationBarIconView : View {
         .onTapGesture {
             viewRouter.currentPage = assignedPage
         }
+        .frame(width: UIScreen.main.bounds.size.width / CGFloat(Page.allCases.count + 1)) // +1 because of some padding
     }
 
 }

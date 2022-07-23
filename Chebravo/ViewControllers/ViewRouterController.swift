@@ -7,7 +7,8 @@
 
 import Foundation
 
-enum Page {
+// CaseIterable in order to style the NavigationBarView accordingly
+enum Page : CaseIterable {
     case Learn
     case YourWords
     case YourExamples
