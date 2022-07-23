@@ -30,42 +30,49 @@ struct NavigationBarView: View {
                         SettingsView()
                     }
                 
-                    HStack {
+                    HStack(alignment: .center) {
+                        Spacer()
                         NavigationBarIconView( // Learning
                             viewRouter: ViewRouter,
                             systemIconName: "graduationcap",
+                            description: "Learning",
                             assignedPage: .Learn,
                             width: iconWidth,
                             height: iconHeight,
                             color: .black
                         )
-                        
+                        Spacer()
                         NavigationBarIconView( // All words
                             viewRouter: ViewRouter,
                             systemIconName: "pencil.circle",
+                            description: "Words",
                             assignedPage: .YourWords,
                             width: iconWidth,
                             height: iconHeight,
                             color: .black
                         )
+                        Spacer()
                         
                         NavigationBarIconView( // Examples
                             viewRouter: ViewRouter,
                             systemIconName: "quote.bubble",
+                            description: "Examples",
                             assignedPage: .YourExamples,
                             width: iconWidth,
                             height: iconHeight,
                             color: .black
                         )
-                        
+                        Spacer()
                         NavigationBarIconView( // settings page
                             viewRouter: ViewRouter,
                             systemIconName: "gearshape",
+                            description: "Settings",
                             assignedPage: .Settings,
                             width: iconWidth,
                             height: iconHeight,
                             color: .black
                         )
+                        Spacer()
                     }
                     .frame(width: geo.size.width, height: geo.size.height/15)
                 }
