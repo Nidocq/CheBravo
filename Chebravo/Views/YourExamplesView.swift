@@ -1,28 +1,28 @@
 //
-//  SettingsView.swift
+//  YourExamples.swift
 //  Chebravo
 //
-//  Created by Phillip Lundin on 23/07/2022.
+//  Created by Phillip Lundin on 22/07/2022.
 //
 
 import SwiftUI
 
-struct SettingsView: View {
+struct YourExamplesView: View {
     var body: some View {
         ZStack {
             Color("PrimaryColor")
                 .ignoresSafeArea()
             
             
-            Text("Settings")
+            Text("Here are your examples")
                 .foregroundColor(.white)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 
-struct SettingsView_Previews: PreviewProvider {
+struct YourExamples_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        YourExamplesView()
     }
 }

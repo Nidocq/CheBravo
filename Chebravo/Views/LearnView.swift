@@ -9,7 +9,15 @@ import SwiftUI
 
 struct LearnView: View {
     var body: some View {
-        Text("Learn view ")
+        ZStack {
+            Color("PrimaryColor")
+                .ignoresSafeArea()
+            
+            
+            Text("Learning is fun!!")
+                .foregroundColor(.white)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 

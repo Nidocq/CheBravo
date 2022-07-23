@@ -25,7 +25,7 @@
 		1CBA3A3D288AE0F400777ADB /* ViewRouterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBA3A3C288AE0F400777ADB /* ViewRouterController.swift */; };
 		1CBA3A3F288AE23E00777ADB /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBA3A3E288AE23E00777ADB /* NavigationBarView.swift */; };
 		1CBA3A41288AE2FD00777ADB /* LearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBA3A40288AE2FD00777ADB /* LearnView.swift */; };
-		1CBA3A43288AE32800777ADB /* YourExamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBA3A42288AE32800777ADB /* YourExamples.swift */; };
+		1CBA3A43288AE32800777ADB /* YourExamplesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBA3A42288AE32800777ADB /* YourExamplesView.swift */; };
 		1CBA3A45288AE67800777ADB /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBA3A44288AE67800777ADB /* TutorialView.swift */; };
 		1CBA3A47288AE78700777ADB /* NagivationBarIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBA3A46288AE78700777ADB /* NagivationBarIconView.swift */; };
 		1CE739A72867053100148371 /* ChebravoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE739A62867053100148371 /* ChebravoApp.swift */; };
@@ -64,7 +64,7 @@
 		1CBA3A3C288AE0F400777ADB /* ViewRouterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouterController.swift; sourceTree = "<group>"; };
 		1CBA3A3E288AE23E00777ADB /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 		1CBA3A40288AE2FD00777ADB /* LearnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnView.swift; sourceTree = "<group>"; };
-		1CBA3A42288AE32800777ADB /* YourExamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourExamples.swift; sourceTree = "<group>"; };
+		1CBA3A42288AE32800777ADB /* YourExamplesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourExamplesView.swift; sourceTree = "<group>"; };
 		1CBA3A44288AE67800777ADB /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		1CBA3A46288AE78700777ADB /* NagivationBarIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NagivationBarIconView.swift; sourceTree = "<group>"; };
 		1CE739A32867053100148371 /* Chebravo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chebravo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,7 +149,7 @@
 				1CBA3A44288AE67800777ADB /* TutorialView.swift */,
 				1C99542828689E3100C6B839 /* VerbView.swift */,
 				1CBA3A40288AE2FD00777ADB /* LearnView.swift */,
-				1CBA3A42288AE32800777ADB /* YourExamples.swift */,
+				1CBA3A42288AE32800777ADB /* YourExamplesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -332,7 +332,7 @@
 				1CAEE4A92870F0F9007CAD1F /* TranslationResponse.swift in Sources */,
 				1C9CB422286C20090082ECB8 /* Extensions.swift in Sources */,
 				1CAEE4A52870DAE0007CAD1F /* TranslationController.swift in Sources */,
-				1CBA3A43288AE32800777ADB /* YourExamples.swift in Sources */,
+				1CBA3A43288AE32800777ADB /* YourExamplesView.swift in Sources */,
 				1CBA3A45288AE67800777ADB /* TutorialView.swift in Sources */,
 				1C0245AC286B6DAB00AD2A5A /* AddWord.swift in Sources */,
 				1CBA3A3D288AE0F400777ADB /* ViewRouterController.swift in Sources */,

@@ -29,7 +29,6 @@ struct NavigationBarIconView : View {
                 .frame(width: width, height: height)
                 .padding(.top, 30)
                 .foregroundColor(color)
-            Spacer()
         }
         .onTapGesture {
             viewRouter.currentPage = assignedPage
