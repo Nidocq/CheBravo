@@ -11,6 +11,7 @@ enum Page {
     case Learn
     case YourWords
     case YourExamples
+    case Settings
     
 }
 

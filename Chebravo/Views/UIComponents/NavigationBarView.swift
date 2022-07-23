@@ -26,6 +26,8 @@ struct NavigationBarView: View {
                         LearnView()
                     case .YourExamples:
                         YourExamples()
+                    case .Settings:
+                        SettingsView()
                     }
                 
                     HStack {
@@ -40,7 +42,7 @@ struct NavigationBarView: View {
                         
                         NavigationBarIconView( // All words
                             viewRouter: ViewRouter,
-                            systemIconName: "book",
+                            systemIconName: "pencil.circle",
                             assignedPage: .YourWords,
                             width: iconWidth,
                             height: iconHeight,
@@ -49,16 +51,26 @@ struct NavigationBarView: View {
                         
                         NavigationBarIconView( // Examples
                             viewRouter: ViewRouter,
-                            systemIconName: "ear",
+                            systemIconName: "quote.bubble",
                             assignedPage: .YourExamples,
                             width: iconWidth,
                             height: iconHeight,
                             color: .black
                         )
+                        
+                        NavigationBarIconView( // settings page
+                            viewRouter: ViewRouter,
+                            systemIconName: "gearshape",
+                            assignedPage: .Settings,
+                            width: iconWidth,
+                            height: iconHeight,
+                            color: .black
+                        )
                     }
-                    .frame(width: geo.size.width, height: geo.size.height/11)
+                    .frame(width: geo.size.width, height: geo.size.height/15)
                 }
-                .background(Color.white)
+                .background(Color("SecondaryColor"))
+                
             }
             
         }
