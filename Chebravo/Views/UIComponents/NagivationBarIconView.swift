@@ -8,6 +8,8 @@
 import Foundation
 import SwiftUI
 
+// TODO: Make the clicking of the icons give a little feedback (maybe?)
+
 struct NavigationBarIconView : View {
     @ObservedObject var viewRouter : ViewRouterController
 
