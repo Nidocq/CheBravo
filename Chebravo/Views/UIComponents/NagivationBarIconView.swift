@@ -43,12 +43,13 @@ struct NavigationBarIconView : View {
             Text(description)
                 .font(.system(size: 11))
                 .fontWeight(GetBoldText())
-                
+                .foregroundColor(color)
+               
         }
         .onTapGesture {
             viewRouter.currentPage = assignedPage
         }
-        .frame(width: UIScreen.main.bounds.size.width / CGFloat(Page.allCases.count + 1)) // +1 because of some padding
+        .frame(width: UIScreen.main.bounds.size.width / CGFloat(Page.allCases.count + 1)) // +1 because of some padding on the sides
     }
 
 }

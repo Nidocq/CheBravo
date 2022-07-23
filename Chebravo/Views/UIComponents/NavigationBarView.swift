@@ -41,7 +41,7 @@ struct NavigationBarView: View {
                             assignedPage: .Learn,
                             width: iconWidth,
                             height: iconHeight,
-                            color: .black
+                            color: Color("SecondaryColor")
                         )
                         Spacer()
                         NavigationBarIconView( // All words
@@ -51,7 +51,7 @@ struct NavigationBarView: View {
                             assignedPage: .YourWords,
                             width: iconWidth,
                             height: iconHeight,
-                            color: .black
+                            color: Color("SecondaryColor")
                         )
                         Spacer()
                         
@@ -62,7 +62,7 @@ struct NavigationBarView: View {
                             assignedPage: .YourExamples,
                             width: iconWidth,
                             height: iconHeight,
-                            color: .black
+                            color: Color("SecondaryColor")
                         )
                         Spacer()
                         NavigationBarIconView( // settings page
@@ -72,13 +72,13 @@ struct NavigationBarView: View {
                             assignedPage: .Settings,
                             width: iconWidth,
                             height: iconHeight,
-                            color: .black
+                            color: Color("SecondaryColor")
                         )
                         Spacer()
                     }
                     .frame(width: geo.size.width, height: geo.size.height/14)
                 }
-                .background(Color("SecondaryColor"))
+                .background(Color("PrimaryColor"))
                 
             }
             
