@@ -27,7 +27,7 @@ struct NavigationBarView: View {
                     case .Learn:
                         LearnView()
                     case .YourExamples:
-                        YourExamplesView()
+                        ExampleView()
                     case .Settings:
                         SettingsView()
                     }

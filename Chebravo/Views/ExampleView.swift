@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct YourExamplesView: View {
+struct ExampleView: View {
     var body: some View {
         ZStack {
             Color("PrimaryColor")
@@ -23,6 +23,6 @@ struct YourExamplesView: View {
 
 struct YourExamples_Previews: PreviewProvider {
     static var previews: some View {
-        YourExamplesView()
+        ExampleView()
     }
 }
