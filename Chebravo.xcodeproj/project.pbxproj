@@ -15,6 +15,8 @@
 		1C401EFC286F8AF400827BFB /* WordComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C401EFB286F8AF400827BFB /* WordComponents.swift */; };
 		1C401EFE286F8FAB00827BFB /* VerbViewSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C401EFD286F8FAB00827BFB /* VerbViewSettings.swift */; };
 		1C5C6AF92868789300609B38 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5C6AF82868789300609B38 /* SplashView.swift */; };
+		1C6FDD47288C6BBE001A41E0 /* LearnNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6FDD46288C6BBE001A41E0 /* LearnNumbers.swift */; };
+		1C6FDD49288C6BCC001A41E0 /* ILearning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6FDD48288C6BCC001A41E0 /* ILearning.swift */; };
 		1C807443288BF8A000E44F49 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C807442288BF8A000E44F49 /* SettingsView.swift */; };
 		1C99542728689C6700C6B839 /* AllWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C99542628689C6700C6B839 /* AllWords.swift */; };
 		1C99542928689E3100C6B839 /* VerbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C99542828689E3100C6B839 /* VerbView.swift */; };
@@ -54,6 +56,8 @@
 		1C401EFB286F8AF400827BFB /* WordComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordComponents.swift; sourceTree = "<group>"; };
 		1C401EFD286F8FAB00827BFB /* VerbViewSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbViewSettings.swift; sourceTree = "<group>"; };
 		1C5C6AF82868789300609B38 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		1C6FDD46288C6BBE001A41E0 /* LearnNumbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnNumbers.swift; sourceTree = "<group>"; };
+		1C6FDD48288C6BCC001A41E0 /* ILearning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILearning.swift; sourceTree = "<group>"; };
 		1C807442288BF8A000E44F49 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		1C99542628689C6700C6B839 /* AllWords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllWords.swift; sourceTree = "<group>"; };
 		1C99542828689E3100C6B839 /* VerbView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbView.swift; sourceTree = "<group>"; };
@@ -142,16 +146,26 @@
 		1C5C6AFC28689B2F00609B38 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1C6FDD45288C6B12001A41E0 /* Learn */,
 				1C4B549E2869DF1200D940CB /* UIComponents */,
 				1C5C6AF82868789300609B38 /* SplashView.swift */,
 				1C99542628689C6700C6B839 /* AllWords.swift */,
 				1C807442288BF8A000E44F49 /* SettingsView.swift */,
 				1CBA3A44288AE67800777ADB /* TutorialView.swift */,
 				1C99542828689E3100C6B839 /* VerbView.swift */,
-				1CBA3A40288AE2FD00777ADB /* LearnView.swift */,
 				1CBA3A42288AE32800777ADB /* ExampleView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		1C6FDD45288C6B12001A41E0 /* Learn */ = {
+			isa = PBXGroup;
+			children = (
+				1CBA3A40288AE2FD00777ADB /* LearnView.swift */,
+				1C6FDD46288C6BBE001A41E0 /* LearnNumbers.swift */,
+				1C6FDD48288C6BCC001A41E0 /* ILearning.swift */,
+			);
+			path = Learn;
 			sourceTree = "<group>";
 		};
 		1CE7399A2867053100148371 = {
@@ -330,6 +344,7 @@
 				1C807443288BF8A000E44F49 /* SettingsView.swift in Sources */,
 				1CF6AD8E2868BA97008BA670 /* WordCore.xcdatamodeld in Sources */,
 				1CAEE4A92870F0F9007CAD1F /* TranslationResponse.swift in Sources */,
+				1C6FDD47288C6BBE001A41E0 /* LearnNumbers.swift in Sources */,
 				1C9CB422286C20090082ECB8 /* Extensions.swift in Sources */,
 				1CAEE4A52870DAE0007CAD1F /* TranslationController.swift in Sources */,
 				1CBA3A43288AE32800777ADB /* ExampleView.swift in Sources */,
@@ -347,6 +362,7 @@
 				1C401EFC286F8AF400827BFB /* WordComponents.swift in Sources */,
 				1C401EFE286F8FAB00827BFB /* VerbViewSettings.swift in Sources */,
 				1CE739A72867053100148371 /* ChebravoApp.swift in Sources */,
+				1C6FDD49288C6BCC001A41E0 /* ILearning.swift in Sources */,
 				1C5C6AF92868789300609B38 /* SplashView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
