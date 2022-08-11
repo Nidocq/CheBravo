@@ -79,7 +79,8 @@ struct DeleteButton: View {
                 .frame(maxWidth: 300)
         }
         .alert(isPresented: $showAlert) {
-            // There is not a way to alter the order of primaryButton and secondaryButton, destructive button will always come last from left to right
+            // There is not a way to alter the order of primaryButton and secondaryButton,
+            // destructive button will always come last from left to right
             Alert(
                 title: Text("Delete word : \(word.name ?? "Unkown")?"),
                 primaryButton: .cancel(Text("Cancel")),

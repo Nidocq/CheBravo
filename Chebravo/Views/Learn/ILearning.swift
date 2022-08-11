@@ -9,7 +9,8 @@ import Foundation
 import SwiftUI
 
 
-// Learning Material Views
+/// <summary> Couples all the learning material together to make
+/// it easier to work with in the future as well </summary>
 protocol ILearning : View, Identifiable {
     var id : UUID { get }
 }

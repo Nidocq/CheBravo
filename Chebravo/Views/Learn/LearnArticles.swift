@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+/// <summary> Articles like, They, them, he, she, etc is the learning material
+/// in this material </summary>
 struct LearnArticles: View, ILearning {
     let id = UUID()
     

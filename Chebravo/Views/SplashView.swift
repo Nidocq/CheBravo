@@ -28,6 +28,7 @@ struct SplashView: View {
                 }
             }
             .onAppear() {
+                // Waits 1.95 seconds before the splash screen finishes
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.95) {
                     withAnimation {
                         self.isSplashActive = false

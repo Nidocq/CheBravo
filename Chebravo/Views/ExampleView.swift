@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+/// <summary> Here are the examples that the user will have
+/// acquired throughout their learning, showcased nicely </summary>
 struct ExampleView: View {
     var body: some View {
         ZStack {

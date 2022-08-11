@@ -7,11 +7,14 @@
 
 import SwiftUI
 
+/// <summary> List the different option and information for the user
+/// to see and manipulate. Can be located in the navigationBar </summary>
 struct SettingsView: View {
     @Environment(\.managedObjectContext) var viewContext
     @AppStorage("wordsCreated") var wordsCreated : Int?
     
     init() {
+        // Making the styling fit the theme (overwriting apples own styling)
         UITableView.appearance().separatorStyle = .singleLine
         //UITableViewCell.appearance().backgroundColor = UIColor(Color("SecondaryColor"))
        UITableView.appearance().backgroundColor = UIColor(Color("PrimaryColor"))

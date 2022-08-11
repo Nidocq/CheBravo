@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// <summary> All the numbers is the learning material for this view </summary>
 struct LearnNumbers: View, ILearning {
     @Environment(\.dismiss) var dismiss
     

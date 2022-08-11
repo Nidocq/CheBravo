@@ -10,6 +10,9 @@ import SwiftUI
 
 // TODO: Make transitions smooth (Sliding into one another) look at Blue NFC App for inspiration
 // TODO: Make the navigationView work on IPhone 8 as well (Right now it is cropped)
+
+/// <summary> Main view for the navigationBar (TabView for apple). Displays the view
+/// based on the the ViewRouters current page. </summary>
 struct NavigationBarView: View {
     @StateObject var ViewRouter : ViewRouterController
     let iconWidth : CGFloat = 30

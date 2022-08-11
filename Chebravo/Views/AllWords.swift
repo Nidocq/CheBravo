@@ -8,6 +8,7 @@
 import SwiftUI
 
 // TODO: Make the Darkmode more friendly with colors that are darker than white :(((
+// TODO: If and when someone types in a space, make a popup that says, "Only words are enabled in this view, head to examples to cover your own examples lorum"
 
 /// <summary> Showcases all the Words the user has saved so far, Data is saved with CoreData </summary>
 struct AllWords: View {
@@ -47,11 +48,13 @@ struct AllWords: View {
                         paddingTopBottom: cornerRadiusAmount
                     )
                     
+                    // Translation or Compact
                     ViewSelection(
                         selectedViewOption: $selectedViewOption,
                         paddingLeadingTrailing: paddingLeadingTrailing
                     )
                     
+                    // based on ViewSelection, how should words be displayed
                     switch selectedViewOption {
                         case ViewOptions.translation:
                             TranslatedViewOption(words: words, paddingLeadingTrailing: paddingLeadingTrailing)
@@ -86,6 +89,14 @@ struct AllWords: View {
     }
 }
 
+/// <summary> The input field where the user can type in the
+/// desired word to be translated </summary>
+/// <param name="input">The input that needs to be translated</param>
+/// <param name="wordController">Uses the controller to tranlsate the desired
+/// word </param>
+/// <param name="paddingLeadingTrailing">spacing for left and right screen </param>
+/// <param name="cornerRadiusAmount">corner radius amount of the input field</param>
+/// <param name="paddingTopBottom">the padding on top and bottom </param>
 struct InputField : View {
     @Environment(\.managedObjectContext) var viewContext
     @Binding var input : String
@@ -143,6 +154,11 @@ struct InputField : View {
     }
 }
 
+/// <summary> View selection of how the words should be displayed
+/// Translation | normal showcase
+/// Compact | compact, translation is not present, more squeezed </summary>
+/// <param name="selectedViewOption"> enum of the ViewOptions </param>
+/// <param name="paddingLeadingTrailing"> spacing for left and right screen </param>
 struct ViewSelection : View {
     @Binding var selectedViewOption : ViewOptions
     
@@ -160,6 +176,10 @@ struct ViewSelection : View {
     }
 }
 
+/// <summary> Non-compact version of showcasing words,
+/// Uses WordDisplay with a translated word </summary>
+/// <param name="words"> words fetched from a/the database </param>
+/// <param name="paddingLeadingTrailing">space on left and right </param>
 struct TranslatedViewOption : View {
     var words : FetchedResults<Word>
     let paddingLeadingTrailing : CGFloat
@@ -185,13 +205,17 @@ struct TranslatedViewOption : View {
     }
 }
 
-
+/// <summary> Uses the WordDisplay component with compact ViewOption
+/// to display words compactly and uses gridItems to get them aligned </summary>
+/// <param name="paddingLeadingTrailing">space on left and right </param>
+/// <param name="words"> words fetched from a/the database </param>
 struct CompactViewOption : View {
     let paddingLeadingTrailing : CGFloat
     var words : FetchedResults<Word>
     
     let columns : [GridItem] = [
         // Size of the width of the word in WordComponent - case .translation:
+        // TODO: MAGIC NUMBER :((((
         GridItem(.adaptive(minimum: 114))
     ]
     
@@ -226,6 +250,3 @@ struct AllWords_Previews: PreviewProvider {
         AllWords()
     }
 }
-
-// MARK: FUNCTIONS
-

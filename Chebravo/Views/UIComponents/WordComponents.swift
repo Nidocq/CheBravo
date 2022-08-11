@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+
+/// WordComponents are the various components found around the system
+/// all are compiles in this file to not flood the other files
+
 ///<summary> UIComponent Displays the name of the words with style </summary>
 ///<param name="name"> Text that needs to be displayed </param>
 struct WordName: View {
@@ -30,7 +34,10 @@ struct WordSpecification: View {
     }
 }
 
-/// <summary> Subview UIComponent that displays an italian word and its represented translated word </summary>
+/// <summary> Subview UIComponent that displays an italian word and its represented translated word
+/// based on its input </summary>
+/// <param name="ViewOptionType"> The ViewOptionType enum that showcases words compactly or full size </param>
+/// <remarks> component just leaves out the translated word if viewOption is compact </remarks>
 struct WordDisplay: View {
     @ObservedObject var word : Word
     var ViewOptionType : ViewOptions
