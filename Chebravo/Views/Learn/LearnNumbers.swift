@@ -10,10 +10,23 @@ import SwiftUI
 struct LearnNumbers: View, ILearning {
     @Environment(\.dismiss) var dismiss
     
+    let NumberIT : [String] = [
+        "Zero", "Uno", "Due", "Tre", "Quattro", "Cinque", "Sei", "Sette", "Otto", "Nove", "dieci",
+        "Undici", "Dodici", "Tredici", "Quattrodici", "Quindici", "Sedici", "Diciassette", "Diciotto", "Diciannove", "Venti",
+        "Ventuno", "Ventidue", "Ventitré", "Ventiquattro", "Venticinque", "Ventisei", "Ventisette", "Ventotto", "Ventinove", "Trenta"
+    ]
+    
+    let NumberEN : [String] = [
+        "Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten",
+        "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen", "Twenty",
+        "Twenty-one", "Twenty-two", "Twenty-three", "Twenty-four", "Twenty-five", "Twenty-six", "Twenty-seven", "Twenty-eight", "Twenty-nine", "Thirty"
+    ]
+    
     @State var CurrentNumber : Int = 0
     var LearningMaterial : [ILearning] = [
         
     ]
+    
     
     init() {
         let navBarAppearance = UINavigationBar.appearance()
@@ -30,6 +43,7 @@ struct LearnNumbers: View, ILearning {
                 VStack {
                     
                     Text("Here we will present you for all the numbers that are necessary to learn when you endaviour into the italian language You will get fluent within no time")
+                        .foregroundColor(.white)
                         .padding()
                     VStack {
                         VStack {
@@ -45,12 +59,12 @@ struct LearnNumbers: View, ILearning {
                         Picker("Number", selection: $CurrentNumber) {
                             ForEach(0..<31) { num in
                                 HStack {
-                                    Spacer()
                                     Text(String(num))
+                                        .padding(.leading, 50)
                                     Spacer()
-                                    Text("IT[num]")
+                                    Text(String(NumberIT[num]))
                                     Spacer()
-                                    Text("en[num]")
+                                    Text(String(NumberEN[num]))
                                     Spacer()
                                 }
                                 .foregroundColor(Color("SecondaryColor"))
@@ -58,8 +72,6 @@ struct LearnNumbers: View, ILearning {
                             }
                         }
                         .pickerStyle(WheelPickerStyle())
-                        .padding()
-                        .padding([.trailing, .leading], 20)
                         
                         Button {
                             
@@ -75,6 +87,7 @@ struct LearnNumbers: View, ILearning {
                         .padding(.bottom)
                     }
                     .border(Color("SecondaryColor"))
+                    .padding()
                 
                     
 
@@ -85,27 +98,25 @@ struct LearnNumbers: View, ILearning {
                 
                 VStack {
                     
-                    HStack() {
+                    HStack {
                         Text("Examples")
                             .fontWeight(.heavy)
                         Image(systemName: "bolt.shield")
                         
+                        
                     }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                     .font(.system(size: 30))
                     .foregroundColor(Color("SecondaryColor"))
+                    .padding(.bottom, 4)
                     
                     
-                    HStack {
-                        Text("Oggi è")
-                        Text("trentuno")
-                            .bold()
-                        Text("gradi!")
-                    }
-                            .foregroundColor(Color("SecondaryColor"))
-                    Text("Quando costa il gilato? ")
-                        .foregroundColor(Color("SecondaryColor"))
+                    LearningExample(ItalianExample: "Oggi è trentuno gradi!", EnglishTranslation: "Today is thirty-one degrees!")
+                    LearningExample(ItalianExample: "Quanto costa il gilato?", EnglishTranslation: "How much does the ice cream cost?")
+                    
                 }
-                .frame(maxWidth: .infinity)
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                .padding()
                 
                 
             }
@@ -142,5 +153,29 @@ struct LearnNumbers: View, ILearning {
 struct LearnNumbers_Previews: PreviewProvider {
     static var previews: some View {
         LearnNumbers()
+    }
+}
+
+
+struct LearningExample : View {
+    var ItalianExample : String
+    var EnglishTranslation : String
+    
+    var body : some View {
+        VStack(alignment: .leading) {
+            
+            Text(ItalianExample)
+                        .fontWeight(.bold)
+            
+            VStack {
+                HStack {
+                    Image(systemName: "arrow.turn.down.right")
+                        .padding(.leading, 30)
+                    Text(EnglishTranslation)
+                }
+            }
+        }
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+            .foregroundColor(Color("SecondaryColor"))
     }
 }
