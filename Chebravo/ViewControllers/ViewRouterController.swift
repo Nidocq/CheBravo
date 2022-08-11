@@ -8,6 +8,7 @@
 import Foundation
 
 // CaseIterable in order to style the NavigationBarView accordingly
+// with proper padding
 enum Page : CaseIterable {
     case Learn
     case YourWords
