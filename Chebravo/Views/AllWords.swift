@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+// TODO: Make the Darkmode more friendly with colors that are darker than white :(((
+
 /// <summary> Showcases all the Words the user has saved so far, Data is saved with CoreData </summary>
 struct AllWords: View {
     @Environment(\.managedObjectContext) var viewContext

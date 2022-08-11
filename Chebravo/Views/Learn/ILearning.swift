@@ -6,8 +6,10 @@
 //
 
 import Foundation
+import SwiftUI
 
 
-protocol ILearning {
-    
+// Learning Material Views
+protocol ILearning : View, Identifiable {
+    var id : UUID { get }
 }

@@ -10,6 +10,10 @@ import SwiftUI
 struct LearnNumbers: View, ILearning {
     @Environment(\.dismiss) var dismiss
     
+    var id = UUID()
+    
+    let MATERIAL_TITLE : String = "Learn Numbers"
+    
     let NumberIT : [String] = [
         "Zero", "Uno", "Due", "Tre", "Quattro", "Cinque", "Sei", "Sette", "Otto", "Nove", "dieci",
         "Undici", "Dodici", "Tredici", "Quattrodici", "Quindici", "Sedici", "Diciassette", "Diciotto", "Diciannove", "Venti",
@@ -23,12 +27,11 @@ struct LearnNumbers: View, ILearning {
     ]
     
     @State var CurrentNumber : Int = 0
-    var LearningMaterial : [ILearning] = [
-        
-    ]
+
     
     
     init() {
+        // Styling the navigationbar
         let navBarAppearance = UINavigationBar.appearance()
         navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor(Color("SecondaryColor"))]
         navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor(Color("SecondaryColor"))]
@@ -42,8 +45,8 @@ struct LearnNumbers: View, ILearning {
             ScrollView {
                 VStack {
                     
-                    Text("Here we will present you for all the numbers that are necessary to learn when you endaviour into the italian language You will get fluent within no time")
-                        .foregroundColor(.white)
+                    Text("Here we will present you for all the numbers that are necessary to learn when you endaviour into the italian language You will get fluent within no time lorum lorum")
+                        .foregroundColor(Color("SecondaryColor"))
                         .padding()
                     VStack {
                         VStack {
@@ -123,7 +126,7 @@ struct LearnNumbers: View, ILearning {
             
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .navigationTitle("Numbers")
+        .navigationTitle(MATERIAL_TITLE)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
@@ -177,5 +180,16 @@ struct LearningExample : View {
         }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
             .foregroundColor(Color("SecondaryColor"))
+    }
+}
+
+struct ListPreview : View {
+    let MATERIAL_NAME : String
+    var body: some View {
+        HStack {
+            Text(MATERIAL_NAME)
+            Image(systemName: "list.number")
+        }
+        .foregroundColor(Color("SecondaryColor"))
     }
 }

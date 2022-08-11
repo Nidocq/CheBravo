@@ -9,6 +9,12 @@ import SwiftUI
 
 struct LearnView: View {
     
+//    var LearningMaterial : [ILearning] = [
+//        LearnNumbers()
+//        // LearnArticles()
+//        // Learn...()
+//    ]
+    
     init() {
         let navBarAppearance = UINavigationBar.appearance()
         navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor(Color("SecondaryColor"))]
@@ -22,13 +28,27 @@ struct LearnView: View {
                     .ignoresSafeArea()
                 
                 
-                NavigationLink(destination: LearnNumbers()) {
-                    HStack {
-                        Text("Learn Numbers ")
-                        Image(systemName: "list.number")
+//                ForEach(LearningMaterial, id: \.id) { mat in
+//
+//                }
+                VStack {
+                    NavigationLink(destination: LearnNumbers()) {
+                        HStack {
+                            Text("Learn Numbers ")
+                            Image(systemName: "list.number")
+                        }
+                            .foregroundColor(Color("SecondaryColor"))
+                        
                     }
-                    .foregroundColor(Color("SecondaryColor"))
+                
+                    NavigationLink(destination: LearnArticles()) {
+                        HStack {
+                            Text("Learn Articles ")
+                            Image(systemName: "list.number")
+                        }
+                    }
                 }
+                .foregroundColor(Color("SecondaryColor"))
             }
             .navigationTitle("Learn")
         }

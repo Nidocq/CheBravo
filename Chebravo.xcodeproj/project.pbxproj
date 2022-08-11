@@ -30,6 +30,7 @@
 		1CBA3A43288AE32800777ADB /* ExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBA3A42288AE32800777ADB /* ExampleView.swift */; };
 		1CBA3A45288AE67800777ADB /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBA3A44288AE67800777ADB /* TutorialView.swift */; };
 		1CBA3A47288AE78700777ADB /* NagivationBarIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBA3A46288AE78700777ADB /* NagivationBarIconView.swift */; };
+		1CCDE84D28A56BFE0052037C /* LearnArticles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCDE84C28A56BFE0052037C /* LearnArticles.swift */; };
 		1CE739A72867053100148371 /* ChebravoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE739A62867053100148371 /* ChebravoApp.swift */; };
 		1CE739AB2867053200148371 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CE739AA2867053200148371 /* Assets.xcassets */; };
 		1CE739AE2867053200148371 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CE739AD2867053200148371 /* Preview Assets.xcassets */; };
@@ -71,6 +72,7 @@
 		1CBA3A42288AE32800777ADB /* ExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleView.swift; sourceTree = "<group>"; };
 		1CBA3A44288AE67800777ADB /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		1CBA3A46288AE78700777ADB /* NagivationBarIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NagivationBarIconView.swift; sourceTree = "<group>"; };
+		1CCDE84C28A56BFE0052037C /* LearnArticles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnArticles.swift; sourceTree = "<group>"; };
 		1CE739A32867053100148371 /* Chebravo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chebravo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CE739A62867053100148371 /* ChebravoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChebravoApp.swift; sourceTree = "<group>"; };
 		1CE739AA2867053200148371 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				1CBA3A40288AE2FD00777ADB /* LearnView.swift */,
+				1CCDE84C28A56BFE0052037C /* LearnArticles.swift */,
 				1C6FDD46288C6BBE001A41E0 /* LearnNumbers.swift */,
 				1C6FDD48288C6BCC001A41E0 /* ILearning.swift */,
 			);
@@ -364,6 +367,7 @@
 				1CE739A72867053100148371 /* ChebravoApp.swift in Sources */,
 				1C6FDD49288C6BCC001A41E0 /* ILearning.swift in Sources */,
 				1C5C6AF92868789300609B38 /* SplashView.swift in Sources */,
+				1CCDE84D28A56BFE0052037C /* LearnArticles.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
