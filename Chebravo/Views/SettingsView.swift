@@ -28,7 +28,7 @@ struct SettingsView: View {
                 Text("Words translated \(String(wordsCreated ?? 0))")
                 Text("Current recevoir \(String(words.count))")
             } header: {
-                Text("I am header")
+                Text("Translation")
                     .foregroundColor(Color("SecondaryColor"))
                     .fontWeight(.heavy)
                     .font(.system(size: 18))
