@@ -8,16 +8,33 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @Environment(\.managedObjectContext) var viewContext
+    @AppStorage("wordsCreated") var wordsCreated : Int?
+    
+    init() {
+        UITableView.appearance().separatorStyle = .singleLine
+        //UITableViewCell.appearance().backgroundColor = UIColor(Color("SecondaryColor"))
+       UITableView.appearance().backgroundColor = UIColor(Color("PrimaryColor"))
+    }
+    
+        @FetchRequest(sortDescriptors: [
+        SortDescriptor(\.date)
+    ]) var words: FetchedResults<Word>
+    
+    
     var body: some View {
-        ZStack {
-            Color("PrimaryColor")
-                .ignoresSafeArea()
-            
-            
-            Text("Settings")
-                .foregroundColor(.white)
+        Form {
+            Section {
+                Text("Words translated \(String(wordsCreated ?? 0))")
+                Text("Current recevoir \(String(words.count))")
+            } header: {
+                Text("I am header")
+                    .foregroundColor(Color("SecondaryColor"))
+                    .fontWeight(.heavy)
+                    .font(.system(size: 18))
+                    .offset(x:-12)
+            }
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 

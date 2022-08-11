@@ -13,6 +13,9 @@ import CoreData
 /// <remarks> I can't instantiate the NSManagedObjectContext with this class for some reason, even though
 /// it probably would b better </remarks>
 class WordController : ObservableObject {
+    
+    // TODO: Make the number count for every word you have translated
+    @AppStorage("wordsCreated") var wordsCreated : Int?
         
     /// <summary> Creates and adds a specified item to the NSManagedObjectContext. </summary>
     /// <param name="viewContext"> The NSManagedObjectContext given in which the item needs to be saved to</param>
@@ -25,6 +28,7 @@ class WordController : ObservableObject {
             // TODO: Nullcheck translation of word
             newWord.translationToEnglish = await TranslationController.translateText(text: Wordname)
             try? viewContext.save()
+            
     }
     
     
