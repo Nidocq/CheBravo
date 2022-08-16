@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 /// <summary> All the numbers is the learning material for this view </summary>
 struct LearnNumbers: View, ILearning {
+    var AC : AudioController = AudioController()
     @Environment(\.dismiss) var dismiss
     
     var id = UUID()
@@ -78,7 +80,7 @@ struct LearnNumbers: View, ILearning {
                         .pickerStyle(WheelPickerStyle())
                         
                         Button {
-                            
+                            AC.playAudio(name: String(NumberIT[CurrentNumber]))
                         } label: {
                             Text("Sound on ")
                                 .foregroundColor(Color("PrimaryColor"))

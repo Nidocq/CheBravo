@@ -16,7 +16,11 @@
 		1C5C6AF92868789300609B38 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5C6AF82868789300609B38 /* SplashView.swift */; };
 		1C6FDD47288C6BBE001A41E0 /* LearnNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6FDD46288C6BBE001A41E0 /* LearnNumbers.swift */; };
 		1C6FDD49288C6BCC001A41E0 /* ILearning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6FDD48288C6BCC001A41E0 /* ILearning.swift */; };
+		1C79585428A6E188008BBC36 /* Tre.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1C79585028A6E188008BBC36 /* Tre.m4a */; };
+		1C79585628A6E188008BBC36 /* Due.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1C79585228A6E188008BBC36 /* Due.m4a */; };
+		1C79585728A6E188008BBC36 /* Uno.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1C79585328A6E188008BBC36 /* Uno.m4a */; };
 		1C807443288BF8A000E44F49 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C807442288BF8A000E44F49 /* SettingsView.swift */; };
+		1C82617D28A6DC3600F77977 /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C82617C28A6DC3600F77977 /* AudioController.swift */; };
 		1C99542728689C6700C6B839 /* AllWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C99542628689C6700C6B839 /* AllWords.swift */; };
 		1C99542928689E3100C6B839 /* VerbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C99542828689E3100C6B839 /* VerbView.swift */; };
 		1C9CB422286C20090082ECB8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9CB421286C20090082ECB8 /* Extensions.swift */; };
@@ -57,7 +61,11 @@
 		1C5C6AF82868789300609B38 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		1C6FDD46288C6BBE001A41E0 /* LearnNumbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnNumbers.swift; sourceTree = "<group>"; };
 		1C6FDD48288C6BCC001A41E0 /* ILearning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILearning.swift; sourceTree = "<group>"; };
+		1C79585028A6E188008BBC36 /* Tre.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Tre.m4a; sourceTree = "<group>"; };
+		1C79585228A6E188008BBC36 /* Due.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Due.m4a; sourceTree = "<group>"; };
+		1C79585328A6E188008BBC36 /* Uno.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Uno.m4a; sourceTree = "<group>"; };
 		1C807442288BF8A000E44F49 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		1C82617C28A6DC3600F77977 /* AudioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioController.swift; sourceTree = "<group>"; };
 		1C99542628689C6700C6B839 /* AllWords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllWords.swift; sourceTree = "<group>"; };
 		1C99542828689E3100C6B839 /* VerbView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbView.swift; sourceTree = "<group>"; };
 		1C9CB421286C20090082ECB8 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -127,6 +135,7 @@
 				1CBA3A3C288AE0F400777ADB /* ViewRouterController.swift */,
 				1C207C862869FAA300847EB2 /* WordController.swift */,
 				1CAEE4A42870DAE0007CAD1F /* TranslationController.swift */,
+				1C82617C28A6DC3600F77977 /* AudioController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -168,6 +177,16 @@
 			path = Learn;
 			sourceTree = "<group>";
 		};
+		1C82617E28A6E03400F77977 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				1C79585228A6E188008BBC36 /* Due.m4a */,
+				1C79585028A6E188008BBC36 /* Tre.m4a */,
+				1C79585328A6E188008BBC36 /* Uno.m4a */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
 		1CE7399A2867053100148371 = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +208,7 @@
 		1CE739A52867053100148371 /* Chebravo */ = {
 			isa = PBXGroup;
 			children = (
+				1C82617E28A6E03400F77977 /* Audio */,
 				1CE739A62867053100148371 /* ChebravoApp.swift */,
 				1C9CB421286C20090082ECB8 /* Extensions.swift */,
 				1CAEE4A62870DEA2007CAD1F /* APIKey.swift */,
@@ -300,7 +320,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C79585628A6E188008BBC36 /* Due.m4a in Resources */,
+				1C79585428A6E188008BBC36 /* Tre.m4a in Resources */,
 				1CE739AE2867053200148371 /* Preview Assets.xcassets in Resources */,
+				1C79585728A6E188008BBC36 /* Uno.m4a in Resources */,
 				1CE739AB2867053200148371 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -353,6 +376,7 @@
 				1C207C872869FAA300847EB2 /* WordController.swift in Sources */,
 				1CBA3A41288AE2FD00777ADB /* LearnView.swift in Sources */,
 				1C207C842869F89A00847EB2 /* CoreDataController.swift in Sources */,
+				1C82617D28A6DC3600F77977 /* AudioController.swift in Sources */,
 				1C99542928689E3100C6B839 /* VerbView.swift in Sources */,
 				1CAEE4A72870DEA2007CAD1F /* APIKey.swift in Sources */,
 				1CBA3A47288AE78700777ADB /* NagivationBarIconView.swift in Sources */,
