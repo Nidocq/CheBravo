@@ -10,9 +10,8 @@ import SwiftUI
 struct LearnView: View {
     
 //    var LearningMaterial : [ILearning] = [
-//        LearnNumbers()
-//        // LearnArticles()
-//        // Learn...()
+//        LearnNumbers() // * All the numbers in italian
+//        // LearnArticles()  * Articles feminine and their conjugation
 //    ]
     
     init() {
@@ -31,14 +30,13 @@ struct LearnView: View {
 //                ForEach(LearningMaterial, id: \.id) { mat in
 //
 //                }
-                VStack {
+                VStack(alignment:.leading, spacing: 10) {
                     NavigationLink(destination: LearnNumbers()) {
                         HStack {
                             Text("Learn Numbers ")
                             Image(systemName: "list.number")
                         }
                             .foregroundColor(Color("SecondaryColor"))
-                        
                     }
                 
                     NavigationLink(destination: LearnArticles()) {
@@ -49,6 +47,8 @@ struct LearnView: View {
                     }
                 }
                 .foregroundColor(Color("SecondaryColor"))
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment:.leading)
+                .padding(.leading, 20)
             }
             .navigationTitle("Learn")
         }

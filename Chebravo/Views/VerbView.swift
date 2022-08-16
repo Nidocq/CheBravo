@@ -10,8 +10,8 @@
 import SwiftUI
 
 /// <summary> Displays information about the Verb that the user has saved </summary>
-
-// TODO: Make it able to swipe back in view so you don't have to press back all the time
+/// <remarks> This libaray will be useful for making connections
+/// https://github.com/ian-hamlin/verb-data/tree/master/json/italian </remarks>
 struct VerbView: View {
     @Environment(\.presentationMode) var presentationMode
     @State var isSheetPresent : Bool = false
@@ -56,14 +56,6 @@ struct VerbView: View {
                 // TODO: Make several examples pop-up with this.name
                 ScrollView {
                         
-                    VStack {
-                        SubTitle(name: "Example")
-                        ExampleTranslation()
-                       
-                    }
-                    .frame(maxWidth: .infinity)
-                    
-                    
                     // Groups
                     VStack {
                         SubTitle(name: "Conjugation")
@@ -74,6 +66,14 @@ struct VerbView: View {
                     VStack {
                         SubTitle(name: "Tenses")
                     }
+                    
+                    VStack {
+                        SubTitle(name: "Example")
+                        ExampleTranslation()
+                       
+                    }
+                    .frame(maxWidth: .infinity)
+                    
                     Spacer()
                 }
                 .frame(maxWidth: .infinity)
@@ -138,6 +138,8 @@ struct SubTitle: View {
 /// <remarks> Not yet implemented </remarks>
 struct ExampleTranslation: View {
     // TODO: Create some translation manager that can translate quotes
+    
+    
     var body: some View {
         VStack {
             Group {

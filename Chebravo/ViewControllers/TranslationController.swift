@@ -10,9 +10,6 @@ import Foundation
 /// <summary> Controller that helps translating words across the application </summary>
 class TranslationController {
     static let ApiKey = APIKey().DeepLTranslatorAPIKey
-    static var translatedWord : String = ""
-
-    
     
     /// <summary> Translates a text into english
     /// <param name="text"> Italian word that will be translated into english </param>

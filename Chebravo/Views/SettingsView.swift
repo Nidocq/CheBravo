@@ -29,7 +29,7 @@ struct SettingsView: View {
         Form {
             Section {
                 Text("Words translated \(String(wordsCreated ?? 0))")
-                Text("Current recevoir \(String(words.count))")
+                Text("Words you know: \(String(words.count))")
             } header: {
                 Text("Translation")
                     .foregroundColor(Color("SecondaryColor"))

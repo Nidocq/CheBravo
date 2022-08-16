@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-
+// TODO: IMPORTANT The navigationBar should NOT be present when the keyboard is present.
 // TODO: Make transitions smooth (Sliding into one another) look at Blue NFC App for inspiration
 // TODO: Make the navigationView work on IPhone 8 as well (Right now it is cropped)
 

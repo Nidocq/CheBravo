@@ -14,12 +14,6 @@ import SwiftUI
 // TODO: Have a database that checks for common words.
 //      * Maybe every 500 most common words have their conjugation
 
-// TODO: Have a tutorial for how to learn
-//      * Learn numbers
-//      * Articles
-//      * Masculine and feminine and their conjugation
-
-// TODO: Have counter of current "Words you know!"
 
 @main
 struct ChebravoApp: App {
