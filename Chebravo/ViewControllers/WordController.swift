@@ -14,6 +14,8 @@ import CoreData
 /// it probably would b better </remarks>
 class WordController : ObservableObject {
     
+    var TC : TranslationController = TranslationController()
+    
     // TODO: Make the number count for every word you have translated
     @AppStorage("wordsCreated") var wordsCreated : Int?
         
@@ -26,7 +28,7 @@ class WordController : ObservableObject {
             newWord.name = Wordname
             newWord.date = Date.now
             // TODO: Nullcheck translation of word
-            newWord.translationToEnglish = await TranslationController.translateText(text: Wordname)
+            newWord.translationToEnglish = await TC.translateText(text: Wordname)
             try? viewContext.save()
             
     }
