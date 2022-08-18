@@ -9,6 +9,7 @@ import SwiftUI
 
 // TODO: Make the Darkmode more friendly with colors that are darker than white :(((
 // TODO: If and when someone types in a space, make a popup that says, "Only words are enabled in this view, head to examples to cover your own examples lorum"
+// TODO: Swiping words can remove them
 
 /// <summary> Showcases all the Words the user has saved so far, Data is saved with CoreData </summary>
 struct AllWords: View {
@@ -166,8 +167,8 @@ struct ViewSelection : View {
     let paddingLeadingTrailing: CGFloat
     var body: some View {
         Picker("View Options", selection: $selectedViewOption) {
-            ForEach(ViewOptions.allCases, id:\.self) { opt in
-                Text(opt.rawValue)
+            ForEach(ViewOptions.allCases, id:\.self) { ViewOpt in
+                Text(ViewOpt.rawValue)
             }
         }
             .pickerStyle(.segmented)
@@ -187,6 +188,8 @@ struct TranslatedViewOption : View {
     var body: some View {
         ScrollView {
             ForEach(words, id: \.self) { word in
+                // TODO: Searching for a word so that only the words matching the strign
+                // serached for, will show up. Update real time
                 NavigationLink(
                     destination:
                     // When clicked go to Verb View
@@ -211,13 +214,19 @@ struct TranslatedViewOption : View {
 /// <param name="words"> words fetched from a/the database </param>
 struct CompactViewOption : View {
     let paddingLeadingTrailing : CGFloat
+    let GridItemSpacing : CGFloat = 114
     var words : FetchedResults<Word>
     
-    let columns : [GridItem] = [
-        // Size of the width of the word in WordComponent - case .translation:
-        // TODO: MAGIC NUMBER :((((
-        GridItem(.adaptive(minimum: 114))
-    ]
+    var columns : [GridItem] {
+        // Computed properties https://developer.apple.com/forums/thread/84827
+        // Is to prevent magic number of 114
+        get {
+            return [
+                // Size of the width of the word in WordComponent - case .translation:
+                GridItem(.adaptive(minimum: GridItemSpacing))
+            ]
+        }
+    }
     
     var body: some View {
         ScrollView {

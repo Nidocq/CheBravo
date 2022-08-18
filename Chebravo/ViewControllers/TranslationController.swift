@@ -35,4 +35,10 @@ class TranslationController {
         }
         return "Unkown"
     }
+    
+    func testAPICall(text: String) async -> String {
+        let TranslatedText = await translateText(text: text)
+        print(TranslatedText)
+        return TranslatedText
+    }
 }

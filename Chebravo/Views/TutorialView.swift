@@ -17,6 +17,19 @@ struct TutorialView: View {
             Image(systemName: "graduationcap.fill") // learn
             Image(systemName: "book.fill") // All words
             Image(systemName: "ear.fill") // examples
+            
+            Button {
+                Task {
+                    do {
+                        print("\(await TranslationController().translateText(text: ""))")
+                    }
+                }
+            } label: {
+                Text("Test API")
+                    .foregroundColor(.white)
+                    .frame(width: 300, height: 100)
+                    .background(.black)
+            }
         }
     }
 }
