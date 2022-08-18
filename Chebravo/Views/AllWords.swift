@@ -30,7 +30,7 @@ struct AllWords: View {
     }
     
     @FetchRequest(sortDescriptors: [
-        SortDescriptor(\.date)
+        SortDescriptor(\.date, order: .reverse)
     ]) var words: FetchedResults<Word>
     
     var body: some View {
