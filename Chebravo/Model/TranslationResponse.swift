@@ -12,5 +12,5 @@ struct TranslationResponse: Decodable {
 }
 
 struct Translation : Decodable {
-    let detectedSourceLanguage, text: String
+    let detected_source_language, text: String
 }
