@@ -21,7 +21,7 @@ struct TutorialView: View {
             Button {
                 Task {
                     do {
-                        print("\(await TranslationController().translateText(text: ""))")
+                        print("\(await TranslationController().translateText(text: "mi piache $100 gilato"))")
                     }
                 }
             } label: {
