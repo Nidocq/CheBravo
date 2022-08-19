@@ -27,7 +27,7 @@ class TranslationControllerTest: XCTestCase {
     
     // Make sure that spaces is possible when making examples
     func test_CheBravo_TranslationController_translateText_StringWithSpaces() async {
-        var TranslatedText = await TC.translateText(text: "Grazie mille")
+        let TranslatedText = await TC.translateText(text: "Grazie mille")
         print(TranslatedText)
         
         XCTAssertFalse(TranslatedText == failedMessageForTranslation)
@@ -42,8 +42,10 @@ class TranslationControllerTest: XCTestCase {
             "",
             " "
         ]
+        
+        var translatedInput : String
         for input in listOfInput {
-            var translatedInput = await TC.translateText(text: input)
+            translatedInput = await TC.translateText(text: input)
             XCTAssertEqual(translatedInput, "")
             
         }
