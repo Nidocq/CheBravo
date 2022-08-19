@@ -13,7 +13,7 @@ class AudioController {
     var player: AVAudioPlayer!
     
     func playAudio(name: String) {
-        if let url = Bundle.main.url(forResource: name, withExtension: "m4a") {
+        if let url = Bundle.main.url(forResource: name, withExtension: "mp3") {
             do {
                 player = try AVAudioPlayer(contentsOf: url)
                 player?.play()

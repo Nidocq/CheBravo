@@ -64,6 +64,7 @@
 		1CA9FE8628B02F580066A8A2 /* 50.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1CA9FE5B28B02F580066A8A2 /* 50.mp3 */; };
 		1CA9FE8728B02F580066A8A2 /* 27.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1CA9FE5C28B02F580066A8A2 /* 27.mp3 */; };
 		1CA9FE8828B02F580066A8A2 /* 40.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1CA9FE5D28B02F580066A8A2 /* 40.mp3 */; };
+		1CA9FE8A28B035D50066A8A2 /* 0.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1CA9FE8928B035D50066A8A2 /* 0.mp3 */; };
 		1CAEE4A52870DAE0007CAD1F /* TranslationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAEE4A42870DAE0007CAD1F /* TranslationController.swift */; };
 		1CAEE4A72870DEA2007CAD1F /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAEE4A62870DEA2007CAD1F /* APIKey.swift */; };
 		1CAEE4A92870F0F9007CAD1F /* TranslationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAEE4A82870F0F9007CAD1F /* TranslationResponse.swift */; };
@@ -150,6 +151,7 @@
 		1CA9FE5B28B02F580066A8A2 /* 50.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 50.mp3; sourceTree = "<group>"; };
 		1CA9FE5C28B02F580066A8A2 /* 27.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 27.mp3; sourceTree = "<group>"; };
 		1CA9FE5D28B02F580066A8A2 /* 40.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 40.mp3; sourceTree = "<group>"; };
+		1CA9FE8928B035D50066A8A2 /* 0.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 0.mp3; path = ../../../../../Desktop/AUDIO/0.mp3; sourceTree = "<group>"; };
 		1CAEE4A42870DAE0007CAD1F /* TranslationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationController.swift; sourceTree = "<group>"; };
 		1CAEE4A62870DEA2007CAD1F /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		1CAEE4A82870F0F9007CAD1F /* TranslationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationResponse.swift; sourceTree = "<group>"; };
@@ -263,8 +265,8 @@
 		1C82617E28A6E03400F77977 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				1CA9FE8928B035D50066A8A2 /* 0.mp3 */,
 				1CA9FE3928B02F570066A8A2 /* 1.mp3 */,
-				1CA9FE5128B02F580066A8A2 /* 1mil.mp3 */,
 				1CA9FE3E28B02F570066A8A2 /* 2.mp3 */,
 				1CA9FE3828B02F570066A8A2 /* 3.mp3 */,
 				1CA9FE5028B02F580066A8A2 /* 4.mp3 */,
@@ -303,6 +305,7 @@
 				1CA9FE4228B02F570066A8A2 /* 100.mp3 */,
 				1CA9FE5428B02F580066A8A2 /* 1000.mp3 */,
 				1CA9FE4B28B02F580066A8A2 /* 2000.mp3 */,
+				1CA9FE5128B02F580066A8A2 /* 1mil.mp3 */,
 				1C79585228A6E188008BBC36 /* Due.m4a */,
 				1C79585028A6E188008BBC36 /* Tre.m4a */,
 				1C79585328A6E188008BBC36 /* Uno.m4a */,
@@ -456,6 +459,7 @@
 				1CA9FE6328B02F580066A8A2 /* 3.mp3 in Resources */,
 				1CA9FE7F28B02F580066A8A2 /* 1000.mp3 in Resources */,
 				1CA9FE7C28B02F580066A8A2 /* 1mil.mp3 in Resources */,
+				1CA9FE8A28B035D50066A8A2 /* 0.mp3 in Resources */,
 				1CA9FE8228B02F580066A8A2 /* 80.mp3 in Resources */,
 				1CA9FE8128B02F580066A8A2 /* 13.mp3 in Resources */,
 				1CA9FE6028B02F580066A8A2 /* 5.mp3 in Resources */,

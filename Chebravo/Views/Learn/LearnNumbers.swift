@@ -80,7 +80,7 @@ struct LearnNumbers: View, ILearning {
                         .pickerStyle(WheelPickerStyle())
                         
                         Button {
-                            AC.playAudio(name: String(NumberIT[CurrentNumber]))
+                            AC.playAudio(name: String(CurrentNumber))
                         } label: {
                             Text("Sound on ")
                                 .foregroundColor(Color("PrimaryColor"))
