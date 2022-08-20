@@ -78,7 +78,7 @@ struct WordDisplay: View {
                         .frame(alignment: .trailing)
                 }
                 .lineLimit(1) 
-                .frame(minWidth: 140, maxWidth: .infinity, minHeight: 40,  maxHeight: .infinity)
+                .frame(minWidth: 140, maxWidth: .infinity, minHeight: 40,  maxHeight: .infinity, alignment: .leading)
                 .foregroundColor(.black)
         }
     }

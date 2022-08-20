@@ -15,7 +15,8 @@ import CoreData
 class WordController : ObservableObject {
     
     var TC : TranslationController = TranslationController()
-    
+    var Haptic = UINotificationFeedbackGenerator()
+
     // TODO: Make the number count for every word you have translated
     @AppStorage("wordsCreated") var wordsCreated : Int?
         
@@ -30,6 +31,7 @@ class WordController : ObservableObject {
             // TODO: Nullcheck translation of word
             newWord.translationToEnglish = await TC.translateText(text: Wordname)
             try? viewContext.save()
+            await Haptic.notificationOccurred(.success)
             
     }
     

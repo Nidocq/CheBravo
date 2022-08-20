@@ -93,8 +93,7 @@ struct AllWords: View {
 /// <summary> The input field where the user can type in the
 /// desired word to be translated </summary>
 /// <param name="input">The input that needs to be translated</param>
-/// <param name="wordController">Uses the controller to tranlsate the desired
-/// word </param>
+/// <param name="wordController">Uses the controller to tranlsate the desired word </param>
 /// <param name="paddingLeadingTrailing">spacing for left and right screen </param>
 /// <param name="cornerRadiusAmount">corner radius amount of the input field</param>
 /// <param name="paddingTopBottom">the padding on top and bottom </param>
@@ -102,7 +101,6 @@ struct InputField : View {
     @Environment(\.managedObjectContext) var viewContext
     @Binding var input : String
     @FocusState private var inputFocused : Bool
-    var Haptic = UINotificationFeedbackGenerator()
     
     var wordController : WordController
     let paddingLeadingTrailing : CGFloat
@@ -134,7 +132,6 @@ struct InputField : View {
             
             Button() {
                 Task {
-                    Haptic.notificationOccurred(.success)
                     do {
                         await AddNewWord()
                     }
