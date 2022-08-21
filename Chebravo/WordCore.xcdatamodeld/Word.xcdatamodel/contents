@@ -4,6 +4,7 @@
         <attribute name="context" optional="YES" attributeType="String"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="note" optional="YES" attributeType="String"/>
         <attribute name="translationToEnglish" optional="YES" attributeType="String"/>
     </entity>
     <entity name="Word" representedClassName="Word" syncable="YES" codeGenerationType="class">
@@ -13,7 +14,7 @@
         <attribute name="translationToEnglish" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Example" positionX="-63" positionY="9" width="128" height="89"/>
+        <element name="Example" positionX="-63" positionY="9" width="128" height="104"/>
         <element name="Word" positionX="-63" positionY="-18" width="128" height="89"/>
     </elements>
 </model>

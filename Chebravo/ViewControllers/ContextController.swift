@@ -40,11 +40,12 @@ class ContextController : ObservableObject {
     /// <param name="WordName"> The name of the example that needs to be saved to the viewContext</param>
     /// <remarks> I have added two different functions for this because the objects are different and easier to modify
     /// if the objects change in functionality </remarks>
-    func addExample(viewContext : NSManagedObjectContext, ExampleText : String) async {
+    func addExample(viewContext : NSManagedObjectContext, ExampleText : String, note : String) async {
         guard (ExampleText != "") else { return }
             let newExample = Example(context: viewContext)
             newExample.context = ExampleText
             newExample.date = Date.now
+            newExample.note = note
             // TODO: Nullcheck translation of word
             newExample.translationToEnglish = await TC.translateText(text: ExampleText)
             try? viewContext.save()
@@ -56,20 +57,22 @@ class ContextController : ObservableObject {
     /// <summary> Removes an item from the NSManagedObjectContext </summary>
     /// <param name="viewContext"> NSManagedObjectContext in which the word needs to be removed </param>
     /// <param name="word"> Word class that needs to be deleted from the viewContext </param>
-    func removeWord(viewContext : NSManagedObjectContext, word : Word) {
+    func removeWord(viewContext : NSManagedObjectContext, word : Word) async {
         withAnimation {
             viewContext.delete(word)
             try? viewContext.save()
         }
+        await Haptic.notificationOccurred(.success)
     }
     
     /// <summary> Removes an Example from the NSManagedObjectContext </summary>
     /// <param name="viewContext"> NSManagedObjectContext in which the example needs to be removed </param>
     /// <param name="word"> Example that needs to be deleted from the viewContext </param>
-    func removeWord(viewContext : NSManagedObjectContext, Example : Example) {
+    func removeExample(viewContext : NSManagedObjectContext, Example : Example) async {
         withAnimation {
             viewContext.delete(Example)
             try? viewContext.save()
         }
+        await Haptic.notificationOccurred(.success)
     }
 }
