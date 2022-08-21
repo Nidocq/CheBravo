@@ -108,7 +108,7 @@ struct InputField : View {
     let paddingTopBottom : CGFloat
         
     func AddNewWord() async {
-        await wordController.addItem(viewContext: viewContext, Wordname: input)
+        await wordController.addWord(viewContext: viewContext, Wordname: input)
         input = ""
         inputFocused = false
     }

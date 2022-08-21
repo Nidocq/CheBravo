@@ -86,7 +86,7 @@ struct DeleteButton: View {
                 primaryButton: .cancel(Text("Cancel")),
                 secondaryButton: .destructive(Text("Delete")) {
                     presentationMode.wrappedValue.dismiss()
-                    wordController.removeItem(viewContext: viewContext, word: word)
+                    wordController.removeWord(viewContext: viewContext, word: word)
                 }
             )
         }

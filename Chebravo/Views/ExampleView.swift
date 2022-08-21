@@ -10,34 +10,39 @@ import SwiftUI
 /// <summary> Here are the examples that the user will have
 /// acquired throughout their learning, showcased nicely </summary>
 struct ExampleView: View {
-    @State var textInput : String = ""
-    @FocusState private var emailFieldIsFocused: Bool
+    @State var showAddNewExample : Bool = false
+   
+    
+    @FetchRequest(sortDescriptors: [
+        SortDescriptor(\.date, order: .reverse)
+    ]) var examples : FetchedResults<Example>
 
     var body: some View {
-        ZStack {
-            Color("PrimaryColor")
-                .ignoresSafeArea()
-            
-            VStack {
-                TextField(
-                    // TODO: Make the text be there with userDefaults, even though the user exists the view to save progress
-                    "Type in an example that should be translated",
-                    text: $textInput
-                )
-                .frame(height: 50)
-                .focused($emailFieldIsFocused)
-                .textInputAutocapitalization(.never)
-                .disableAutocorrection(true)
-                .border(.secondary)
-                .padding()
+        NavigationView {
+            ZStack {
+                Color("PrimaryColor")
+                    .ignoresSafeArea()
                 
-                Text(textInput)
-                        .foregroundColor(emailFieldIsFocused ? .red : .blue)
-                        .font(.system(size: 24))
-            }
-
+                VStack {
+                    Text("Hello there ")
+                    ForEach(examples, id: \.self) { ex in
+                        Text(ex.context!)
+                    }
+                }
+            }.toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        print("Adding card")
+                        showAddNewExample = true
+                    } label : {
+                        Image(systemName: "plus")
+                            .foregroundColor(Color("SecondaryColor"))
+                    }
+                }
+            }.sheet(isPresented: $showAddNewExample) {
+                AddNewExampleView()
+            } .navigationTitle("Examples")
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 

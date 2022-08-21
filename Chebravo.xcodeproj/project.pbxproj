@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1C0DEC8F2879B6410071BEC7 /* ChebravoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0DEC8E2879B6410071BEC7 /* ChebravoTests.swift */; };
-		1C0DEC962879B71D0071BEC7 /* WordControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0DEC952879B71D0071BEC7 /* WordControllerTest.swift */; };
+		1C0DEC962879B71D0071BEC7 /* ContextControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0DEC952879B71D0071BEC7 /* ContextControllerTest.swift */; };
 		1C207C842869F89A00847EB2 /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C207C832869F89A00847EB2 /* CoreDataController.swift */; };
 		1C207C872869FAA300847EB2 /* ContextController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C207C862869FAA300847EB2 /* ContextController.swift */; };
 		1C401EFC286F8AF400827BFB /* WordComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C401EFB286F8AF400827BFB /* WordComponents.swift */; };
@@ -64,7 +64,6 @@
 		1CA9FE8628B02F580066A8A2 /* 50.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1CA9FE5B28B02F580066A8A2 /* 50.mp3 */; };
 		1CA9FE8728B02F580066A8A2 /* 27.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1CA9FE5C28B02F580066A8A2 /* 27.mp3 */; };
 		1CA9FE8828B02F580066A8A2 /* 40.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1CA9FE5D28B02F580066A8A2 /* 40.mp3 */; };
-		1CA9FE8A28B035D50066A8A2 /* 0.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1CA9FE8928B035D50066A8A2 /* 0.mp3 */; };
 		1CAEE4A52870DAE0007CAD1F /* TranslationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAEE4A42870DAE0007CAD1F /* TranslationController.swift */; };
 		1CAEE4A72870DEA2007CAD1F /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAEE4A62870DEA2007CAD1F /* APIKey.swift */; };
 		1CAEE4A92870F0F9007CAD1F /* TranslationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAEE4A82870F0F9007CAD1F /* TranslationResponse.swift */; };
@@ -76,6 +75,8 @@
 		1CBA3A47288AE78700777ADB /* NagivationBarIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBA3A46288AE78700777ADB /* NagivationBarIconView.swift */; };
 		1CCBACEF28AE871A00D3924F /* TranslationControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCBACEE28AE871A00D3924F /* TranslationControllerTest.swift */; };
 		1CCDE84D28A56BFE0052037C /* LearnArticles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCDE84C28A56BFE0052037C /* LearnArticles.swift */; };
+		1CD36C6128B2314000653348 /* 0.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1CD36C6028B2314000653348 /* 0.mp3 */; };
+		1CD36C6328B236B700653348 /* AddNewExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD36C6228B236B700653348 /* AddNewExampleView.swift */; };
 		1CE739A72867053100148371 /* ChebravoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE739A62867053100148371 /* ChebravoApp.swift */; };
 		1CE739AB2867053200148371 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CE739AA2867053200148371 /* Assets.xcassets */; };
 		1CE739AE2867053200148371 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CE739AD2867053200148371 /* Preview Assets.xcassets */; };
@@ -95,7 +96,7 @@
 /* Begin PBXFileReference section */
 		1C0DEC8C2879B6410071BEC7 /* ChebravoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChebravoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C0DEC8E2879B6410071BEC7 /* ChebravoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChebravoTests.swift; sourceTree = "<group>"; };
-		1C0DEC952879B71D0071BEC7 /* WordControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordControllerTest.swift; sourceTree = "<group>"; };
+		1C0DEC952879B71D0071BEC7 /* ContextControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextControllerTest.swift; sourceTree = "<group>"; };
 		1C207C832869F89A00847EB2 /* CoreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
 		1C207C862869FAA300847EB2 /* ContextController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextController.swift; sourceTree = "<group>"; };
 		1C401EFB286F8AF400827BFB /* WordComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordComponents.swift; sourceTree = "<group>"; };
@@ -151,7 +152,6 @@
 		1CA9FE5B28B02F580066A8A2 /* 50.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 50.mp3; sourceTree = "<group>"; };
 		1CA9FE5C28B02F580066A8A2 /* 27.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 27.mp3; sourceTree = "<group>"; };
 		1CA9FE5D28B02F580066A8A2 /* 40.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 40.mp3; sourceTree = "<group>"; };
-		1CA9FE8928B035D50066A8A2 /* 0.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 0.mp3; path = ../../../../../Desktop/AUDIO/0.mp3; sourceTree = "<group>"; };
 		1CAEE4A42870DAE0007CAD1F /* TranslationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationController.swift; sourceTree = "<group>"; };
 		1CAEE4A62870DEA2007CAD1F /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		1CAEE4A82870F0F9007CAD1F /* TranslationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationResponse.swift; sourceTree = "<group>"; };
@@ -163,6 +163,8 @@
 		1CBA3A46288AE78700777ADB /* NagivationBarIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NagivationBarIconView.swift; sourceTree = "<group>"; };
 		1CCBACEE28AE871A00D3924F /* TranslationControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationControllerTest.swift; sourceTree = "<group>"; };
 		1CCDE84C28A56BFE0052037C /* LearnArticles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnArticles.swift; sourceTree = "<group>"; };
+		1CD36C6028B2314000653348 /* 0.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 0.mp3; sourceTree = "<group>"; };
+		1CD36C6228B236B700653348 /* AddNewExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewExampleView.swift; sourceTree = "<group>"; };
 		1CE739A32867053100148371 /* Chebravo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chebravo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CE739A62867053100148371 /* ChebravoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChebravoApp.swift; sourceTree = "<group>"; };
 		1CE739AA2867053200148371 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -200,7 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				1C0DEC8E2879B6410071BEC7 /* ChebravoTests.swift */,
-				1C0DEC952879B71D0071BEC7 /* WordControllerTest.swift */,
+				1C0DEC952879B71D0071BEC7 /* ContextControllerTest.swift */,
 				1CCBACEE28AE871A00D3924F /* TranslationControllerTest.swift */,
 			);
 			path = ChebravoTests;
@@ -247,6 +249,7 @@
 				1CBA3A44288AE67800777ADB /* TutorialView.swift */,
 				1C99542828689E3100C6B839 /* VerbView.swift */,
 				1CBA3A42288AE32800777ADB /* ExampleView.swift */,
+				1CD36C6228B236B700653348 /* AddNewExampleView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -265,7 +268,7 @@
 		1C82617E28A6E03400F77977 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
-				1CA9FE8928B035D50066A8A2 /* 0.mp3 */,
+				1CD36C6028B2314000653348 /* 0.mp3 */,
 				1CA9FE3928B02F570066A8A2 /* 1.mp3 */,
 				1CA9FE3E28B02F570066A8A2 /* 2.mp3 */,
 				1CA9FE3828B02F570066A8A2 /* 3.mp3 */,
@@ -459,7 +462,6 @@
 				1CA9FE6328B02F580066A8A2 /* 3.mp3 in Resources */,
 				1CA9FE7F28B02F580066A8A2 /* 1000.mp3 in Resources */,
 				1CA9FE7C28B02F580066A8A2 /* 1mil.mp3 in Resources */,
-				1CA9FE8A28B035D50066A8A2 /* 0.mp3 in Resources */,
 				1CA9FE8228B02F580066A8A2 /* 80.mp3 in Resources */,
 				1CA9FE8128B02F580066A8A2 /* 13.mp3 in Resources */,
 				1CA9FE6028B02F580066A8A2 /* 5.mp3 in Resources */,
@@ -479,6 +481,7 @@
 				1CA9FE5F28B02F580066A8A2 /* 11.mp3 in Resources */,
 				1CA9FE7E28B02F580066A8A2 /* 18.mp3 in Resources */,
 				1CA9FE7328B02F580066A8A2 /* 17.mp3 in Resources */,
+				1CD36C6128B2314000653348 /* 0.mp3 in Resources */,
 				1CA9FE7028B02F580066A8A2 /* 19.mp3 in Resources */,
 				1CA9FE6128B02F580066A8A2 /* 30.mp3 in Resources */,
 				1CA9FE8628B02F580066A8A2 /* 50.mp3 in Resources */,
@@ -524,7 +527,7 @@
 			files = (
 				1C0DEC8F2879B6410071BEC7 /* ChebravoTests.swift in Sources */,
 				1CCBACEF28AE871A00D3924F /* TranslationControllerTest.swift in Sources */,
-				1C0DEC962879B71D0071BEC7 /* WordControllerTest.swift in Sources */,
+				1C0DEC962879B71D0071BEC7 /* ContextControllerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -551,6 +554,7 @@
 				1CBA3A3F288AE23E00777ADB /* NavigationBarView.swift in Sources */,
 				1C99542728689C6700C6B839 /* AllWords.swift in Sources */,
 				1C401EFC286F8AF400827BFB /* WordComponents.swift in Sources */,
+				1CD36C6328B236B700653348 /* AddNewExampleView.swift in Sources */,
 				1C401EFE286F8FAB00827BFB /* VerbViewSettings.swift in Sources */,
 				1CE739A72867053100148371 /* ChebravoApp.swift in Sources */,
 				1C6FDD49288C6BCC001A41E0 /* ILearning.swift in Sources */,

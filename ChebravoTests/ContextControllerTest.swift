@@ -1,5 +1,5 @@
 //
-//  WordControllerTest.swift
+//  ContextControllerTest.swift
 //  ChebravoTests
 //
 //  Created by Phillip Lundin on 09/07/2022.
@@ -10,7 +10,7 @@ import SwiftUI
 @testable import Chebravo
 // Naming structure: test_UnitOfWork_StateUnderTest_ExpectedBehavious
 
-class WordControllerTest: XCTestCase {
+class ContextControllerTest: XCTestCase {
     var WC : ContextController!
     
     override func setUp() {
