@@ -10,7 +10,7 @@
 		1C0DEC8F2879B6410071BEC7 /* ChebravoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0DEC8E2879B6410071BEC7 /* ChebravoTests.swift */; };
 		1C0DEC962879B71D0071BEC7 /* WordControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0DEC952879B71D0071BEC7 /* WordControllerTest.swift */; };
 		1C207C842869F89A00847EB2 /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C207C832869F89A00847EB2 /* CoreDataController.swift */; };
-		1C207C872869FAA300847EB2 /* WordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C207C862869FAA300847EB2 /* WordController.swift */; };
+		1C207C872869FAA300847EB2 /* ContextController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C207C862869FAA300847EB2 /* ContextController.swift */; };
 		1C401EFC286F8AF400827BFB /* WordComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C401EFB286F8AF400827BFB /* WordComponents.swift */; };
 		1C401EFE286F8FAB00827BFB /* VerbViewSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C401EFD286F8FAB00827BFB /* VerbViewSettings.swift */; };
 		1C5C6AF92868789300609B38 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5C6AF82868789300609B38 /* SplashView.swift */; };
@@ -97,7 +97,7 @@
 		1C0DEC8E2879B6410071BEC7 /* ChebravoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChebravoTests.swift; sourceTree = "<group>"; };
 		1C0DEC952879B71D0071BEC7 /* WordControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordControllerTest.swift; sourceTree = "<group>"; };
 		1C207C832869F89A00847EB2 /* CoreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
-		1C207C862869FAA300847EB2 /* WordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordController.swift; sourceTree = "<group>"; };
+		1C207C862869FAA300847EB2 /* ContextController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextController.swift; sourceTree = "<group>"; };
 		1C401EFB286F8AF400827BFB /* WordComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordComponents.swift; sourceTree = "<group>"; };
 		1C401EFD286F8FAB00827BFB /* VerbViewSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbViewSettings.swift; sourceTree = "<group>"; };
 		1C5C6AF82868789300609B38 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
@@ -218,7 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				1CBA3A3C288AE0F400777ADB /* ViewRouterController.swift */,
-				1C207C862869FAA300847EB2 /* WordController.swift */,
+				1C207C862869FAA300847EB2 /* ContextController.swift */,
 				1CAEE4A42870DAE0007CAD1F /* TranslationController.swift */,
 				1C82617C28A6DC3600F77977 /* AudioController.swift */,
 			);
@@ -541,7 +541,7 @@
 				1CBA3A43288AE32800777ADB /* ExampleView.swift in Sources */,
 				1CBA3A45288AE67800777ADB /* TutorialView.swift in Sources */,
 				1CBA3A3D288AE0F400777ADB /* ViewRouterController.swift in Sources */,
-				1C207C872869FAA300847EB2 /* WordController.swift in Sources */,
+				1C207C872869FAA300847EB2 /* ContextController.swift in Sources */,
 				1CBA3A41288AE2FD00777ADB /* LearnView.swift in Sources */,
 				1C207C842869F89A00847EB2 /* CoreDataController.swift in Sources */,
 				1C82617D28A6DC3600F77977 /* AudioController.swift in Sources */,

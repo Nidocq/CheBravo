@@ -61,7 +61,7 @@ struct VerbViewSettings: View {
 struct DeleteButton: View {
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.managedObjectContext) var viewContext
-    var wordController = WordController()
+    var wordController = ContextController()
     @State var showAlert = false
     @ObservedObject var word : Word
 

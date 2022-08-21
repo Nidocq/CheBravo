@@ -2,6 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21C52" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Example" representedClassName="Example" syncable="YES" codeGenerationType="class">
         <attribute name="context" optional="YES" attributeType="String"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="translationToEnglish" optional="YES" attributeType="String"/>
     </entity>
@@ -12,7 +13,7 @@
         <attribute name="translationToEnglish" optional="YES" attributeType="String"/>
     </entity>
     <elements>
+        <element name="Example" positionX="-63" positionY="9" width="128" height="89"/>
         <element name="Word" positionX="-63" positionY="-18" width="128" height="89"/>
-        <element name="Example" positionX="-63" positionY="9" width="128" height="74"/>
     </elements>
 </model>

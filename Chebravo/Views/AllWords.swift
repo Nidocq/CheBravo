@@ -22,7 +22,7 @@ struct AllWords: View {
     let paddingLeadingTrailing : CGFloat = 18
     let cornerRadiusAmount : CGFloat = 10
     let paddingTopBottom : CGFloat = 14
-    var wordController = WordController()
+    var wordController = ContextController()
     
     init() {
         let navBarAppearance = UINavigationBar.appearance()
@@ -102,7 +102,7 @@ struct InputField : View {
     @Binding var input : String
     @FocusState private var inputFocused : Bool
     
-    var wordController : WordController
+    var wordController : ContextController
     let paddingLeadingTrailing : CGFloat
     let cornerRadiusAmount : CGFloat
     let paddingTopBottom : CGFloat

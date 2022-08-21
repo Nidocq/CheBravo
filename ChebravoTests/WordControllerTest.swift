@@ -11,15 +11,15 @@ import SwiftUI
 // Naming structure: test_UnitOfWork_StateUnderTest_ExpectedBehavious
 
 class WordControllerTest: XCTestCase {
-    var WC : WordController!
+    var WC : ContextController!
     
     override func setUp() {
-        self.WC = WordController()
+        self.WC = ContextController()
     }
 
     func test_CheBravo_WordController_IsInitialized() {
         XCTAssert(WC != nil)
-        XCTAssert(WC is WordController)
+        XCTAssert(WC is ContextController)
     }
     
     func test_CheBravo_WordController_IsItemAdded() async {

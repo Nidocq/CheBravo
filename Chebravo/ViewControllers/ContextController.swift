@@ -1,5 +1,5 @@
 //
-//  WordController.swift
+//  ContextController.swift
 //  Chebravo
 //
 //  Created by Phillip Lundin on 27/06/2022.
@@ -12,7 +12,7 @@ import CoreData
 /// <summary> Controls the behaviour of the words with the help of viewContexts </summary>
 /// <remarks> I can't instantiate the NSManagedObjectContext with this class for some reason, even though
 /// it probably would b better </remarks>
-class WordController : ObservableObject {
+class ContextController : ObservableObject {
     
     var TC : TranslationController = TranslationController()
     var Haptic = UINotificationFeedbackGenerator()
