@@ -10,7 +10,6 @@ import SwiftUI
 /// <summary> Here are the examples that the user will have
 /// acquired throughout their learning, showcased nicely </summary>
 struct AllExamples: View {
-    @Environment(\.presentationMode) var presentationMode
     @State var showAddNewExample : Bool = false
     
     let paddingFromTitleToExamples : CGFloat = 30
@@ -50,17 +49,6 @@ struct AllExamples: View {
                     } label : {
                         Image(systemName: "plus")
                             .foregroundColor(Color("SecondaryColor"))
-                    }
-                }
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button {
-                        presentationMode.wrappedValue.dismiss()
-                    } label: {
-                        HStack {
-                            Image(systemName: "chevron.backward")
-                            Text("Back")
-                        }
-                        .foregroundColor(Color("SecondaryColor"))
                     }
                 }
             }.sheet(isPresented: $showAddNewExample) {

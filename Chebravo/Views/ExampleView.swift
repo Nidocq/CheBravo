@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ExampleView: View {
     @Environment(\.managedObjectContext) var viewContext
+    @Environment(\.presentationMode) var presentationMode
 
     var example : Example
     let paddingOnSides : CGFloat = 25
@@ -52,6 +53,7 @@ struct ExampleView: View {
                 
                 Spacer()
                 Button {
+                    // TODO: IMPORTANT make a alert that verifies that the user wants to delete the word
                     Task {
                         do {
                             await CC.removeExample(viewContext: viewContext, Example: example)
@@ -65,6 +67,18 @@ struct ExampleView: View {
                         .cornerRadius(20)
                     
                 }.padding(.bottom, 25)
+            }
+        }.toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button {
+                    presentationMode.wrappedValue.dismiss()
+                } label: {
+                    HStack {
+                        Image(systemName: "chevron.backward")
+                        Text("Back")
+                    }
+                    .foregroundColor(Color("PrimaryColor"))
+                }
             }
         }
         .navigationBarBackButtonHidden(true)

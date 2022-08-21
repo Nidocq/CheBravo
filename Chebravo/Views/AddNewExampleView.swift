@@ -18,6 +18,7 @@ struct AddNewExampleView: View {
     @FocusState private var emailFieldIsFocused: Bool
     
     let paddingOnSides : CGFloat = 20
+    let paddingInsideTextFields : CGFloat = 15
         
     var body: some View {
         ZStack {
@@ -40,11 +41,12 @@ struct AddNewExampleView: View {
                         text: $headingText
                     )
                     .foregroundColor(Color("SecondaryColor"))
-                    .frame(height: 50)
+                    .frame(height: 30)
                     .focused($emailFieldIsFocused)
                     .textInputAutocapitalization(.never)
                     .disableAutocorrection(true)
                     .font(.system(size: 24))
+                    .padding(paddingInsideTextFields)
                     .border(Color("SecondaryColor"))
                     
                     TextField(
@@ -52,12 +54,16 @@ struct AddNewExampleView: View {
                         text: $bodyText
                     )
                     .foregroundColor(Color("SecondaryColor"))
-                    .frame(height: 120)
+                    .frame(height: 100)
                     .focused($emailFieldIsFocused)
                     .textInputAutocapitalization(.never)
                     .disableAutocorrection(true)
+                    .padding(paddingInsideTextFields)
+                    .fixedSize(horizontal: false, vertical: true)
                 }
                     .border(Color("SecondaryColor"))
+                
+                // Add example button
                 Button {
                     Task {
                         do {
@@ -79,6 +85,19 @@ struct AddNewExampleView: View {
                         .foregroundColor(Color("PrimaryColor"))
                         .padding(.top, 30)
                 }
+                
+                // Cancel button
+                Button {
+                    dismiss()
+                    
+                } label: {
+                    Text("Cancel")
+                        .frame(width: UIScreen.main.bounds.width-paddingOnSides*2, height: 50)
+                        .background(Color("SecondaryColor"))
+                        .foregroundColor(Color("PrimaryColor"))
+                        .padding(.top, 30)
+                }
+                
                 
                 // TODO: Make a live example (with a live creation of the component)
                 // ExampleCard($headingText, $bodyText)
