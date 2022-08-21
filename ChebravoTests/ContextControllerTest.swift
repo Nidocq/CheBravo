@@ -26,6 +26,6 @@ class WordControllerTest: XCTestCase {
         @StateObject var CDController = CoreDataController()
         var viewContext = CDController.modelContainer.viewContext
         
-        await WC.addItem(viewContext: viewContext, Wordname: "Hello")
+        await WC.addWord(viewContext: viewContext, Wordname: "Hello")
     }
 }

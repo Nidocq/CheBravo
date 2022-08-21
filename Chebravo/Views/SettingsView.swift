@@ -26,17 +26,20 @@ struct SettingsView: View {
     
     
     var body: some View {
-        Form {
-            Section {
-                Text("Words translated \(String(wordsCreated ?? 0))")
-                Text("Words you know: \(String(words.count))")
-            } header: {
-                Text("Translation")
-                    .foregroundColor(Color("SecondaryColor"))
-                    .fontWeight(.heavy)
-                    .font(.system(size: 18))
-                    .offset(x:-12)
+        NavigationView {
+            Form {
+                Section {
+                    Text("Words translated \(String(wordsCreated ?? 0))")
+                    Text("Words you know: \(String(words.count))")
+                } header: {
+                    Text("Translation")
+                        .foregroundColor(Color("SecondaryColor"))
+                        .fontWeight(.heavy)
+                        .font(.system(size: 18))
+                        .offset(x:-12)
+                }
             }
+            .navigationTitle("Settings")
         }
     }
 }
