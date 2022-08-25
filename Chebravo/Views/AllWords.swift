@@ -51,7 +51,7 @@ struct AllWords: View {
                     
                     // Translation or Compact
                     ViewSelection(
-                        selectedViewOption: $selectedViewOption,
+                        selectedViewOption: $selectedViewOption.animation(.spring()),
                         paddingLeadingTrailing: paddingLeadingTrailing
                     )
                     

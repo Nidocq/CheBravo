@@ -24,6 +24,8 @@ struct SettingsView: View {
         SortDescriptor(\.date)
     ]) var words: FetchedResults<Word>
     
+    @State var Buttonhaha : Bool = false
+    
     
     var body: some View {
         NavigationView {
@@ -31,6 +33,26 @@ struct SettingsView: View {
                 Section {
                     Text("Words translated \(String(wordsCreated ?? 0))")
                     Text("Words you know: \(String(words.count))")
+                } header: {
+                    Text("Translation")
+                        .foregroundColor(Color("SecondaryColor"))
+                        .fontWeight(.heavy)
+                        .font(.system(size: 18))
+                        .offset(x:-12)
+                }
+                
+                Section {
+                    // TODO: Example translation configuration
+                    Toggle("Show translation on examples", isOn: $Buttonhaha)
+                } header: {
+                    Text("Configuration")
+                        .foregroundColor(Color("SecondaryColor"))
+                        .fontWeight(.heavy)
+                        .font(.system(size: 18))
+                        .offset(x:-12)
+                }
+                Section {
+                    Text("Version 1.0.0")
                 } header: {
                     Text("Translation")
                         .foregroundColor(Color("SecondaryColor"))

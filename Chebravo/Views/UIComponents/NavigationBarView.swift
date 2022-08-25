@@ -50,7 +50,7 @@ struct NavigationBarView: View {
                         Spacer()
                         NavigationBarIconView( // All words
                             viewRouter: ViewRouter,
-                            systemIconName: "pencil.circle",
+                            systemIconName: "books.vertical",
                             description: "Words",
                             assignedPage: .YourWords,
                             width: iconWidth,
