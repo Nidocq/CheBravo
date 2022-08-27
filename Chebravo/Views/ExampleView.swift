@@ -53,7 +53,7 @@ struct ExampleView: View {
                 
                 Spacer()
                 Button {
-                    // TODO: IMPORTANT make a alert that verifies that the user wants to delete the word
+                    // TODO: IMPORTANT make a alert that verifies that the user wants to delete the example
                     Task {
                         do {
                             await CC.removeExample(viewContext: viewContext, Example: example)

@@ -9,7 +9,7 @@ import SwiftUI
 
 // TODO: Make the Darkmode more friendly with colors that are darker than white :(((
 // TODO: If and when someone types in a space, make a popup that says, "Only words are enabled in this view, head to examples to cover your own examples lorum"
-// TODO: Swiping words can remove them
+// TODO: Make a little one time tutorial for people who use the app the first time
 
 /// <summary> Showcases all the Words the user has saved so far, Data is saved with CoreData </summary>
 struct AllWords: View {

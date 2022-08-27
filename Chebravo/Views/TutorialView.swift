@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-//TODO: Make the tutorial for how to use the application
 
 /// <summary> Show the user how to use this app briefly, if they click on the icon
 /// that invokes this view. It is found in the AllWords.swift </summary>
