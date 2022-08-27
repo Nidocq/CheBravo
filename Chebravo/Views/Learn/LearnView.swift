@@ -54,7 +54,7 @@ struct LearnView: View {
                         
                         NavigationLink(destination: LearnArticles()) {
                             ModuleDisplay(
-                                moduleName: "Something else",
+                                moduleName: "Something else that i cant say",
                                 moduleIcon:"textformat.123"
                             )
                         }
@@ -80,6 +80,7 @@ struct ModuleDisplay : View {
         VStack{
             Image(systemName: moduleIcon)
                 .font(.system(size: 30))
+                .padding(.bottom, 4)
             Text(moduleName)
                 .font(.system(size: 18))
                 .bold()
