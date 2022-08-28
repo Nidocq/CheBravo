@@ -51,6 +51,7 @@ struct SplashGraphics: View {
     var body: some View {
         HStack {
             // TODO: Add picture with sparkles and the logo afterwards
+            // With the use of lottie animations
             // CheBravə
             Text("CheBravo")
                 .font(.system(size: 32))

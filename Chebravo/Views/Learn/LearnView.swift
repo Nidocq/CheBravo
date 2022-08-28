@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+/// <summary> All modules of the italian lanugage will be stored here.
+/// Clicking on one of the modules will take you to the specific module
+/// </summary>
 struct LearnView: View {
     // TODO: When emphazise words with an apostroph to indicate
     init() {
@@ -26,6 +29,8 @@ struct LearnView: View {
                     .ignoresSafeArea()
                 
                 ScrollView {
+                    // TODO: Make the module display display the modules
+                        // dynamically so there is less code
                     LazyVGrid(columns: columns, spacing: 0) {
                         NavigationLink(
                             destination: LearnNumbers()) {
@@ -97,7 +102,7 @@ struct LearnView: View {
 }
 
 
-/// <summary> Each modules' display which will be displayed in a list </summary>
+/// <summary> Each modules' infographic display</summary>
 /// <remarks> inpired by
 /// https://assets.justinmind.com/wp-content/webp-express/webp-images/uploads/2019/10/list-ui-design-category-listing.png.webp </remarks>
 struct ModuleDisplay : View {
