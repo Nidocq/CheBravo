@@ -49,9 +49,9 @@ struct WordDisplay: View {
                 HStack {
                     // ---
                     VStack(alignment: .leading) {
-                        WordSpecification(text: WordType.verb.rawValue)
+//                        WordSpecification(text: WordType.verb.rawValue)
                         WordName(name: self.word.name ?? "Unkown")
-                        WordSpecification(text: ConjugationProcess.first.rawValue)
+//                        WordSpecification(text: ConjugationProcess.first.rawValue)
                             .frame(maxWidth: .infinity, alignment: .leading)
                     }
                         .frame(maxWidth: .infinity, alignment: .trailing)
@@ -72,9 +72,9 @@ struct WordDisplay: View {
             
             case .compact:
                 VStack(alignment: .leading) {
-                    WordSpecification(text: WordType.verb.rawValue)
+//                    WordSpecification(text: WordType.verb.rawValue)
                     WordName(name: self.word.name ?? "Unkown")
-                    WordSpecification(text: ConjugationProcess.first.rawValue)
+//                    WordSpecification(text: ConjugationProcess.first.rawValue)
                         .frame(alignment: .trailing)
                 }
                 .lineLimit(1) 

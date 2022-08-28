@@ -36,6 +36,9 @@ class TranslationController {
         // letters, otherwise the API will not return anything
         // The letters supported in Italian are
         // "à", "À", "Á", "á", "è", "È", "é", "É", "ì", "Ì", "ó", "Ó", "ù", "Ù"
+        // TODO: Già and Andrà are not recognized in API
+        // For the most part the words are still recognized by the api but Già
+        // and Andrà are not
         parseText = parseText.folding(options: .diacriticInsensitive, locale: nil)
         
         // Characters allowed '+',

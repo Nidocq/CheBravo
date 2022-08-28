@@ -36,7 +36,6 @@ struct AllExamples: View {
                                 // TODO: Make a component here for readability
                                 ExampleShowCase(ex: ex)
                             }
-                            Seperator()
                         }
                     }
                     .padding(.top, paddingFromTitleToExamples)
@@ -80,22 +79,46 @@ struct ExampleShowCase : View {
 
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Text(ex.note ?? "No Note")
-                .bold()
-                .font(.system(size: 24))
-            Text(ex.context ?? "")
+        ZStack {
+            Color("PrimaryColor")
+            
+            HStack(spacing: 0) {
+                Rectangle()
+                    .fill(Color("SecondaryColor"))
+                    .frame(maxWidth: 10, maxHeight: .infinity, alignment: .leading)
+                VStack(alignment: .leading) {
+                    HStack {
+                        Text(ex.note ?? "No note")
+                            .bold()
+                            .font(.system(size: 20))
+                        Spacer()
+                        Image(systemName: "highlighter")
+                    }
+                        Text(ex.context ?? "No translation")
+                }
+                .foregroundColor(Color("SecondaryColor"))
+                .padding()
+                
+            }
+            .frame(maxWidth: .infinity, maxHeight: 100, alignment: .leading)
+            .border(Color("SecondaryColor"))
+            .cornerRadius(10)
+     
+
         }
-        .foregroundColor(Color("SecondaryColor"))
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-        .background(Color("PrimaryColor"))
-        .padding([.top, .bottom], paddingTopBottom)
-        .padding([.leading, .trailing], paddingLeadingTrailing)
+        .padding(14)
+//        VStack(alignment: .leading) {
+//            Text(ex.note ?? "No Note")
+//                .bold()
+//                .font(.system(size: 24))
+//            Text(ex.context ?? "")
+//                .fixedSize(horizontal: false, vertical: true)
+//        }
+//        .foregroundColor(Color("SecondaryColor"))
+//        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+//        .background(Color("PrimaryColor"))
+//        .padding([.top, .bottom], paddingTopBottom)
+//        .padding([.leading, .trailing], paddingLeadingTrailing)
     }
 }
 
-struct YourExamples_Previews: PreviewProvider {
-    static var previews: some View {
-        AllExamples()
-    }
-}
