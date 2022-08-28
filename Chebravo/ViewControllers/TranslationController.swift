@@ -30,12 +30,21 @@ class TranslationController {
             return ""
         }
         
+        var parseText = text
+        
+        // Remove accents from a word in order for the API to recognize the
+        // letters, otherwise the API will not return anything
+        // The letters supported in Italian are
+        // "à", "À", "Á", "á", "è", "È", "é", "É", "ì", "Ì", "ó", "Ó", "ù", "Ù"
+        parseText = parseText.folding(options: .diacriticInsensitive, locale: nil)
+        
         // Characters allowed '+',
         let invalidCharacter : [String] = [
-            "%", "%20", "£", "∞", "‰", "¢", "¡", "§", "", "$", "{", "}", "-", "_", "`", "<", ">"
+            "%", "%20", "£", "∞", "‰", "¢", "¡", "§", "", "$", "{", "}", "-",
+            "_", "`", "<", ">"
         ]
         
-        var parseText = text
+        
         
         for inchr in invalidCharacter {
             // if someone types in %20 it wont break the rest of the code

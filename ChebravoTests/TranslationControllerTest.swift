@@ -64,12 +64,18 @@ class TranslationControllerTest: XCTestCase {
         testList.append(await TC.translateText(text: "I remember that < is less and > is bigger :)"))
         testList.append(await TC.translateText(text: "03c+$v.-{}_"))
         testList.append(await TC.translateText(text: "`'`"))
-        
 
         for TransTest in testList {
             XCTAssertNotEqual(TransTest, failedMessageForTranslation)
         }
     }
+    
+    func test_CheBravo_TranslationController_translateText_accents() async {
+        let sutTranslation = await TC.translateText(text: "àÀÁáèÈéÉìÌóÓùÙ")
+        
+        XCTAssertEqual("aAAaeEeEiIoOuU", sutTranslation)
+    }
+
     
     func test_CheBravo_TranslationController_translateText_WithQuotes() async {
     }
