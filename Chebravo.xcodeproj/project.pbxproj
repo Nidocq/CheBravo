@@ -67,6 +67,12 @@
 		1CAEE4A52870DAE0007CAD1F /* TranslationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAEE4A42870DAE0007CAD1F /* TranslationController.swift */; };
 		1CAEE4A72870DEA2007CAD1F /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAEE4A62870DEA2007CAD1F /* APIKey.swift */; };
 		1CAEE4A92870F0F9007CAD1F /* TranslationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAEE4A82870F0F9007CAD1F /* TranslationResponse.swift */; };
+		1CB5F42628BB79490059E135 /* LearnPronunciation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB5F42528BB79490059E135 /* LearnPronunciation.swift */; };
+		1CB5F42828BB7B350059E135 /* LearnDirections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB5F42728BB7B350059E135 /* LearnDirections.swift */; };
+		1CB5F42A28BB7BE20059E135 /* LearnAskingQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB5F42928BB7BE20059E135 /* LearnAskingQuestions.swift */; };
+		1CB5F42C28BB7BF40059E135 /* LearnTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB5F42B28BB7BF40059E135 /* LearnTime.swift */; };
+		1CB5F42E28BB7BFD0059E135 /* LearnPossession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB5F42D28BB7BFD0059E135 /* LearnPossession.swift */; };
+		1CB5F43028BB7C060059E135 /* LearnConjugation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB5F42F28BB7C060059E135 /* LearnConjugation.swift */; };
 		1CBA3A3D288AE0F400777ADB /* ViewRouterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBA3A3C288AE0F400777ADB /* ViewRouterController.swift */; };
 		1CBA3A3F288AE23E00777ADB /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBA3A3E288AE23E00777ADB /* NavigationBarView.swift */; };
 		1CBA3A41288AE2FD00777ADB /* LearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBA3A40288AE2FD00777ADB /* LearnView.swift */; };
@@ -156,6 +162,12 @@
 		1CAEE4A42870DAE0007CAD1F /* TranslationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationController.swift; sourceTree = "<group>"; };
 		1CAEE4A62870DEA2007CAD1F /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		1CAEE4A82870F0F9007CAD1F /* TranslationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationResponse.swift; sourceTree = "<group>"; };
+		1CB5F42528BB79490059E135 /* LearnPronunciation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnPronunciation.swift; sourceTree = "<group>"; };
+		1CB5F42728BB7B350059E135 /* LearnDirections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnDirections.swift; sourceTree = "<group>"; };
+		1CB5F42928BB7BE20059E135 /* LearnAskingQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnAskingQuestions.swift; sourceTree = "<group>"; };
+		1CB5F42B28BB7BF40059E135 /* LearnTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnTime.swift; sourceTree = "<group>"; };
+		1CB5F42D28BB7BFD0059E135 /* LearnPossession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnPossession.swift; sourceTree = "<group>"; };
+		1CB5F42F28BB7C060059E135 /* LearnConjugation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnConjugation.swift; sourceTree = "<group>"; };
 		1CBA3A3C288AE0F400777ADB /* ViewRouterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouterController.swift; sourceTree = "<group>"; };
 		1CBA3A3E288AE23E00777ADB /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 		1CBA3A40288AE2FD00777ADB /* LearnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnView.swift; sourceTree = "<group>"; };
@@ -261,9 +273,15 @@
 			isa = PBXGroup;
 			children = (
 				1CBA3A40288AE2FD00777ADB /* LearnView.swift */,
+				1CB5F42528BB79490059E135 /* LearnPronunciation.swift */,
 				1CCDE84C28A56BFE0052037C /* LearnArticles.swift */,
 				1C6FDD46288C6BBE001A41E0 /* LearnNumbers.swift */,
 				1C6FDD48288C6BCC001A41E0 /* ILearning.swift */,
+				1CB5F42728BB7B350059E135 /* LearnDirections.swift */,
+				1CB5F42928BB7BE20059E135 /* LearnAskingQuestions.swift */,
+				1CB5F42B28BB7BF40059E135 /* LearnTime.swift */,
+				1CB5F42D28BB7BFD0059E135 /* LearnPossession.swift */,
+				1CB5F42F28BB7C060059E135 /* LearnConjugation.swift */,
 			);
 			path = Learn;
 			sourceTree = "<group>";
@@ -538,14 +556,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CB5F42E28BB7BFD0059E135 /* LearnPossession.swift in Sources */,
 				1C807443288BF8A000E44F49 /* SettingsView.swift in Sources */,
 				1CF6AD8E2868BA97008BA670 /* WordCore.xcdatamodeld in Sources */,
 				1CAEE4A92870F0F9007CAD1F /* TranslationResponse.swift in Sources */,
+				1CB5F43028BB7C060059E135 /* LearnConjugation.swift in Sources */,
 				1C6FDD47288C6BBE001A41E0 /* LearnNumbers.swift in Sources */,
 				1C9CB422286C20090082ECB8 /* Extensions.swift in Sources */,
 				1CAEE4A52870DAE0007CAD1F /* TranslationController.swift in Sources */,
 				1CBA3A43288AE32800777ADB /* AllExamples.swift in Sources */,
+				1CB5F42C28BB7BF40059E135 /* LearnTime.swift in Sources */,
 				1CBA3A45288AE67800777ADB /* TutorialView.swift in Sources */,
+				1CB5F42628BB79490059E135 /* LearnPronunciation.swift in Sources */,
+				1CB5F42A28BB7BE20059E135 /* LearnAskingQuestions.swift in Sources */,
 				1CBA3A3D288AE0F400777ADB /* ViewRouterController.swift in Sources */,
 				1C207C872869FAA300847EB2 /* ContextController.swift in Sources */,
 				1CBA3A41288AE2FD00777ADB /* LearnView.swift in Sources */,
@@ -559,6 +582,7 @@
 				1C401EFC286F8AF400827BFB /* WordComponents.swift in Sources */,
 				1CD36C6328B236B700653348 /* AddNewExampleView.swift in Sources */,
 				1C401EFE286F8FAB00827BFB /* VerbViewSettings.swift in Sources */,
+				1CB5F42828BB7B350059E135 /* LearnDirections.swift in Sources */,
 				1CE739A72867053100148371 /* ChebravoApp.swift in Sources */,
 				1C6FDD49288C6BCC001A41E0 /* ILearning.swift in Sources */,
 				1C5C6AF92868789300609B38 /* SplashView.swift in Sources */,

@@ -8,12 +8,7 @@
 import SwiftUI
 
 struct LearnView: View {
-    
-//    var LearningMaterial : [ILearning] = [
-//        LearnNumbers() // * All the numbers in italian
-//        // LearnArticles()  * Articles feminine and their conjugation
-//    ]
-    
+    // TODO: When emphazise words with an apostroph to indicate
     init() {
         let navBarAppearance = UINavigationBar.appearance()
         navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor(Color("SecondaryColor"))]
@@ -30,35 +25,67 @@ struct LearnView: View {
                 Color("PrimaryColor")
                     .ignoresSafeArea()
                 
-                
-//                ForEach(LearningMaterial, id: \.id) { mat in
-//
-//                }
                 ScrollView {
-                    LazyVGrid(columns: columns, spacing: 10) {
+                    LazyVGrid(columns: columns, spacing: 0) {
                         NavigationLink(
                             destination: LearnNumbers()) {
                             ModuleDisplay(
                                 moduleName: "Numbers",
-                                moduleIcon:"textformat.123"
+                                moduleIcon: "textformat.123"
                             )
                         }
 
                         NavigationLink(
                             destination: LearnArticles()) {
                             ModuleDisplay(
-                                moduleName: "Articles",
-                                moduleIcon:"textformat.subscript"
+                                moduleName: "Definite Articles",
+                                moduleIcon: "textformat.subscript"
                             )
                         }
                         
-                        NavigationLink(destination: LearnArticles()) {
+                        NavigationLink(destination: LearnPronunciation()) {
                             ModuleDisplay(
-                                moduleName: "Something else that i cant say",
-                                moduleIcon:"textformat.123"
+                                moduleName: "Pronunciation",
+                                moduleIcon: "message"
+                            )
+                        }
+                        
+                        NavigationLink(destination: LearnAskingQuestions()) {
+                            ModuleDisplay(
+                                moduleName: "Asking Questions",
+                                moduleIcon: "questionmark"
+                            )
+                        }
+                        
+                        NavigationLink(destination: LearnConjugation()) {
+                            ModuleDisplay(
+                                moduleName: "Common Verbs & Conjugations",
+                                moduleIcon: "table"
+                            )
+                        }
+                        
+                        NavigationLink(destination: LearnPossession()) {
+                            ModuleDisplay(
+                                moduleName: "Possessive Adjectives",
+                                moduleIcon: "figure.wave"
+                            )
+                        }
+                        
+                        NavigationLink(destination: LearnTime()) {
+                            ModuleDisplay(
+                                moduleName: "Talking About Time",
+                                moduleIcon: "clock"
+                            )
+                        }
+                        
+                        NavigationLink(destination: LearnDirections()) {
+                            ModuleDisplay(
+                                moduleName: "Directions",
+                                moduleIcon: "arrow.up.right.and.arrow.down.left.rectangle"
                             )
                         }
                     }
+                    .padding()
                 }
                 .foregroundColor(Color("SecondaryColor"))
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment:.leading)
@@ -76,18 +103,38 @@ struct LearnView: View {
 struct ModuleDisplay : View {
     let moduleName : String
     let moduleIcon : String
+    let completedIconSize : CGFloat = 22
+    
+    // Should be var if expanded
+    // Deprecated because no logic is implemented for complete badges
+    let moduleCompleted : Bool = false
+
     var body: some View {
-        VStack{
+        VStack {
             Image(systemName: moduleIcon)
                 .font(.system(size: 30))
                 .padding(.bottom, 4)
             Text(moduleName)
                 .font(.system(size: 18))
                 .bold()
+                .padding([.trailing, .leading], 10)
                 .fixedSize(horizontal: false, vertical: true)
         }
-        .frame(width: 160, height: 160)
+        .frame(width: 164, height: 164)
         .border(Color("SecondaryColor"))
+        .foregroundColor(Color("SecondaryColor"))
+        .overlay(
+            Image(systemName: "checkmark.seal.fill")
+                .frame(
+                    width: completedIconSize,
+                    height: completedIconSize,
+                    alignment: .leading
+                )
+                .padding(8)
+                .opacity( moduleCompleted ? 1 : 0 )
+            , alignment: .topLeading)
+       
+        
     }
 }
 
@@ -96,3 +143,15 @@ struct LearnView_Previews: PreviewProvider {
         LearnView()
     }
 }
+
+struct ModuleDisplay_Previews: PreviewProvider {
+    static var previews: some View {
+        ZStack {
+            Color("PrimaryColor")
+                .ignoresSafeArea()
+            
+            ModuleDisplay(moduleName: "Hey there i am just programming my wayout of here", moduleIcon: "plus")
+        }
+    }
+}
+

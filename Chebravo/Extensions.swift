@@ -28,6 +28,47 @@ enum ViewOptions: String, CaseIterable {
 
 }
 
+struct LearningMaterialBoilerPlate : View {
+    @Environment(\.dismiss) var dismiss
+    var ModuleContent : AnyView
+    
+    init(ModuleContent : AnyView) {
+        self.ModuleContent = ModuleContent
+    }
+    
+    var body: some View {
+        ZStack {
+            Color("PrimaryColor")
+                .ignoresSafeArea()
+            ModuleContent
+        }
+        
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    
+                } label: {
+                    Image(systemName: "list.bullet")
+                        .foregroundColor(Color("SecondaryColor"))
+                }
+            }
+            
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button {
+                    dismiss()
+                } label: {
+                    HStack {
+                        Image(systemName: "chevron.left")
+                        Text(" Back")
+                    }
+                    .foregroundColor(Color("SecondaryColor"))
+                }
+            }
+        }
+        .navigationBarBackButtonHidden(true)
+    }
+}
+
 // For reference, fixing the swiping feature if the NavigationView is hidden
 // https://stackoverflow.com/questions/59921239/hide-navigation-bar-without-losing-swipe-back-gesture-in-swiftui
 extension UINavigationController: UIGestureRecognizerDelegate {
