@@ -7,9 +7,24 @@
 
 import SwiftUI
 
-struct LearnTime: View {
+struct ModuleTime: ILearning {
+    var id: UUID = UUID()
+    
+    static var MATERIAL_TITLE: String = "Time"
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text(" hihihii")
+        }
+        .foregroundColor(Color("SecondaryColor"))
+    }
+}
+
+struct LearnTime : View {
+    var body: some View {
+        LearningMaterialBoilerPlate(
+            ModuleContent: AnyView(ModuleTime()),
+            MATERIAL_TITLE: ModuleTime.MATERIAL_TITLE)
     }
 }
 

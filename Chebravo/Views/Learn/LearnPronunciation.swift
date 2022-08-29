@@ -7,11 +7,33 @@
 
 import SwiftUI
 
-struct LearnPronunciation: View {
+struct ModulePronunciation: ILearning {
+    var id: UUID = UUID()
+    static var MATERIAL_TITLE: String = "Pronunciation"
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text("Pronunciation")
+                .font(.title)
+            Divider()
+            Text("This is cool because")
+            Text("che makes kə")
+            Text("ce makes sh")
+        }
+        .foregroundColor(Color("SecondaryColor"))
     }
 }
+
+struct LearnPronunciation : View {
+    
+    var body: some View {
+        LearningMaterialBoilerPlate(
+            ModuleContent: AnyView(ModulePronunciation()),
+            MATERIAL_TITLE: ModulePronunciation.MATERIAL_TITLE
+        )
+    }
+}
+
 
 struct LearnPronunciation_Previews: PreviewProvider {
     static var previews: some View {

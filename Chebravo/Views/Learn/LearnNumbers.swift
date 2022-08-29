@@ -9,7 +9,7 @@ import SwiftUI
 import AVFoundation
 
 /// <summary> All the numbers is the learning material for this view </summary>
-struct NumbersModule: View, ILearning {
+struct NumbersModule: ILearning {
     var AC : AudioController = AudioController()
     var id = UUID()
     
@@ -124,7 +124,6 @@ struct NumbersModule: View, ILearning {
 
 // MARK: Main body
 struct LearnNumbers: View {
-    let id = UUID()
     
     var body: some View {
         LearningMaterialBoilerPlate(

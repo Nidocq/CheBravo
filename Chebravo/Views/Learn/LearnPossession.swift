@@ -7,9 +7,22 @@
 
 import SwiftUI
 
-struct LearnPossession: View {
+struct ModulePossession: ILearning {
+    var id: UUID = UUID()
+    
+    static var MATERIAL_TITLE: String = "Possessions "
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("yeah idk")
+    }
+}
+
+struct LearnPossession : View {
+    var body: some View {
+        LearningMaterialBoilerPlate(
+            ModuleContent: AnyView(ModuleConjugation()),
+            MATERIAL_TITLE: ModulePossession.MATERIAL_TITLE
+        )
     }
 }
 

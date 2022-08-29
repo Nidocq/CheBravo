@@ -8,7 +8,7 @@
 import SwiftUI
 
 /// <summary> Articles as "The, a, an" and how to use them in Italian </summary>
-struct ArticleModule : View, ILearning {
+struct ArticleModule : ILearning {
     var id: UUID = UUID()
     
     static let MATERIAL_TITLE = "Articles"
@@ -27,7 +27,6 @@ struct ArticleModule : View, ILearning {
 /// <summary> Boiler plate implementation with the module constructed above
 /// </summary>
 struct LearnArticles: View {
-    let id = UUID()
     
     var body: some View {
         LearningMaterialBoilerPlate(

@@ -272,16 +272,16 @@
 		1C6FDD45288C6B12001A41E0 /* Learn */ = {
 			isa = PBXGroup;
 			children = (
-				1CBA3A40288AE2FD00777ADB /* LearnView.swift */,
-				1CB5F42528BB79490059E135 /* LearnPronunciation.swift */,
-				1CCDE84C28A56BFE0052037C /* LearnArticles.swift */,
-				1C6FDD46288C6BBE001A41E0 /* LearnNumbers.swift */,
 				1C6FDD48288C6BCC001A41E0 /* ILearning.swift */,
-				1CB5F42728BB7B350059E135 /* LearnDirections.swift */,
+				1CBA3A40288AE2FD00777ADB /* LearnView.swift */,
+				1C6FDD46288C6BBE001A41E0 /* LearnNumbers.swift */,
+				1CCDE84C28A56BFE0052037C /* LearnArticles.swift */,
+				1CB5F42528BB79490059E135 /* LearnPronunciation.swift */,
 				1CB5F42928BB7BE20059E135 /* LearnAskingQuestions.swift */,
-				1CB5F42B28BB7BF40059E135 /* LearnTime.swift */,
-				1CB5F42D28BB7BFD0059E135 /* LearnPossession.swift */,
 				1CB5F42F28BB7C060059E135 /* LearnConjugation.swift */,
+				1CB5F42D28BB7BFD0059E135 /* LearnPossession.swift */,
+				1CB5F42B28BB7BF40059E135 /* LearnTime.swift */,
+				1CB5F42728BB7B350059E135 /* LearnDirections.swift */,
 			);
 			path = Learn;
 			sourceTree = "<group>";

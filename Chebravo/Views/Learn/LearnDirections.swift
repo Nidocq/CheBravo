@@ -7,9 +7,30 @@
 
 import SwiftUI
 
-struct LearnDirections: View {
+struct ModuleDirections: ILearning {
+    var id: UUID = UUID()
+    
+    static var MATERIAL_TITLE: String = "Directions"
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            HStack {
+                Text("Sinistra")
+                Spacer()
+                Text("Destra")
+            }
+            .padding(15)
+        }
+        .foregroundColor(Color("SecondaryColor"))
+    }
+}
+
+struct LearnDirections : View {
+    var body: some View {
+        LearningMaterialBoilerPlate(
+            ModuleContent: AnyView(ModuleDirections()),
+            MATERIAL_TITLE: ModuleDirections.MATERIAL_TITLE
+        )
     }
 }
 
