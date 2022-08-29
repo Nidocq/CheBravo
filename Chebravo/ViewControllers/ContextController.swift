@@ -28,7 +28,7 @@ class ContextController : ObservableObject {
             let newWord = Word(context: viewContext)
             newWord.name = Wordname
             newWord.date = Date.now
-            // TODO: Nullcheck translation of word
+            // if word is unvalid this will become "Unkown"
             newWord.translationToEnglish = await TC.translateText(text: Wordname)
             try? viewContext.save()
             await Haptic.notificationOccurred(.success)
@@ -46,7 +46,7 @@ class ContextController : ObservableObject {
             newExample.context = ExampleText
             newExample.date = Date.now
             newExample.note = note
-            // TODO: Nullcheck translation of word
+            // if example is unvalid this will become "Unkown"
             newExample.translationToEnglish = await TC.translateText(text: ExampleText)
             try? viewContext.save()
             await Haptic.notificationOccurred(.success)

@@ -13,4 +13,5 @@ import SwiftUI
 /// it easier to work with in the future as well </summary>
 protocol ILearning : View, Identifiable {
     var id : UUID { get }
+    static var MATERIAL_TITLE : String { get }
 }

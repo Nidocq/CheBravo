@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-
+// MARK: Enums
 /// Word type
 enum WordType : String {
     case adjective = "Adjective"
@@ -28,20 +28,38 @@ enum ViewOptions: String, CaseIterable {
 
 }
 
+
+// MARK: Learning material extensions
+/// <summary> BoilerPlate used for all the material that all the modules have
+/// in common in order to DRY </summary>
+/// <remarks>
+/// - Provides Background color on the main view that calls .infinify on Zstack
+/// - Two tab icons
+///     - Back button for going back the all the modules
+///     - TODO: List icon for the module (to be implemented)
+/// - Hiding the navigationBar
+/// - Setting the navigationTitle to MATERIAL_TITLE
+/// </remarks>
+/// <param name="ModuleContent"> A View which is the specific module content
+/// </param>
+/// <param name="MATERIAL_TITLE"> The name of the module </param>
 struct LearningMaterialBoilerPlate : View {
     @Environment(\.dismiss) var dismiss
     var ModuleContent : AnyView
+    let MATERIAL_TITLE : String 
     
-    init(ModuleContent : AnyView) {
+    init(ModuleContent : AnyView, MATERIAL_TITLE : String) {
         self.ModuleContent = ModuleContent
+        self.MATERIAL_TITLE = MATERIAL_TITLE
     }
     
     var body: some View {
         ZStack {
             Color("PrimaryColor")
                 .ignoresSafeArea()
-            ModuleContent
+            self.ModuleContent
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
@@ -66,9 +84,68 @@ struct LearningMaterialBoilerPlate : View {
             }
         }
         .navigationBarBackButtonHidden(true)
+        .navigationTitle(self.MATERIAL_TITLE)
     }
 }
 
+struct LearningHeading : View {
+    var subTitle : String? = nil
+    
+    // Making this an optional parameter
+    init(subTitle : String? = nil) {
+        self.subTitle = subTitle
+        
+    }
+    
+    var body: some View {
+        VStack {
+            HStack {
+                Text("Examples")
+                    .fontWeight(.heavy)
+                    .underline()
+                Image(systemName: "text.magnifyingglass")
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+            .font(.system(size: 30))
+            .foregroundColor(Color("SecondaryColor"))
+            if self.subTitle != nil {
+                Text(self.subTitle!)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                    .foregroundColor(Color("SecondaryColor"))
+                    .padding(.bottom, 4)
+            }
+        }
+    }
+}
+    
+
+/// <summary> Info graphic for the learning modules that translates examples
+/// that are associated with the specific module </summary>
+struct LearningExample : View {
+    var ItalianExample : String
+    var EnglishTranslation : String
+    
+    var body : some View {
+        VStack(alignment: .leading) {
+            
+            Text(ItalianExample)
+                        .fontWeight(.bold)
+            
+            VStack {
+                HStack {
+                    Image(systemName: "arrow.turn.down.right")
+                        .padding(.leading, 30)
+                    Text(EnglishTranslation)
+                }
+            }
+        }
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+            .foregroundColor(Color("SecondaryColor"))
+    }
+}
+
+
+// MARK: Universal settings
 // For reference, fixing the swiping feature if the NavigationView is hidden
 // https://stackoverflow.com/questions/59921239/hide-navigation-bar-without-losing-swipe-back-gesture-in-swiftui
 extension UINavigationController: UIGestureRecognizerDelegate {
