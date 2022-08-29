@@ -26,7 +26,6 @@ struct AllExamples: View {
                 
                 VStack {
                     Seperator(paddingLeadingTrailing : 0)
-                        .padding(.top, 15)
                     
                     ScrollView {
                         ForEach(examples, id: \.self) { ex in
@@ -37,8 +36,8 @@ struct AllExamples: View {
                                 ExampleShowCase(ex: ex)
                             }
                         }
+                        .padding(.top, paddingFromTitleToExamples)
                     }
-                    .padding(.top, paddingFromTitleToExamples)
                 }
             }.toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -85,40 +84,40 @@ struct ExampleShowCase : View {
             HStack(spacing: 0) {
                 Rectangle()
                     .fill(Color("SecondaryColor"))
-                    .frame(maxWidth: 10, maxHeight: .infinity, alignment: .leading)
+                    .frame(
+                        maxWidth:  10,
+                        maxHeight: .infinity,
+                        alignment: .leading
+                    )
+                
                 VStack(alignment: .leading) {
                     HStack {
                         Text(ex.note ?? "No note")
                             .bold()
                             .font(.system(size: 20))
+                            .padding(.bottom, 1)
                         Spacer()
                         Image(systemName: "highlighter")
                     }
                         Text(ex.context ?? "No translation")
+                        .multilineTextAlignment(.leading)
+                        // In order to not disturb the highlighter icon
+                        .padding(.trailing, 15)
+
                 }
                 .foregroundColor(Color("SecondaryColor"))
                 .padding()
                 
             }
-            .frame(maxWidth: .infinity, maxHeight: 100, alignment: .leading)
-            .border(Color("SecondaryColor"))
-            .cornerRadius(10)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .border(Color("SecondaryColor"), width: 1.5)
+            .cornerRadius(6)
+           
      
 
         }
-        .padding(14)
-//        VStack(alignment: .leading) {
-//            Text(ex.note ?? "No Note")
-//                .bold()
-//                .font(.system(size: 24))
-//            Text(ex.context ?? "")
-//                .fixedSize(horizontal: false, vertical: true)
-//        }
-//        .foregroundColor(Color("SecondaryColor"))
-//        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-//        .background(Color("PrimaryColor"))
-//        .padding([.top, .bottom], paddingTopBottom)
-//        .padding([.leading, .trailing], paddingLeadingTrailing)
+        
+        .padding([.trailing, .leading], 15)
+        .padding(.bottom, 4)
     }
 }
-

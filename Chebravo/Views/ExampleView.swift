@@ -31,6 +31,7 @@ struct ExampleView: View {
                         .font(.system(size: 24))
                     Text(example.context ?? "Unkown")
                 }
+                    .foregroundColor(.black)
                     .padding([.leading, .trailing], paddingOnSides)
                     .padding([.top, .bottom], 16)
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -42,6 +43,8 @@ struct ExampleView: View {
                         .bold()
                         .font(.system(size: 24))
                     Text(example.translationToEnglish ?? "Unkown")
+                        .multilineTextAlignment(.leading)
+                    
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .foregroundColor(Color("SecondaryColor"))
