@@ -28,7 +28,7 @@ struct LearnView: View {
                 Color("PrimaryColor")
                     .ignoresSafeArea()
                 
-                ScrollView {
+                ScrollView(showsIndicators: false) {
                     // TODO: Make the module display display the modules
                         // dynamically so there is less code
                     LazyVGrid(columns: columns, spacing: 0) {
