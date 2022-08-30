@@ -18,6 +18,7 @@ struct AllWords: View {
     @State private var IsHelpSheetActive = false
     @State var selectedViewOption : ViewOptions = ViewOptions.translation
     
+    @State private var something : Int = -8
     
     let paddingLeadingTrailing : CGFloat = 18
     let cornerRadiusAmount : CGFloat = 10
@@ -55,14 +56,19 @@ struct AllWords: View {
                         paddingLeadingTrailing: paddingLeadingTrailing
                     )
                     
-                    // based on ViewSelection, how should words be displayed
-                    switch selectedViewOption {
-                        case ViewOptions.translation:
-                            TranslatedViewOption(words: words, paddingLeadingTrailing: paddingLeadingTrailing)
-                        case ViewOptions.compact:
-                            CompactViewOption(paddingLeadingTrailing: paddingLeadingTrailing, words: words)
+                    // If the user is new, thus 0 words, help them understand
+                    // The concept with an infographic
+                    if (words.count <= 0) {
+                        HelpingGraphic()
+                    } else {
+                        // based on ViewSelection, how should words be displayed
+                        switch selectedViewOption {
+                            case ViewOptions.translation:
+                                TranslatedViewOption(words: words, paddingLeadingTrailing: paddingLeadingTrailing)
+                            case ViewOptions.compact:
+                                CompactViewOption(paddingLeadingTrailing: paddingLeadingTrailing, words: words)
+                        }
                     }
-                    
 
                 }
             }
@@ -247,6 +253,44 @@ struct CompactViewOption : View {
             }
                 .padding([.leading, .trailing], paddingLeadingTrailing)
         }
+    }
+}
+
+struct HelpingGraphic : View {
+    @State private var animationAmount : Int = -8
+    var body: some View {
+        VStack(alignment: .center) {
+            Image(systemName: "arrow.triangle.merge")
+                .font(.system(size: 120))
+                .padding([.top, .bottom], 10)
+                .offset(y: CGFloat(animationAmount))
+                .onAppear {
+                    withAnimation(.easeInOut(duration: 2.5).repeatForever()) {
+                        // Going from minus to positive
+                        animationAmount = abs(animationAmount)
+                    }
+                }
+            
+            HStack {
+                Text("Ciao 🇮🇹")
+                Image(systemName: "arrow.right")
+                    .font(.system(size: 12))
+                Text("ADD WORD")
+                    .frame(maxWidth: 80, maxHeight: 10)
+                    .font(.system(size: 13))
+                    .padding()
+                    .background(Color("SecondaryColor"))
+                    .cornerRadius(10)
+                    .foregroundColor(.black)
+                Image(systemName: "arrow.right")
+                    .font(.system(size: 12))
+                Text("Hi 🇬🇧")
+            }
+            .offset(x: -10)
+            Spacer()
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+        .opacity(0.75)
     }
 }
 
