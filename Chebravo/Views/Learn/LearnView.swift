@@ -98,7 +98,7 @@ struct LearnView: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment:.leading)
                 .padding([.leading, .trailing], 20)
             }
-            .navigationTitle("Learn")
+            .navigationTitle("Modules")
         }
     }
 }
