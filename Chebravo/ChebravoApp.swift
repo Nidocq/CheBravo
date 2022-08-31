@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-// TODO: Do so you can add examples to a specific view as well
 // TODO: Have a database that checks for common words.
 //      * Maybe every 500 most common words have their conjugation
 // TODO: Goto the words or examples when you have created them
