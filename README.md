@@ -33,11 +33,11 @@ Jul 6 : \
 <img src="./assets/updatejul6.png" width="180">
 
 Aug 31 : \
-<img src="./assets/update_31Aug1.png" width="180">
-<img src="./assets/update_31Aug2.png" width="180">
-<img src="./assets/update_31Aug3.png" width="180">
-<img src="./assets/update_31Aug4.png" width="180">
-<img src="./assets/update_31Aug%.png" width="180">
+<img src="./assets/update_31Aug1.PNG" width="180">
+<img src="./assets/update_31Aug2.PNG" width="180">
+<img src="./assets/update_31Aug3.PNG" width="180">
+<img src="./assets/update_31Aug4.PNG" width="180">
+<img src="./assets/update_31Aug%.PNG" width="180">
 
 
 CheBravo uses API from [DeepL](https://www.deepl.com/translator) in order to effectively translate words.
