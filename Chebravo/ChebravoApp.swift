@@ -9,7 +9,6 @@ import SwiftUI
 
 // TODO: Have a database that checks for common words.
 //      * Maybe every 500 most common words have their conjugation
-// TODO: Goto the words or examples when you have created them
 
 @main
 struct ChebravoApp: App {

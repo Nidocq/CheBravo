@@ -36,7 +36,6 @@ enum ViewOptions: String, CaseIterable {
 /// - Provides Background color on the main view that calls .infinify on Zstack
 /// - Two tab icons
 ///     - Back button for going back the all the modules
-///     - TODO: List icon for the module (to be implemented)
 /// - Hiding the navigationBar
 /// - Setting the navigationTitle to MATERIAL_TITLE
 /// </remarks>
@@ -57,7 +56,12 @@ struct LearningMaterialBoilerPlate : View {
         ZStack {
             Color("PrimaryColor")
                 .ignoresSafeArea()
-            self.ModuleContent
+            VStack {
+                Text("")
+                ScrollView {
+                    self.ModuleContent
+                }
+            }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         

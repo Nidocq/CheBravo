@@ -27,72 +27,76 @@ struct LearnView: View {
             ZStack {
                 Color("PrimaryColor")
                     .ignoresSafeArea()
-                
-                ScrollView(showsIndicators: false) {
-                    // TODO: Make the module display display the modules
-                        // dynamically so there is less code
-                    LazyVGrid(columns: columns, spacing: 0) {
-                        NavigationLink(
-                            destination: LearnNumbers()) {
-                            ModuleDisplay(
-                                moduleName: ModuleNumbers.MATERIAL_TITLE,
-                                moduleIcon: ModuleNumbers.ICON_NAME
-                            )
-                        }
+                VStack {
+                    // Having something in the VStack makes the title not
+                    // go into compact mode hence empty Text
+                    Text("")
+                    ScrollView(showsIndicators: false) {
+                        // TODO: Make the module display display the modules
+                            // dynamically so there is less code
+                        LazyVGrid(columns: columns, spacing: 0) {
+                            NavigationLink(
+                                destination: LearnNumbers()) {
+                                ModuleDisplay(
+                                    moduleName: ModuleNumbers.MATERIAL_TITLE,
+                                    moduleIcon: ModuleNumbers.ICON_NAME
+                                )
+                            }
 
-                        NavigationLink(
-                            destination: LearnArticles()) {
-                            ModuleDisplay(
-                                moduleName: ModuleArticles.MATERIAL_TITLE,
-                                moduleIcon: ModuleArticles.ICON_NAME
-                            )
+                            NavigationLink(
+                                destination: LearnArticles()) {
+                                ModuleDisplay(
+                                    moduleName: ModuleArticles.MATERIAL_TITLE,
+                                    moduleIcon: ModuleArticles.ICON_NAME
+                                )
+                            }
+                            
+                            NavigationLink(destination: LearnPronunciation()) {
+                                ModuleDisplay(
+                                    moduleName: ModulePronunciation.MATERIAL_TITLE,
+                                    moduleIcon: ModulePronunciation.ICON_NAME
+                                )
+                            }
+                            
+                            NavigationLink(destination: LearnAskingQuestions()) {
+                                ModuleDisplay(
+                                    moduleName: ModuleAskingQuestions.MATERIAL_TITLE,
+                                    moduleIcon: ModuleAskingQuestions.ICON_NAME
+                                )
+                            }
+                            
+                            NavigationLink(destination: LearnConjugation()) {
+                                ModuleDisplay(
+                                    // Material name is not the same as the displayed
+                                    // Title in LearnView
+                                    moduleName: "Common Verbs & Conjugations",
+                                    moduleIcon: ModuleConjugation.ICON_NAME
+                                )
+                            }
+                            
+                            NavigationLink(destination: LearnPossession()) {
+                                ModuleDisplay(
+                                    moduleName: ModulePossession.MATERIAL_TITLE,
+                                    moduleIcon: ModulePossession.ICON_NAME
+                                )
+                            }
+                            
+                            NavigationLink(destination: LearnTime()) {
+                                ModuleDisplay(
+                                    moduleName: ModuleTime.MATERIAL_TITLE,
+                                    moduleIcon: ModuleTime.ICON_NAME
+                                )
+                            }
+                            
+                            NavigationLink(destination: LearnDirections()) {
+                                ModuleDisplay(
+                                    moduleName: ModuleDirections.MATERIAL_TITLE,
+                                    moduleIcon: ModuleDirections.ICON_NAME
+                                )
+                            }
                         }
-                        
-                        NavigationLink(destination: LearnPronunciation()) {
-                            ModuleDisplay(
-                                moduleName: ModulePronunciation.MATERIAL_TITLE,
-                                moduleIcon: ModulePronunciation.ICON_NAME
-                            )
-                        }
-                        
-                        NavigationLink(destination: LearnAskingQuestions()) {
-                            ModuleDisplay(
-                                moduleName: ModuleAskingQuestions.MATERIAL_TITLE,
-                                moduleIcon: ModuleAskingQuestions.ICON_NAME
-                            )
-                        }
-                        
-                        NavigationLink(destination: LearnConjugation()) {
-                            ModuleDisplay(
-                                // Material name is not the same as the displayed
-                                // Title in LearnView
-                                moduleName: "Common Verbs & Conjugations",
-                                moduleIcon: ModuleConjugation.ICON_NAME
-                            )
-                        }
-                        
-                        NavigationLink(destination: LearnPossession()) {
-                            ModuleDisplay(
-                                moduleName: ModulePossession.MATERIAL_TITLE,
-                                moduleIcon: ModulePossession.ICON_NAME
-                            )
-                        }
-                        
-                        NavigationLink(destination: LearnTime()) {
-                            ModuleDisplay(
-                                moduleName: ModuleTime.MATERIAL_TITLE,
-                                moduleIcon: ModuleTime.ICON_NAME
-                            )
-                        }
-                        
-                        NavigationLink(destination: LearnDirections()) {
-                            ModuleDisplay(
-                                moduleName: ModuleDirections.MATERIAL_TITLE,
-                                moduleIcon: ModuleDirections.ICON_NAME
-                            )
-                        }
+                        .padding()
                     }
-                    .padding()
                 }
                 .foregroundColor(Color("SecondaryColor"))
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment:.leading)
