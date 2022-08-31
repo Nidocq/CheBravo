@@ -10,7 +10,8 @@ import SwiftUI
 struct ModulePossession: ILearning {
     var id: UUID = UUID()
     
-    static var MATERIAL_TITLE: String = "Possessions "
+    static var MATERIAL_TITLE : String = "Possessive Adjectives"
+    static var ICON_NAME : String = "figure.wave"
     
     var body: some View {
         Text("yeah idk")

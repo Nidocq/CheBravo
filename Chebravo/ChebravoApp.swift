@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-// TODO: Make a anti-hero animation when there are no words Something like -> "No words added, try adding one uphere *hint*
-
 // TODO: Do so you can add examples to a specific view as well
 // TODO: Have a database that checks for common words.
 //      * Maybe every 500 most common words have their conjugation

@@ -35,58 +35,60 @@ struct LearnView: View {
                         NavigationLink(
                             destination: LearnNumbers()) {
                             ModuleDisplay(
-                                moduleName: "Numbers",
-                                moduleIcon: "textformat.123"
+                                moduleName: ModuleNumbers.MATERIAL_TITLE,
+                                moduleIcon: ModuleNumbers.ICON_NAME
                             )
                         }
 
                         NavigationLink(
                             destination: LearnArticles()) {
                             ModuleDisplay(
-                                moduleName: "Definite Articles",
-                                moduleIcon: "textformat.subscript"
+                                moduleName: ModuleArticles.MATERIAL_TITLE,
+                                moduleIcon: ModuleArticles.ICON_NAME
                             )
                         }
                         
                         NavigationLink(destination: LearnPronunciation()) {
                             ModuleDisplay(
-                                moduleName: "Pronunciation",
-                                moduleIcon: "message"
+                                moduleName: ModulePronunciation.MATERIAL_TITLE,
+                                moduleIcon: ModulePronunciation.ICON_NAME
                             )
                         }
                         
                         NavigationLink(destination: LearnAskingQuestions()) {
                             ModuleDisplay(
-                                moduleName: "Asking Questions",
-                                moduleIcon: "questionmark"
+                                moduleName: ModuleAskingQuestions.MATERIAL_TITLE,
+                                moduleIcon: ModuleAskingQuestions.ICON_NAME
                             )
                         }
                         
                         NavigationLink(destination: LearnConjugation()) {
                             ModuleDisplay(
+                                // Material name is not the same as the displayed
+                                // Title in LearnView
                                 moduleName: "Common Verbs & Conjugations",
-                                moduleIcon: "table"
+                                moduleIcon: ModuleConjugation.ICON_NAME
                             )
                         }
                         
                         NavigationLink(destination: LearnPossession()) {
                             ModuleDisplay(
-                                moduleName: "Possessive Adjectives",
-                                moduleIcon: "figure.wave"
+                                moduleName: ModulePossession.MATERIAL_TITLE,
+                                moduleIcon: ModulePossession.ICON_NAME
                             )
                         }
                         
                         NavigationLink(destination: LearnTime()) {
                             ModuleDisplay(
-                                moduleName: "Talking About Time",
-                                moduleIcon: "clock"
+                                moduleName: ModuleTime.MATERIAL_TITLE,
+                                moduleIcon: ModuleTime.ICON_NAME
                             )
                         }
                         
                         NavigationLink(destination: LearnDirections()) {
                             ModuleDisplay(
-                                moduleName: "Directions",
-                                moduleIcon: "arrow.up.right.and.arrow.down.left.rectangle"
+                                moduleName: ModuleDirections.MATERIAL_TITLE,
+                                moduleIcon: ModuleDirections.ICON_NAME
                             )
                         }
                     }

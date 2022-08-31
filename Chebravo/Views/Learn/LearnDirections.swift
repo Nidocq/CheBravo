@@ -11,6 +11,7 @@ struct ModuleDirections: ILearning {
     var id: UUID = UUID()
     
     static var MATERIAL_TITLE: String = "Directions"
+    static var ICON_NAME : String = "arrow.up.right.and.arrow.down.left.rectangle"
     
     var body: some View {
         VStack {

@@ -10,7 +10,8 @@ import SwiftUI
 struct ModuleTime: ILearning {
     var id: UUID = UUID()
     
-    static var MATERIAL_TITLE: String = "Time"
+    static var MATERIAL_TITLE : String = "Talking About Time"
+    static var ICON_NAME : String = "clock"
     
     var body: some View {
         VStack {

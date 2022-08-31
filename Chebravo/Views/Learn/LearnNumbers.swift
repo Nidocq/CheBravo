@@ -9,11 +9,12 @@ import SwiftUI
 import AVFoundation
 
 /// <summary> All the numbers is the learning material for this view </summary>
-struct NumbersModule: ILearning {
+struct ModuleNumbers: ILearning {
     var AC : AudioController = AudioController()
     var id = UUID()
     
-    static let MATERIAL_TITLE : String = "Learn Numbers"
+    static let MATERIAL_TITLE : String = "Numbers"
+    static let ICON_NAME : String = "textformat.123"
     
     let NumberIT : [String] = [
         "Zero", "Uno", "Due", "Tre", "Quattro", "Cinque", "Sei", "Sette", "Otto", "Nove", "Dieci",
@@ -127,8 +128,8 @@ struct LearnNumbers: View {
     
     var body: some View {
         LearningMaterialBoilerPlate(
-            ModuleContent: AnyView(NumbersModule()),
-            MATERIAL_TITLE: NumbersModule.MATERIAL_TITLE
+            ModuleContent: AnyView(ModuleNumbers()),
+            MATERIAL_TITLE: ModuleNumbers.MATERIAL_TITLE
         )
     }
 }

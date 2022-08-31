@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ModuleConjugation: ILearning {
     var id: UUID = UUID()
-    static var MATERIAL_TITLE: String = "Conjugation"
+    static var MATERIAL_TITLE : String = "Conjugation & Verbs"
+    static var ICON_NAME : String = "table"
     
     var body: some View {
         VStack {

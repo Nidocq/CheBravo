@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ModuleAskingQuestions: ILearning {
     var id: UUID = UUID()
-    static var MATERIAL_TITLE: String = "Asking Questions"
+    static var MATERIAL_TITLE : String = "Asking Questions"
+    static var ICON_NAME : String = "questionmark"
     
     
     var body: some View {

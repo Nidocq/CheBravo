@@ -8,10 +8,11 @@
 import SwiftUI
 
 /// <summary> Articles as "The, a, an" and how to use them in Italian </summary>
-struct ArticleModule : ILearning {
+struct ModuleArticles : ILearning {
     var id: UUID = UUID()
     
-    static let MATERIAL_TITLE = "Articles"
+    static let MATERIAL_TITLE : String = "Articles"
+    static let ICON_NAME : String = "textformat.subscript"
     
     var body: some View {
         VStack {
@@ -27,11 +28,10 @@ struct ArticleModule : ILearning {
 /// <summary> Boiler plate implementation with the module constructed above
 /// </summary>
 struct LearnArticles: View {
-    
     var body: some View {
         LearningMaterialBoilerPlate(
-            ModuleContent: AnyView(ArticleModule()),
-            MATERIAL_TITLE: ArticleModule.MATERIAL_TITLE
+            ModuleContent: AnyView(ModuleArticles()),
+            MATERIAL_TITLE: ModuleArticles.MATERIAL_TITLE
         )
     }
 }

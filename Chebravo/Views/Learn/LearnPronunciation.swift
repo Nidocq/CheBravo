@@ -10,6 +10,7 @@ import SwiftUI
 struct ModulePronunciation: ILearning {
     var id: UUID = UUID()
     static var MATERIAL_TITLE: String = "Pronunciation"
+    static var ICON_NAME : String = "message"
     
     var body: some View {
         VStack {
