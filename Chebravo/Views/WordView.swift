@@ -12,7 +12,7 @@ import SwiftUI
 /// <summary> Displays information about the Verb that the user has saved </summary>
 /// <remarks> This libaray will be useful for making connections
 /// https://github.com/ian-hamlin/verb-data/tree/master/json/italian </remarks>
-struct VerbView: View {
+struct WordView: View {
     @Environment(\.presentationMode) var presentationMode
     @State var isSheetPresent : Bool = false
     @ObservedObject var word : Word
@@ -69,7 +69,7 @@ struct VerbView: View {
                     
                     VStack {
                         SubTitle(name: "Example")
-                        ExampleTranslation()
+                        ExampleTranslation(wordString: word.name ?? "Unkown")
                        
                     }
                     .frame(maxWidth: .infinity)
@@ -137,6 +137,15 @@ struct SubTitle: View {
 /// <summary> Gives a translates with the word as example <summary>
 /// <remarks> Not yet implemented </remarks>
 struct ExampleTranslation: View {
+    let wordString : String
+    
+    @FetchRequest(sortDescriptors: [])
+    var allExamples : FetchedResults<Example>
+    
+//    func wordMatchExample(word : String, allExamples : FetchedResults<Example>) -> [Example] {
+//        return allExamples
+//    }
+    
     var body: some View {
         VStack {
             Group {
