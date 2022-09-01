@@ -68,7 +68,7 @@ struct WordView: View {
                     }
                     
                     VStack {
-                        SubTitle(name: "Example")
+                        SubTitle(name: "Your examples")
                         ExampleTranslation(wordString: word.name ?? "Unkown")
                        
                     }
@@ -137,26 +137,29 @@ struct SubTitle: View {
 /// <summary> Gives a translates with the word as example <summary>
 /// <remarks> Not yet implemented </remarks>
 struct ExampleTranslation: View {
-    let wordString : String
+    let wordString : String?
+    let CC : ContextController = ContextController()
     
     @FetchRequest(sortDescriptors: [])
     var allExamples : FetchedResults<Example>
     
-//    func wordMatchExample(word : String, allExamples : FetchedResults<Example>) -> [Example] {
-//        return allExamples
-//    }
-    
     var body: some View {
         VStack {
-            Group {
-                Text("This is some text")
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                Text("This is translation text")
-                    .frame(maxWidth: .infinity, alignment: .trailing)
-            }
-            .padding([.trailing, .leading], 40)
-            .padding([.top, .bottom], 10)
-            .foregroundColor(.white)
+            Text("Hl")
+//            if () {
+//                Group {
+//                    Text("This is some text")
+//                        .frame(maxWidth: .infinity, alignment: .leading)
+//                    Text("This is translation text")
+//                        .frame(maxWidth: .infinity, alignment: .trailing)
+//                }
+//                .padding([.trailing, .leading], 40)
+//                .padding([.top, .bottom], 10)
+//                .foregroundColor(.white)
+//            } else {
+//
+//            }
+            
             
         }
     }

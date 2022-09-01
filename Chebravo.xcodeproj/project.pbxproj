@@ -22,7 +22,7 @@
 		1C807443288BF8A000E44F49 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C807442288BF8A000E44F49 /* SettingsView.swift */; };
 		1C82617D28A6DC3600F77977 /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C82617C28A6DC3600F77977 /* AudioController.swift */; };
 		1C99542728689C6700C6B839 /* AllWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C99542628689C6700C6B839 /* AllWords.swift */; };
-		1C99542928689E3100C6B839 /* VerbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C99542828689E3100C6B839 /* VerbView.swift */; };
+		1C99542928689E3100C6B839 /* WordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C99542828689E3100C6B839 /* WordView.swift */; };
 		1C9CB422286C20090082ECB8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9CB421286C20090082ECB8 /* Extensions.swift */; };
 		1CA9FE5E28B02F580066A8A2 /* 60.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1CA9FE3328B02F570066A8A2 /* 60.mp3 */; };
 		1CA9FE5F28B02F580066A8A2 /* 11.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1CA9FE3428B02F570066A8A2 /* 11.mp3 */; };
@@ -117,7 +117,7 @@
 		1C807442288BF8A000E44F49 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		1C82617C28A6DC3600F77977 /* AudioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioController.swift; sourceTree = "<group>"; };
 		1C99542628689C6700C6B839 /* AllWords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllWords.swift; sourceTree = "<group>"; };
-		1C99542828689E3100C6B839 /* VerbView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbView.swift; sourceTree = "<group>"; };
+		1C99542828689E3100C6B839 /* WordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordView.swift; sourceTree = "<group>"; };
 		1C9CB421286C20090082ECB8 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		1CA9FE3328B02F570066A8A2 /* 60.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 60.mp3; sourceTree = "<group>"; };
 		1CA9FE3428B02F570066A8A2 /* 11.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 11.mp3; sourceTree = "<group>"; };
@@ -261,7 +261,7 @@
 				1C99542628689C6700C6B839 /* AllWords.swift */,
 				1C807442288BF8A000E44F49 /* SettingsView.swift */,
 				1CBA3A44288AE67800777ADB /* TutorialView.swift */,
-				1C99542828689E3100C6B839 /* VerbView.swift */,
+				1C99542828689E3100C6B839 /* WordView.swift */,
 				1CBA3A42288AE32800777ADB /* AllExamples.swift */,
 				1CD36C6428B2415000653348 /* ExampleView.swift */,
 				1CD36C6228B236B700653348 /* AddNewExampleView.swift */,
@@ -574,7 +574,7 @@
 				1CBA3A41288AE2FD00777ADB /* LearnView.swift in Sources */,
 				1C207C842869F89A00847EB2 /* CoreDataController.swift in Sources */,
 				1C82617D28A6DC3600F77977 /* AudioController.swift in Sources */,
-				1C99542928689E3100C6B839 /* VerbView.swift in Sources */,
+				1C99542928689E3100C6B839 /* WordView.swift in Sources */,
 				1CAEE4A72870DEA2007CAD1F /* APIKey.swift in Sources */,
 				1CBA3A47288AE78700777ADB /* NagivationBarIconView.swift in Sources */,
 				1CBA3A3F288AE23E00777ADB /* NavigationBarView.swift in Sources */,

@@ -199,8 +199,8 @@ struct TranslatedViewOption : View {
                 // serached for, will show up. Update real time
                 NavigationLink(
                     destination:
-                    // When clicked go to Verb View
-                        VerbView(word: word)
+                    // When clicked go to WordView
+                        WordView(word: word)
                 ) {
                     // Style of the navigation link
                     WordDisplay(word: word, ViewOptionType: ViewOptions.translation)
@@ -241,8 +241,8 @@ struct CompactViewOption : View {
                 ForEach(words, id: \.self) { word in
                     NavigationLink(
                         destination:
-                        // When clicked go to Verb View
-                            VerbView(word: word)
+                        // When clicked go to WordView
+                            WordView(word: word)
                     ) {
                         // Style of the navigation link
                         WordDisplay(word: word, ViewOptionType: .compact)
