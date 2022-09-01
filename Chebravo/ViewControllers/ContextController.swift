@@ -13,6 +13,8 @@ import CoreData
 /// <remarks> I can't instantiate the NSManagedObjectContext with this class for some reason, even though
 /// it probably would b better </remarks>
 class ContextController : ObservableObject {
+    @FetchRequest(sortDescriptors: []) var allWords: FetchedResults<Word>
+    @FetchRequest(sortDescriptors: []) var allExamples : FetchedResults<Example>
     
     var TC : TranslationController = TranslationController()
     var Haptic = UINotificationFeedbackGenerator()
@@ -31,7 +33,7 @@ class ContextController : ObservableObject {
             // if word is unvalid this will become "Unkown"
             newWord.translationToEnglish = await TC.translateText(text: Wordname)
             try? viewContext.save()
-            await Haptic.notificationOccurred(.success)
+            Haptic.notificationOccurred(.success)
             
     }
     
@@ -49,7 +51,7 @@ class ContextController : ObservableObject {
             // if example is unvalid this will become "Unkown"
             newExample.translationToEnglish = await TC.translateText(text: ExampleText)
             try? viewContext.save()
-            await Haptic.notificationOccurred(.success)
+            Haptic.notificationOccurred(.success)
             
     }
     
@@ -62,7 +64,7 @@ class ContextController : ObservableObject {
             viewContext.delete(word)
             try? viewContext.save()
         }
-        await Haptic.notificationOccurred(.success)
+        Haptic.notificationOccurred(.success)
     }
     
     /// <summary> Removes an Example from the NSManagedObjectContext </summary>
@@ -73,6 +75,24 @@ class ContextController : ObservableObject {
             viewContext.delete(Example)
             try? viewContext.save()
         }
-        await Haptic.notificationOccurred(.success)
+        Haptic.notificationOccurred(.success)
+    }
+    
+    
+    func wordMatchExample(word : String?, allExamples : FetchedResults<Example>) -> [Example] {
+//        if let word = word {
+//            for ex in allExamples {
+//                if let ex = ex {
+//                    print(ex.context)
+//                } else {
+//                    print("Coulnd't find example")
+//                }
+//            }
+//        }
+//
+//        if (word! == nil | !allExamples.isEmpty) {
+//        }
+        return []
+        
     }
 }
