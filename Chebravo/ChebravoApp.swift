@@ -9,6 +9,7 @@ import SwiftUI
 
 // TODO: Have a database that checks for common words.
 //      * Maybe every 500 most common words have their conjugation
+// https://docs.google.com/document/d/1plph6y-SPUzLXvtWWwxQCCrH5d5qBmhYm-sZlmoFdxk/edit
 
 @main
 struct ChebravoApp: App {
