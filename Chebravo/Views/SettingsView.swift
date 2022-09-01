@@ -47,7 +47,6 @@ struct SettingsView: View {
                 }
                 
                 Section {
-                    // TODO: Example translation configuration
                     Toggle("Switch language to Italian 🇮🇹", isOn: $languageItalian)
                     Text(String(languageItalian))
                     Toggle("Show translation on examples", isOn: $Buttonhaha)

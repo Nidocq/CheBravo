@@ -32,7 +32,6 @@ struct AllExamples: View {
                             NavigationLink(
                                 destination: ExampleView(example: ex)
                             ) {
-                                // TODO: Make a component here for readability
                                 ExampleShowCase(ex: ex)
                             }
                         }

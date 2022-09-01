@@ -8,7 +8,6 @@
 import Foundation
 import SwiftUI
 
-// TODO: Make the clicking of the icons give a little feedback (maybe?)
 // TODO: Make it easier to click on the icons
 
 /// <summary> Icons made for the NavigationBarView. Made to be easily extendable
@@ -20,6 +19,8 @@ import SwiftUI
 /// <param name="color"> color of the component </param>
 struct NavigationBarIconView : View {
     @ObservedObject var viewRouter : ViewRouterController
+    var Haptic = UIImpactFeedbackGenerator(style: .light)
+    
 
     var systemIconName: String
     let description: String
@@ -57,6 +58,7 @@ struct NavigationBarIconView : View {
         .frame(width: UIScreen.main.bounds.size.width / CGFloat(Page.allCases.count + 1)) // +1 by adding another icon to form padding on the sides
         .onTapGesture {
             viewRouter.currentPage = assignedPage
+            Haptic.impactOccurred()
         }
     }
 

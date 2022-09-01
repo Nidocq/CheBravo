@@ -137,9 +137,6 @@ struct SubTitle: View {
 /// <summary> Gives a translates with the word as example <summary>
 /// <remarks> Not yet implemented </remarks>
 struct ExampleTranslation: View {
-    // TODO: Create some translation manager that can translate quotes
-    
-    
     var body: some View {
         VStack {
             Group {

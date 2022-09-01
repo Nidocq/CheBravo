@@ -41,8 +41,7 @@ struct ModulePronunciation: ILearning {
                     secondVowel: "e"
                 )
             }
-            //TODO: Make a sound for the pronunciations
-//            WordPronunciation(pronunciation: "k")
+            
             VStack {
                 Image(systemName: "arrow.down")
                     .font(.system(size: 38))
