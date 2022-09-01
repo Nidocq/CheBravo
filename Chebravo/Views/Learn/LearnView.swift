@@ -114,11 +114,11 @@ struct LearnView: View {
 struct ModuleDisplay : View {
     let moduleName : String
     let moduleIcon : String
-    let completedIconSize : CGFloat = 22
     
     // Should be var if expanded
     // Deprecated because no logic is implemented for complete badges
     let moduleCompleted : Bool = false
+    let completedIconSize : CGFloat = 22
 
     var body: some View {
         VStack {

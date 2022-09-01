@@ -55,6 +55,8 @@ struct ModuleNumbers: ILearning {
                     Text("0-30")
                         .foregroundColor(Color("SecondaryColor"))
                         .font(.system(size: 28))
+                    Seperator()
+                        .padding(.bottom, 20)
                     Picker("Number", selection: $CurrentNumber) {
                         ForEach(0..<31) { num in
                             HStack {
@@ -87,13 +89,13 @@ struct ModuleNumbers: ILearning {
                     .frame(maxWidth: .infinity, minHeight: 30)
                     .padding([.top, .bottom], 8)
                     .background(Color("SecondaryColor"))
+                    .cornerRadius(20)
                     .padding([.trailing, .leading], 22)
                     .shadow(radius: 14, x: 2, y: 6)
 
                 }
                 .padding(.bottom)
             }
-            .border(Color("SecondaryColor"))
             .padding()
         }
         
