@@ -9,10 +9,12 @@ import SwiftUI
 
 // TODO: Make the Darkmode more friendly with colors that are darker than white :(((
 // TODO: If and when someone types in a space, make a popup that says, "Only words are enabled in this view, head to examples to cover your own examples lorum"
-// TODO: Make a little one time tutorial for people who use the app the first time
 
 /// <summary> Showcases all the Words the user has saved so far, Data is saved with CoreData </summary>
 struct AllWords: View {
+    @AppStorage("wordsCreated") var wordsCreated : Int?
+    @AppStorage("languageItalian") var languageItalian : Bool?
+    
     @Environment(\.managedObjectContext) var viewContext
     @State var input : String = ""
     @State private var IsHelpSheetActive = false
@@ -25,7 +27,7 @@ struct AllWords: View {
     let paddingTopBottom : CGFloat = 14
     var wordController = ContextController()
     
-    init() {
+    init(wordsCreated : Int? = 0, languageItalian : Bool? = false) {
         let navBarAppearance = UINavigationBar.appearance()
         navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor(Color("SecondaryColor"))]
         navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor(Color("SecondaryColor"))]
@@ -165,6 +167,8 @@ struct InputField : View {
 /// <param name="paddingLeadingTrailing"> spacing for left and right screen </param>
 struct ViewSelection : View {
     @Binding var selectedViewOption : ViewOptions
+    
+    
     
     // TODO: Styling the ViewPicker
     let paddingLeadingTrailing: CGFloat

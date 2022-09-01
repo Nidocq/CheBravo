@@ -5,6 +5,8 @@
 //  Created by Phillip Lundin on 23/07/2022.
 //
 
+
+//TODO: Make a credit page.
 import SwiftUI
 
 /// <summary> List the different option and information for the user
@@ -12,12 +14,14 @@ import SwiftUI
 struct SettingsView: View {
     @Environment(\.managedObjectContext) var viewContext
     @AppStorage("wordsCreated") var wordsCreated : Int?
+    @AppStorage("languageItalian") var languageItalian : Bool = false
     
     init() {
         // Making the styling fit the theme (overwriting apples own styling)
         UITableView.appearance().separatorStyle = .singleLine
         //UITableViewCell.appearance().backgroundColor = UIColor(Color("SecondaryColor"))
        UITableView.appearance().backgroundColor = UIColor(Color("PrimaryColor"))
+        
     }
     
         @FetchRequest(sortDescriptors: [
@@ -25,6 +29,7 @@ struct SettingsView: View {
     ]) var words: FetchedResults<Word>
     
     @State var Buttonhaha : Bool = false
+    @State var isLanguageItalian : Bool = false
     
     
     var body: some View {
@@ -43,6 +48,8 @@ struct SettingsView: View {
                 
                 Section {
                     // TODO: Example translation configuration
+                    Toggle("Switch language to Italian 🇮🇹", isOn: $languageItalian)
+                    Text(String(languageItalian))
                     Toggle("Show translation on examples", isOn: $Buttonhaha)
                 } header: {
                     Text("Configuration")
