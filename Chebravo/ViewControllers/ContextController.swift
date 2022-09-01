@@ -78,8 +78,22 @@ class ContextController : ObservableObject {
         Haptic.notificationOccurred(.success)
     }
     
-    
-    func wordMatchExample(word : String?, allExamples : FetchedResults<Example>) -> [Example] {
+    /// <summary> Search for a word in all the examples. If a word is found in
+    /// one or more of the examples it will return that list (for being
+    /// displayed in a view) </summary>
+    /// <param name="word"> word which name will be searched for in all examples
+    /// </param>
+    /// <param name="allExampmles"> all examples in which the word name
+    /// is searched through </param>
+    /// <remarks> The translated word will also compare to a translated example
+    /// </remarks>
+    func wordMatchExample(word : Word, allExamples : FetchedResults<Example>) -> [Example] {
+        // Make the word be found in an example with the word
+        // Make the word not be found in an example where the word IS NOT
+        // Make the translated word be found in a translated
+        // Make the translated word in translated example NOT be found
+        // Check for accents where à and a is the same
+        // __________________
 //        if let word = word {
 //            for ex in allExamples {
 //                if let ex = ex {
