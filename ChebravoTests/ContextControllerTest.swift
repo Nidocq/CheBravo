@@ -14,8 +14,6 @@ import CoreData
 class ContextControllerTest: XCTestCase {
     var WC : ContextController!
     @StateObject var CDController = CoreDataController()
-    // NSManagedObjectContext
-    // NSPersistentContainer
     var viewContext: NSManagedObjectContext!
     
     override func setUp() {
@@ -82,23 +80,75 @@ class ContextControllerTest: XCTestCase {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
             let resultsWithAddition = try? self.viewContext.fetch(fetchRequest) as? [NSManagedObject]
             
-            if !(results!.count == 0) {
+            if !(resultsWithAddition!.count == 0) {
                 XCTFail()
             }
         }
     }
     
-    //TODO: Make test for the addExample (With the help from above examples
+    //TODO: Make test for the addExample & removeExample
+    // (With the help from above examples)
     func test_CheBravo_WordController_addExample() async {
         
     }
     
-    func test_CheBravo_WordController_addExample() async {
+    func test_CheBravo_WordController_removeExample() async {
         
     }
     
-    func test_CheBravo_WordController_wordMatchExample() {
+    func helperFunction_GetWordFromViewContext(wordName : String) -> Word {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Word")
+        fetchRequest.predicate = NSPredicate(format: "name contains[c] %@", wordName)
+        let fetchPhilWord = try? self.viewContext.fetch(fetchRequest) as? [NSManagedObject]
+        return fetchPhilWord![0] as! Word
+    }
+    
+    func helperFunction_GetExampleFromViewContext() -> Example {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Example")
+        fetchRequest.predicate = NSPredicate(format: "context contains[c] %@", "IsPhillipMatching")
+        let fetchPhilWord = try? self.viewContext.fetch(fetchRequest) as? [NSManagedObject]
+        return fetchPhilWord![0] as! Example
+    }
+    func test_CheBravo_WordController_wordMatchExample() async {
+        // Make the word be found in an example with the word
+        // Make the word not be found in an example where the word IS NOT
+        // Make the translated word be found in a translated
+        // Make the translated word in translated example NOT be found
+        // Check for accents where à and a is the same
+        var ExampleContainer : [Example] = []
         
+        // Making word for testing the examples
+//        await WC.addWord(viewContext: self.viewContext, Wordname: "isPhillipMatching")
+//        await WC.addExample(viewContext: self.viewContext, ExampleText: "I love kindereggs and isPhillipMatching", note: "")
+        
+        // Fetching "isPhillipMatching" word after it has been added
+//        let addedWord : Word = helperFunction_GetWordFromViewContext(wordName: "isPhillipMatching")
+
+//        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Example")
+////        fetchRequest.predicate = NSPredicate(format: "context contains[c] %@", "IsPhillipMatching")
+//        let fetchPhilWord = try? self.viewContext.fetch(fetchRequest)
+        
+//        var fetchRequest = FetchRequest<Example>(fetchRequest: NSFetchRequest<Example>)
+//        var AllExamples : FetchedResults<Example> { fetchRequest.wrappedValue }
+        
+//        WC.wordMatchExample(word: Word(context: self.viewContext), allExamples: fetchedExamples)
+//        let fetchExamples = NSFetchRequest<NSFetchRequestResult>(entityName: "Example")
+//        let examples = try? self.viewContext.fetch(fetchExamples) as? [NSManagedObject]
+
+//        for ex in examples! {
+//            print(
+//                ExampleContainer.append()
+//                (ex as! Example).context!
+//                )
+//        }
+        
+        // Clean up the viewContext
+//        let addedExample : Example = helperFunction_GetExampleFromViewContext()
+//        await WC.removeExample(viewContext: self.viewContext, Example: addedExample)
+//        await WC.removeWord(viewContext: self.viewContext, word: addedWord)
+
+//        viewContext
+//        WC.wordMatchExample(word: <#T##Word#>, allExamples: <#T##FetchedResults<Example>#>)
     }
     
     
