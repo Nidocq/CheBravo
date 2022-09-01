@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ModulePronunciation: ILearning {
+    @AppStorage("languageItalian") var languageItalian : Bool?
     var id: UUID = UUID()
     private let AC : AudioController = AudioController()
     static var MATERIAL_TITLE: String = "Pronunciation"
@@ -17,6 +18,11 @@ struct ModulePronunciation: ILearning {
     var body: some View {
         VStack(spacing: 24) {
             Text("Italians use 'c' extensively, so when it comes to pronunciation is vital to pronunce it right.")
+            Text(String(languageItalian ?? false))
+            Text("Hello there i am love")
+                .if(languageItalian ?? false) { view in
+                    Text("This is another")
+                }
             
             
             // Pronunciation graphics together

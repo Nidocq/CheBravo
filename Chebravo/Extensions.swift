@@ -59,6 +59,7 @@ struct LearningMaterialBoilerPlate : View {
             VStack {
                 Text("")
                 ScrollView {
+                    // Embed the module here
                     self.ModuleContent
                 }
             }
@@ -175,3 +176,31 @@ extension UINavigationController: UIGestureRecognizerDelegate {
         return viewControllers.count > 1
     }
 }
+
+
+// https://www.avanderlee.com/swiftui/conditional-view-modifier/
+
+// Example :
+//  Text("Hello there i am love")
+//    .if(true) { view in
+//        Text("This is another")
+//          or if you want to style this view (Which is a Text)
+//          view
+//              .font(.system(size: 33))
+//    }
+extension View {
+    /// Applies the given transform if the given condition evaluates to `true`.
+    /// - Parameters:
+    ///   - condition: The condition to evaluate.
+    ///   - transform: The transform to apply to the source `View`.
+    /// - Returns: Either the original `View` or the modified `View` if the condition is `true`.
+    @ViewBuilder func `if`<Content: View>(_ condition: Bool, transform: (Self) -> Content) -> some View {
+        if condition {
+            transform(self)
+        } else {
+            self
+        }
+    }
+}
+
+
