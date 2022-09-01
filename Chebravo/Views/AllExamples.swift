@@ -56,19 +56,7 @@ struct AllExamples: View {
     }
 }
 
-struct Seperator : View {
-    var paddingLeadingTrailing : CGFloat = 20 + 10
 
-    
-    var body: some View {
-        Rectangle()
-            .frame(
-                width: UIScreen.main.bounds.width-paddingLeadingTrailing*2,
-                height: 2
-            )
-            .foregroundColor(Color("SecondaryColor"))
-    }
-}
 
 
 struct ExampleShowCase : View {

@@ -9,6 +9,7 @@ import Foundation
 import AVKit
 
 ///<summary> Plays audio for views</summary>
+/// <PRECONDITION> The file has to be an mp3 file </PRECONDITION>
 class AudioController {
     var player: AVAudioPlayer!
     
