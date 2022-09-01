@@ -148,6 +148,19 @@ struct LearningExample : View {
     }
 }
 
+struct Seperator : View {
+    var paddingLeadingTrailing : CGFloat = 20 + 10
+    
+    var body: some View {
+        Rectangle()
+            .frame(
+                width: UIScreen.main.bounds.width-paddingLeadingTrailing*2,
+                height: 2
+            )
+            .foregroundColor(Color("SecondaryColor"))
+    }
+}
+
 
 // MARK: Universal settings
 // For reference, fixing the swiping feature if the NavigationView is hidden
