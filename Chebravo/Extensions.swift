@@ -129,12 +129,16 @@ struct LearningHeading : View {
 struct LearningExample : View {
     var ItalianExample : String
     var EnglishTranslation : String
+    var TextColor : Color = Color("SecondaryColor")
+    var TextSize : CGFloat = 18
     
     var body : some View {
         VStack(alignment: .leading) {
             
             Text(ItalianExample)
-                        .fontWeight(.bold)
+                .fontWeight(.bold)
+                .font(.system(size: TextSize))
+
             
             VStack {
                 HStack {
@@ -142,10 +146,11 @@ struct LearningExample : View {
                         .padding(.leading, 30)
                     Text(EnglishTranslation)
                 }
+                .font(.system(size: TextSize))
             }
         }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-            .foregroundColor(Color("SecondaryColor"))
+            .foregroundColor(TextColor)
     }
 }
 

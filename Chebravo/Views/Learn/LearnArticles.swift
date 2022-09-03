@@ -22,62 +22,75 @@ struct ModuleArticles : ILearning {
                 
         }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-            .padding()
+            .padding([.trailing, .leading, .bottom], 18)
             .foregroundColor(Color("SecondaryColor"))
         VStack(spacing:0) {
-            Text("♀")
+            Seperator()
+            VStack {
+                Text("♀")
+                Text("Feminine articles")
+                    .font(.system(size: 18))
+                
+            }
                 .padding()
                 .font(.system(size: 40))
             
-            
-                // Female
-                VStack(alignment: .leading) {
-                    Text("la, le, l'")
-                        .underline()
-                        .bold()
-                        .padding(.bottom, 10)
-                    
-                    VStack(alignment: .leading) {
+            HStack {
+                VStack {
+                    VStack(spacing: 0) {
                         HStack {
-                            Image(systemName: "person")
-                            Text("singular")
-                                .bold()
-                                .font(.system(size: 12))
-                                .baselineOffset(-20.0)
-                            
+                            Text("***la***")
+                                .underline()
+                                .font(.system(size: 22))
+                            SuperscriptSingular
                         }
-                        LearningExample(
-                            ItalianExample: "il libro",
-                            EnglishTranslation: "the book")
-                        .font(.system(size: 12))
-                        .frame(maxWidth: .infinity, maxHeight: 30)
-                        .padding(0)
-                        .offset(x: 30)
+                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                            .padding()
+                            .background(Color("SecondaryColor"))
+                    LearningExample(
+                        ItalianExample: "la matita",
+                        EnglishTranslation: "The morning",
+                        TextSize: 16
+                    )
+                        .padding(10)
                     }
                     .foregroundColor(Color("PrimaryColor"))
-                    .background(Color("SecondaryColor"))
-                        
+                    .border(Color("SecondaryColor"), width: 2)
+                    
                     HStack {
-                        Image(systemName: "person.3.sequence")
-                        Text("plural")
-                            .bold()
-                            .font(.system(size: 12))
-                            .baselineOffset(-20.0)
-                    }
-                        
-                }
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-
-               
-                // Male
-                VStack(alignment: .leading) {
-                    Text("il, i, lo, gli, l'")
+                    Text("**l\'**")
                         .underline()
-                        .bold()
+                        .font(.system(size: 22))
+                        SuperscriptSingular
+                    }
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                LearningExample(ItalianExample: "l\'isola", EnglishTranslation: "The island")
+                    
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-
-            .padding()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                    .padding(.leading)
+                
+                
+                Spacer()
+                Image(systemName: "arrow.right")
+                Spacer()
+                VStack {
+                    HStack {
+                        Text("**le**")
+                            .underline()
+                            .font(.system(size: 22))
+                        SuperscriptPlural
+                    }
+                    LearningExample(ItalianExample: "le matine", EnglishTranslation: "The mornings")
+                        .frame(maxWidth: .infinity, maxHeight: 40)
+                    LearningExample(ItalianExample: "l'isole", EnglishTranslation: "The islands")
+                        .frame(maxWidth: .infinity, maxHeight: 40)
+                    
+                }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                
+                    
+            }
         }
         .foregroundColor(Color("SecondaryColor"))
     }
@@ -92,6 +105,29 @@ struct LearnArticles: View {
             MATERIAL_TITLE: ModuleArticles.MATERIAL_TITLE
         )
     }
+}
+
+extension ModuleArticles {
+    private var SuperscriptSingular : some View {
+        HStack {
+            Image(systemName: "person")
+            Text("singular")
+                .bold()
+                .font(.system(size: 12))
+        }
+        .offset(y: -12)
+    }
+    
+    private var SuperscriptPlural : some View {
+        HStack {
+            Image(systemName: "person.3.sequence")
+            Text("plural")
+                .bold()
+                .font(.system(size: 12))
+        }
+        .offset(y: -12)
+    }
+    
 }
 
 struct LearnArticles_Previews: PreviewProvider {
