@@ -109,14 +109,40 @@ class ContextControllerTest: XCTestCase {
         let fetchPhilWord = try? self.viewContext.fetch(fetchRequest) as? [NSManagedObject]
         return fetchPhilWord![0] as! Example
     }
+    struct testingView : View {
+        @StateObject var CDController = CoreDataController()
+        @Environment(\.managedObjectContext) var viewContext
+
+        @FetchRequest(sortDescriptors: [])
+        var allExamples : FetchedResults<Example>
+        
+//        init(allExamples : FetchedResults<Example>) {
+//            self.allExamples = allExamples
+//        }
+        
+        var body: some View {
+            Text("Hel")
+                .environment(\.managedObjectContext, CDController.modelContainer.viewContext)
+        }
+    }
     func test_CheBravo_WordController_wordMatchExample() async {
         // Make the word be found in an example with the word
         // Make the word not be found in an example where the word IS NOT
         // Make the translated word be found in a translated
         // Make the translated word in translated example NOT be found
         // Check for accents where à and a is the same
-        var ExampleContainer : [Example] = []
         
+        var ExampleContainer : [Example] = []
+        for ex in testingView().allExamples {
+            print(ex.context!)
+        }
+        //        var Examples: FetchedResults<Example> { fetchRequest.wrappedValue }
+//        @FetchRequest var allExamples : FetchedResults<Example>
+//
+//        _allExamples = FetchRequest<Example>(sortDescriptors: [])
+//        for ex in allExamples {
+//            print(ex.context!)
+//        }
         // Making word for testing the examples
 //        await WC.addWord(viewContext: self.viewContext, Wordname: "isPhillipMatching")
 //        await WC.addExample(viewContext: self.viewContext, ExampleText: "I love kindereggs and isPhillipMatching", note: "")
@@ -125,7 +151,7 @@ class ContextControllerTest: XCTestCase {
 //        let addedWord : Word = helperFunction_GetWordFromViewContext(wordName: "isPhillipMatching")
 
 //        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Example")
-////        fetchRequest.predicate = NSPredicate(format: "context contains[c] %@", "IsPhillipMatching")
+//        fetchRequest.predicate = NSPredicate(format: "context contains[c] %@", "IsPhillipMatching")
 //        let fetchPhilWord = try? self.viewContext.fetch(fetchRequest)
         
 //        var fetchRequest = FetchRequest<Example>(fetchRequest: NSFetchRequest<Example>)

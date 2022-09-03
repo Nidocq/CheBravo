@@ -30,6 +30,7 @@ class ContextController : ObservableObject {
             let newWord = Word(context: viewContext)
             newWord.name = Wordname
             newWord.date = Date.now
+            newWord.id = UUID()
             // if word is unvalid this will become "Unkown"
             newWord.translationToEnglish = await TC.translateText(text: Wordname)
             try? viewContext.save()
@@ -48,6 +49,8 @@ class ContextController : ObservableObject {
             newExample.context = ExampleText
             newExample.date = Date.now
             newExample.note = note
+            newExample.id = UUID()
+
             // if example is unvalid this will become "Unkown"
             newExample.translationToEnglish = await TC.translateText(text: ExampleText)
             try? viewContext.save()
@@ -85,28 +88,28 @@ class ContextController : ObservableObject {
     /// </param>
     /// <param name="allExampmles"> all examples in which the word name
     /// is searched through </param>
-    /// <remarks> The translated word will also compare to a translated example
-    /// </remarks>
+    /// <remarks> The translated word will also compare to a translated example.
+    /// If </remarks>
     func wordMatchExample(word : Word, allExamples : FetchedResults<Example>) -> [Example] {
-        // Make the word be found in an example with the word
-        // Make the word not be found in an example where the word IS NOT
-        // Make the translated word be found in a translated
-        // Make the translated word in translated example NOT be found
-        // Check for accents where à and a is the same
+        // TODO: Make the translated word be found in a translated
+        // TODO: Check for accents where à and a is the same
         // __________________
-//        if let word = word {
-//            for ex in allExamples {
-//                if let ex = ex {
-//                    print(ex.context)
-//                } else {
-//                    print("Coulnd't find example")
-//                }
-//            }
-//        }
-//
-//        if (word! == nil | !allExamples.isEmpty) {
-//        }
-        return []
+        var returnContainer : [Example] = []
+        if (!(word.name == "Unkown") || !allExamples.isEmpty) {
+            
+            var ExampleText : String
+            let WordName : String = word.name!.lowercased()
+            for ex in allExamples {
+                
+                // append example if the word is contained in one of the sentences
+                ExampleText = ex.context!
+                if ExampleText.lowercased().contains(WordName) {
+                    returnContainer.append(ex)
+                }
+            }
+        }
+
+        return returnContainer
         
     }
 }

@@ -14,6 +14,7 @@ import SwiftUI
 /// https://github.com/ian-hamlin/verb-data/tree/master/json/italian </remarks>
 struct WordView: View {
     @Environment(\.presentationMode) var presentationMode
+
     @State var isSheetPresent : Bool = false
     @ObservedObject var word : Word
     
@@ -56,24 +57,23 @@ struct WordView: View {
                 // TODO: Make several examples pop-up with this.name
                 ScrollView {
                         
-                    // Groups
-                    VStack {
-                        SubTitle(name: "Conjugation")
-                        
-                    }
+//                    // Groups
+//                    VStack {
+//                        SubTitle(ICON_NAME: "table", name: "Conjugation")
+//
+//                    }
+//
+//                    // Tenses
+//                    VStack {
+//                        SubTitle(ICON_NAME: "clock", name: "Tenses")
+//                    }
                     
-                    // Tenses
                     VStack {
-                        SubTitle(name: "Tenses")
-                    }
-                    
-                    VStack {
-                        SubTitle(name: "Your examples")
-                        ExampleTranslation(wordString: word.name ?? "Unkown")
+                        SubTitle(ICON_NAME: "eye.square", name: "From Your Examples")
+                        ExampleTranslation(word: word)
                        
                     }
                     .frame(maxWidth: .infinity)
-                    
                     Spacer()
                 }
                 .frame(maxWidth: .infinity)
@@ -122,45 +122,79 @@ struct WordView: View {
 /// <summary> Titles that descripe the information </summary>
 /// <param arg="name"> Text of title </param>
 struct SubTitle: View {
+    let ICON_NAME : String
     var name : String
+    let leadingPadding : CGFloat = 12
     var body: some View {
-        Text(self.name)
-            .font(.system(size: 20))
-            .foregroundColor(Color("SecondaryColor"))
-            .bold()
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.leading)
-            .padding(.top, 10)
+        VStack {
+            HStack(spacing: 18) {
+                Image(systemName: self.ICON_NAME)
+                    .frame(maxWidth: 30, alignment: .center)
+                Text(self.name)
+                    .bold()
+            }
+                    .font(.system(size: 26))
+                    .foregroundColor(Color("SecondaryColor"))
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.leading, self.leadingPadding)
+                    .padding(.top, 10)
+            Seperator()
+                // To match the start of the title
+                .offset(x:-self.leadingPadding-4)
+                .padding(.bottom, 18)
+        }
+                    .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 
 /// <summary> Gives a translates with the word as example <summary>
 /// <remarks> Not yet implemented </remarks>
 struct ExampleTranslation: View {
-    let wordString : String?
+    let word : Word
     let CC : ContextController = ContextController()
-    
+    let leadingPadding : CGFloat = 30
+    @Environment(\.managedObjectContext) var viewContext
+
     @FetchRequest(sortDescriptors: [])
     var allExamples : FetchedResults<Example>
     
+    @State var matchingWords : [Example] = []
+    
+    
     var body: some View {
-        VStack {
-            Text("Hl")
-//            if () {
-//                Group {
-//                    Text("This is some text")
-//                        .frame(maxWidth: .infinity, alignment: .leading)
-//                    Text("This is translation text")
-//                        .frame(maxWidth: .infinity, alignment: .trailing)
-//                }
-//                .padding([.trailing, .leading], 40)
-//                .padding([.top, .bottom], 10)
-//                .foregroundColor(.white)
-//            } else {
-//
-//            }
+        if self.matchingWords.count == 0 {
+            //TODO: Add a page that tells you if you have an example where a
+            // word is in them, they will show up here. (Other way around)
             
-            
+            // Basically made an infographic that tells the user to words that
+            // match to find them here
+            Text("None - Your examples will show up here of your matching words")
+                .foregroundColor(Color("SecondaryColor"))
+                .fixedSize(horizontal: false, vertical: true)
+                .padding(.leading, leadingPadding)
+//                .multilineTextAlignment(.leading)
+        }
+        VStack(alignment: .leading) {
+            ForEach(self.matchingWords) { matchEx in
+                NavigationLink(destination: ExampleView(example: matchEx)) {
+                Text(matchEx.context!)
+                    .font(.system(size: 20))
+                    .padding(.leading, self.leadingPadding)
+                    .padding(.bottom, 10)
+                }
+            }
+            .foregroundColor(Color("SecondaryColor"))
+        }
+        // TODO: Make another VStack to print out the translated quotes.
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.65) {
+                withAnimation(.spring()) {
+                    self.matchingWords = CC.wordMatchExample(
+                        word: word,
+                        allExamples: allExamples)
+                }
+            }
         }
     }
 }
