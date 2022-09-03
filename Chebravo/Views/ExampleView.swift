@@ -56,7 +56,9 @@ struct ExampleView: View {
                 
                 Spacer()
                 Button {
-                    // TODO: IMPORTANT make a alert that verifies that the user wants to delete the example
+                    //TODO: copy paste word settings into example settings
+                    // And make sure examples get deleted properly
+                    presentationMode.wrappedValue.dismiss()
                     Task {
                         do {
                             await CC.removeExample(viewContext: viewContext, Example: example)

@@ -171,13 +171,11 @@ struct ExampleTranslation: View {
             Text("None - Your examples will show up here of your matching words")
                 .foregroundColor(Color("SecondaryColor"))
                 .fixedSize(horizontal: false, vertical: true)
-                .padding(.leading, leadingPadding)
-//                .multilineTextAlignment(.leading)
         }
         VStack(alignment: .leading) {
             ForEach(self.matchingWords) { matchEx in
                 NavigationLink(destination: ExampleView(example: matchEx)) {
-                Text(matchEx.context!)
+                Text(matchEx.context ?? "None")
                     .font(.system(size: 20))
                     .padding(.leading, self.leadingPadding)
                     .padding(.bottom, 10)
@@ -194,6 +192,13 @@ struct ExampleTranslation: View {
                         word: word,
                         allExamples: allExamples)
                 }
+            }
+        }
+        .onChange(of: self.matchingWords) { _ in
+            withAnimation(.spring()) {
+                self.matchingWords = CC.wordMatchExample(
+                    word: word,
+                    allExamples: allExamples)
             }
         }
     }
