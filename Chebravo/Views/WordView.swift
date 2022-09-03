@@ -159,10 +159,11 @@ struct ExampleTranslation: View {
     var allExamples : FetchedResults<Example>
     
     @State var matchingWords : [Example] = []
+    @State var isMatchingWordsEmpty : Bool = false
     
     
     var body: some View {
-        if self.matchingWords.count == 0 {
+        if self.isMatchingWordsEmpty {
             //TODO: Add a page that tells you if you have an example where a
             // word is in them, they will show up here. (Other way around)
             
@@ -171,13 +172,14 @@ struct ExampleTranslation: View {
             Text("None - Your examples will show up here of your matching words")
                 .foregroundColor(Color("SecondaryColor"))
                 .fixedSize(horizontal: false, vertical: true)
+                .padding(.trailing, self.leadingPadding)
         }
         VStack(alignment: .leading) {
             ForEach(self.matchingWords) { matchEx in
                 NavigationLink(destination: ExampleView(example: matchEx)) {
                 Text(matchEx.context ?? "None")
                     .font(.system(size: 20))
-                    .padding(.leading, self.leadingPadding)
+                    .padding([.leading, .trailing], self.leadingPadding)
                     .padding(.bottom, 10)
                 }
             }
@@ -186,11 +188,14 @@ struct ExampleTranslation: View {
         // TODO: Make another VStack to print out the translated quotes.
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
         .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.65) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) {
                 withAnimation(.spring()) {
                     self.matchingWords = CC.wordMatchExample(
                         word: word,
-                        allExamples: allExamples)
+                        allExamples: self.allExamples)
+                    if self.matchingWords.isEmpty {
+                        self.isMatchingWordsEmpty = true
+                    }
                 }
             }
         }
