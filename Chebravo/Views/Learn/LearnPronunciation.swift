@@ -26,6 +26,7 @@ struct ModulePronunciation: ILearning {
                     }
                 } label: {
                     Text("IPA")
+                        .underline()
                         .foregroundColor(.blue)
                         .frame(width: 70, height: 30)
                         .background(Color("SecondaryColor"))
