@@ -13,7 +13,8 @@ struct ModuleArticles : ILearning {
     
     static let MATERIAL_TITLE : String = "Articles"
     static let ICON_NAME : String = "textformat.subscript"
-    
+    let paddingLeftRight : CGFloat = 14
+
     var body: some View {
         VStack(alignment: .leading) {
             Text("Articles clarifies the condition of a noun, like how many there are, or if you refer to a specific thing or not.")
@@ -22,8 +23,10 @@ struct ModuleArticles : ILearning {
                 
         }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-            .padding([.trailing, .leading, .bottom], 18)
+            .padding([.trailing, .leading], paddingLeftRight)
+            .padding(.bottom, 18)
             .foregroundColor(Color("SecondaryColor"))
+        
         VStack(spacing:0) {
             Seperator()
             VStack {
@@ -35,45 +38,24 @@ struct ModuleArticles : ILearning {
                 .padding()
                 .font(.system(size: 40))
             
-            HStack {
-                VStack {
-                    VStack(spacing: 0) {
-                        HStack {
-                            Text("***la***")
-                                .underline()
-                                .font(.system(size: 22))
-                            SuperscriptSingular
-                        }
-                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-                            .padding()
-                            .background(Color("SecondaryColor"))
-                    LearningExample(
-                        ItalianExample: "la matita",
-                        EnglishTranslation: "The morning",
-                        TextSize: 16
-                    )
-                        .padding(10)
-                    }
-                    .foregroundColor(Color("PrimaryColor"))
-                    .border(Color("SecondaryColor"), width: 2)
-                    
-                    HStack {
-                    Text("**l\'**")
-                        .underline()
-                        .font(.system(size: 22))
-                        SuperscriptSingular
-                    }
-                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-                LearningExample(ItalianExample: "l\'isola", EnglishTranslation: "The island")
-                    
+            // Individual infographics for the Articles
+            VStack {
+                ArticleType (
+                    Article: "la",
+                    SingularOrPlural: SuperscriptSingular as! AnyView,
+                    ExampleIT: "la matita",
+                    ExampleEN: "The morning"
+                )
+                
+                HStack {
+                Text("**l\'**")
+                    .underline()
+                    .font(.system(size: 22))
+                    SuperscriptSingular
                 }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-                    .padding(.leading)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                //LearningExample(ItalianExample: "l\'isola", EnglishTranslation: "The island")
                 
-                
-                Spacer()
-                Image(systemName: "arrow.right")
-                Spacer()
                 VStack {
                     HStack {
                         Text("**le**")
@@ -89,10 +71,11 @@ struct ModuleArticles : ILearning {
                 }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                 
-                    
             }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
         }
         .foregroundColor(Color("SecondaryColor"))
+        .padding([.leading, .trailing], paddingLeftRight)
     }
 }
 
@@ -105,6 +88,36 @@ struct LearnArticles: View {
             MATERIAL_TITLE: ModuleArticles.MATERIAL_TITLE
         )
     }
+}
+
+struct ArticleType: View {
+    var Article : String
+    var SingularOrPlural : AnyView
+    var ExampleIT : String
+    var ExampleEN : String
+    var body: some View {
+        VStack(spacing: 0) {
+            HStack {
+                Text(Article)
+                    .italic()
+                    .bold()
+                    .font(.system(size: 22))
+                SingularOrPlural
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+            .padding()
+            .background(Color("SecondaryColor"))
+            LearningExample(
+                ItalianExample: ExampleIT,
+                EnglishTranslation: ExampleEN,
+                TextSize: 16
+            )
+            .padding(10)
+        }
+        .foregroundColor(Color("PrimaryColor"))
+        .border(Color("SecondaryColor"), width: 2)
+    }
+    
 }
 
 extension ModuleArticles {
