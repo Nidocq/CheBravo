@@ -15,6 +15,8 @@ struct ModuleArticles : ILearning {
     static let ICON_NAME : String = "textformat.subscript"
     let paddingLeftRight : CGFloat = 14
     let titleSize : CGFloat = 22
+    @State var DefiniteIndefinite : String = "Definite"
+    @State var isDefinite : Bool = false
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -29,65 +31,140 @@ struct ModuleArticles : ILearning {
         VStack(spacing:0) {
             Seperator()
                 .padding(.bottom, 15)
-            VStack {
-                Text("♀")
-                Text("Feminine articles")
-                    .font(.system(size: titleSize))
-                    .bold()
+            // Makes up for the definite and indefinite change when the
+            // button is pressed
+            if (self.isDefinite) {
+                // la l' le
                 VStack {
-                    Text("Article \"la\" is used for every feminine article, unless there is a vovel then we use \"l\'\". If you talk about several nouns, \"le\" is the article to describe the plural")
-                        .font(.system(size: 18))
-                }
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-            }
-                .padding(.bottom, 20)
-                .font(.system(size: 40))
-            
-            // Individual infographics for the Articles
-            VStack {
-                Text("Definite")
-                    .italic()
-                    .font(.system(size: 16))
+                    VStack {
+                        Text("♀")
+                        Text("Feminine articles")
+                            .font(.system(size: titleSize))
+                            .bold()
+                        
+                        VStack {
+                            Text("Article \"la\" is used for every feminine article, unless there is a vovel then we use \"l\'\". If you talk about several nouns, \"le\" is the article to describe the plural")
+                                .font(.system(size: 18))
+                        }
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                    }
+                    .padding(.bottom, 20)
+                    .font(.system(size: 40))
+                    
+                    // Individual infographics for the Articles for feminine
+                    VStack {
+                        Text(DefiniteIndefinite)
+                            .italic()
+                            .font(.system(size: 16))
+                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                        ArticleType (
+                            Article: "la",
+                            SingularOrPlural: AnyView(SuperscriptSingular),
+                            ExampleIT: "la mattina",
+                            ExampleEN: "The morning"
+                        )
+                        
+                        ArticleType(
+                            Article: "l\'",
+                            SingularOrPlural: AnyView(SuperscriptSingular),
+                            ExampleIT: "l\'isola",
+                            ExampleEN: "The island"
+                        )
+                        
+                        ArticleType(
+                            Article: "le",
+                            SingularOrPlural: AnyView(SuperscriptPlural),
+                            ExampleIT: "le mattine",
+                            ExampleEN: "The mornings"
+                            // TODO: Optional argument paramaeter for le isole
+                        )
+                        
+                        Button {
+                            self.isDefinite = false
+                            self.DefiniteIndefinite = "Indefinite"
+                        } label: {
+                            Text("Show indefine articles")
+                                .foregroundColor(Color("PrimaryColor"))
+                                .bold()
+                                .padding(.top, 16)
+                                .frame(width: 230, height: 50)
+                                .background(Color("SecondaryColor"))
+                                .cornerRadius(11)
+                        }
+                        //TODO: Make text in the middle of button
+                        .padding(.top, 20)
+                        
+                        
+                    }
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-                ArticleType (
-                    Article: "la",
-                    SingularOrPlural: SuperscriptSingular as! AnyView,
-                    ExampleIT: "la mattina",
-                    ExampleEN: "The morning"
-                )
-                
-                ArticleType(
-                    Article: "l\'",
-                    SingularOrPlural: SuperscriptSingular as! AnyView,
-                    ExampleIT: "l\'isola",
-                    ExampleEN: "The island"
-                )
-                
-                ArticleType(
-                    Article: "le",
-                    SingularOrPlural: SuperscriptPlural as! AnyView,
-                    ExampleIT: "le mattine",
-                    ExampleEN: "The mornings"
-                    // TODO: Optional argument paramaeter for le isole
-                )
-                
-                Button {
-                    //code
-                } label: {
-                    Text("Show indefine articles")
-                        .foregroundColor(Color("PrimaryColor"))
-                        .bold()
-                        .padding(.top, 16)
-                        .frame(width: 230, height: 50)
-                        .background(Color("SecondaryColor"))
-                        .cornerRadius(11)
                 }
-                //TODO: Make text in the middle of button
-                .padding(.top, 20)
-
-                
+            } else {
+                // la l' le
+                VStack {
+                    VStack {
+                        Text("♀")
+                        Text("Feminine articles")
+                            .font(.system(size: titleSize))
+                            .bold()
+                        
+                        VStack {
+                            Text("Una is used for all the indefinite (no direct reference to a noun) article, but if a vowel is in front of the word, \"un'\" is used.")
+                                .font(.system(size: 18))
+                        }
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                    }
+                    .padding(.bottom, 20)
+                    .font(.system(size: 40))
+                    
+                    // Individual infographics for the Articles for feminine
+                    VStack {
+                        Text(DefiniteIndefinite)
+                            .italic()
+                            .font(.system(size: 16))
+                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                        ArticleType (
+                            Article: "una",
+                            SingularOrPlural: AnyView(SuperscriptSingular),
+                            ExampleIT: "Una mattina",
+                            ExampleEN: "A morning"
+                        )
+                        
+                        ArticleType(
+                            Article: "un'",
+                            SingularOrPlural: AnyView(SuperscriptSingular),
+                            ExampleIT: "Un\'isola",
+                            ExampleEN: "An island"
+                        )
+                        
+                        ArticleType(
+                            Article: "le",
+                            SingularOrPlural: AnyView(SuperscriptPlural),
+                            ExampleIT: "le mattine",
+                            ExampleEN: "The mornings",
+                            isHidden: true
+                            // TODO: Optional argument paramaeter for le isole
+                        )
+                        
+                        Button {
+                            self.DefiniteIndefinite = "Definite"
+                            self.isDefinite = true
+                        } label: {
+                            Text("Show definite articles")
+                                .foregroundColor(Color("PrimaryColor"))
+                                .bold()
+                                .padding(.top, 16)
+                                .frame(width: 230, height: 50)
+                                .background(Color("SecondaryColor"))
+                                .cornerRadius(11)
+                        }
+                        //TODO: Make text in the middle of button
+                        .padding(.top, 20)
+                        
+                        
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                }
             }
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
         }
         .foregroundColor(Color("SecondaryColor"))
         .padding([.leading, .trailing], paddingLeftRight)
@@ -113,28 +190,38 @@ struct ModuleArticles : ILearning {
                 .padding(.bottom, 20)
                 .font(.system(size: 40))
             
-            // Individual infographics for the Articles
+            // Individual infographics for the Articles for masculine
             VStack {
+                Text(DefiniteIndefinite)
+                    .italic()
+                    .font(.system(size: 16))
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                 ArticleType (
+                    Article: "il",
+                    SingularOrPlural: AnyView(SuperscriptSingular),
+                    ExampleIT: "",
+                    ExampleEN: ""
+                )
+                
+                ArticleType(
+                    Article: "i",
+                    SingularOrPlural: AnyView(SuperscriptPlural),
+                    ExampleIT: "",
+                    ExampleEN: ""
+                )
+                
+                ArticleType(
                     Article: "lo",
-                    SingularOrPlural: SuperscriptSingular as! AnyView,
-                    ExampleIT: "la mattina",
-                    ExampleEN: "The morning"
+                    SingularOrPlural: AnyView(SuperscriptSingular),
+                    ExampleIT: "",
+                    ExampleEN: ""
                 )
                 
                 ArticleType(
                     Article: "gli",
-                    SingularOrPlural: SuperscriptSingular as! AnyView,
-                    ExampleIT: "l\'isola",
-                    ExampleEN: "The island"
-                )
-                
-                ArticleType(
-                    Article: "le",
-                    SingularOrPlural: SuperscriptPlural as! AnyView,
+                    SingularOrPlural: AnyView(SuperscriptPlural),
                     ExampleIT: "le mattine",
                     ExampleEN: "The mornings"
-                    // TODO: Optional argument paramaeter for le isole
                 )
                 
             }
@@ -163,6 +250,7 @@ struct ArticleType: View {
     var ExampleIT : String
     var ExampleEN : String
     let paddingAllAround : CGFloat = 14
+    var isHidden : Bool = false
     var body: some View {
         VStack(spacing: 0) {
             HStack {
@@ -175,6 +263,7 @@ struct ArticleType: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
             .padding(paddingAllAround)
             .background(Color("SecondaryColor"))
+            
             LearningExample(
                 ItalianExample: ExampleIT,
                 EnglishTranslation: ExampleEN,
@@ -184,6 +273,13 @@ struct ArticleType: View {
         }
         .foregroundColor(Color("PrimaryColor"))
         .border(Color("SecondaryColor"), width: 2)
+        .if(isHidden) { elem in
+            elem
+                .redacted(reason: .placeholder)
+                .border(Color("SecondaryColor"), width: 0)
+                .opacity(0.5)
+
+        }
     }
     
 }
