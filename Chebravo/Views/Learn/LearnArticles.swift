@@ -15,8 +15,9 @@ struct ModuleArticles : ILearning {
     static let ICON_NAME : String = "textformat.subscript"
     let paddingLeftRight : CGFloat = 14
     let titleSize : CGFloat = 22
+    let cornerRadiusAmount : CGFloat = 10
     @State var DefiniteIndefinite : String = "Definite"
-    @State var isDefinite : Bool = false
+    @State var isDefinite : Bool = true
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -79,20 +80,11 @@ struct ModuleArticles : ILearning {
                             // TODO: Optional argument paramaeter for le isole
                         )
                         
-                        Button {
-                            self.isDefinite = false
-                            self.DefiniteIndefinite = "Indefinite"
-                        } label: {
-                            Text("Show indefine articles")
-                                .foregroundColor(Color("PrimaryColor"))
-                                .bold()
-                                .padding(.top, 16)
-                                .frame(width: 230, height: 50)
-                                .background(Color("SecondaryColor"))
-                                .cornerRadius(11)
-                        }
-                        //TODO: Make text in the middle of button
-                        .padding(.top, 20)
+                        ShowButton(
+                            DefiniteIndefinite: $DefiniteIndefinite,
+                            isDefinite: $isDefinite,
+                            cornerRadiusAmount: cornerRadiusAmount
+                        )
                         
                         
                     }
@@ -145,20 +137,11 @@ struct ModuleArticles : ILearning {
                             // TODO: Optional argument paramaeter for le isole
                         )
                         
-                        Button {
-                            self.DefiniteIndefinite = "Definite"
-                            self.isDefinite = true
-                        } label: {
-                            Text("Show definite articles")
-                                .foregroundColor(Color("PrimaryColor"))
-                                .bold()
-                                .padding(.top, 16)
-                                .frame(width: 230, height: 50)
-                                .background(Color("SecondaryColor"))
-                                .cornerRadius(11)
-                        }
-                        //TODO: Make text in the middle of button
-                        .padding(.top, 20)
+                        ShowButton(
+                            DefiniteIndefinite: $DefiniteIndefinite,
+                            isDefinite: $isDefinite,
+                            cornerRadiusAmount: cornerRadiusAmount
+                        )
                         
                         
                     }
@@ -281,7 +264,36 @@ struct ArticleType: View {
 
         }
     }
+}
+
+struct ShowButton : View {
+    @Binding var DefiniteIndefinite : String
+    @Binding var isDefinite : Bool
+    func GetInverse() -> String {
+        if (self.DefiniteIndefinite == "Definite") {
+            return "Indefinite"
+        } else {
+            return "Definite"
+        }
+    }
     
+    let cornerRadiusAmount : CGFloat
+    var body: some View {
+        Button {
+            self.DefiniteIndefinite = GetInverse()
+            self.isDefinite.toggle()
+        } label: {
+            Text("Show \(GetInverse()) articles")
+                .bold()
+                .frame(maxWidth: .infinity)
+                .padding()
+                .background(Color("SecondaryColor"))
+                .cornerRadius(cornerRadiusAmount)
+                .foregroundColor(Color("PrimaryColor"))
+
+        }
+        .padding(.top, 20)
+    }
 }
 
 extension ModuleArticles {
