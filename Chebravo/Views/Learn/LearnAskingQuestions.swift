@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct ModuleAskingQuestions: ILearning {
+    
     var id: UUID = UUID()
     static var MATERIAL_TITLE : String = "Asking Questions"
+    static var MATERIAL_TITLE_IT: String = "Fare Domande"
     static var ICON_NAME : String = "questionmark"
     
     

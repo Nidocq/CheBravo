@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct ModulePossession: ILearning {
+    
     var id: UUID = UUID()
     
     static var MATERIAL_TITLE : String = "Possessive Adjectives"
+    static var MATERIAL_TITLE_IT: String = "Gli Aggettivi Possessivi"
     static var ICON_NAME : String = "figure.wave"
     
     var body: some View {

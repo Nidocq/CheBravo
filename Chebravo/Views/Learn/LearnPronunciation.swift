@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct ModulePronunciation: ILearning {
+    
     @AppStorage("languageItalian") var languageItalian : Bool?
     var id: UUID = UUID()
     private let AC : AudioController = AudioController()
     static var MATERIAL_TITLE: String = "Pronunciation"
+    static var MATERIAL_TITLE_IT: String = "La Pronuncia"
     static var ICON_NAME : String = "message"
     
     

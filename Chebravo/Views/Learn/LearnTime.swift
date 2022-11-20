@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct ModuleTime: ILearning {
-    var id: UUID = UUID()
     
+    var id: UUID = UUID()
     static var MATERIAL_TITLE : String = "Talking About Time"
+    static var MATERIAL_TITLE_IT: String = "Il Tempo e Le Date"
     static var ICON_NAME : String = "clock"
     
     var body: some View {

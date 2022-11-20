@@ -12,6 +12,8 @@ import SwiftUI
 /// </summary>
 struct LearnView: View {
     // TODO: When emphazise words with an apostroph to indicate
+    @AppStorage("languageItalian") var languageItalian : Bool?
+
     init() {
         let navBarAppearance = UINavigationBar.appearance()
         navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor(Color("SecondaryColor"))]
@@ -21,6 +23,14 @@ struct LearnView: View {
     let columns : [GridItem] = [
         GridItem(.adaptive(minimum: 130))
     ]
+    
+    func ItalianTranslation() -> String {
+        if (languageItalian ?? false) {
+            return "Lezioni"
+        } else {
+            return "Modules"
+        }
+    }
     
     var body: some View {
         NavigationView {
@@ -39,6 +49,7 @@ struct LearnView: View {
                                 destination: LearnNumbers()) {
                                 ModuleDisplay(
                                     moduleName: ModuleNumbers.MATERIAL_TITLE,
+                                    moduleNameIT: ModuleNumbers.MATERIAL_TITLE_IT,
                                     moduleIcon: ModuleNumbers.ICON_NAME
                                 )
                             }
@@ -47,6 +58,7 @@ struct LearnView: View {
                                 destination: LearnArticles()) {
                                 ModuleDisplay(
                                     moduleName: ModuleArticles.MATERIAL_TITLE,
+                                    moduleNameIT: ModuleArticles.MATERIAL_TITLE_IT,
                                     moduleIcon: ModuleArticles.ICON_NAME
                                 )
                             }
@@ -54,6 +66,7 @@ struct LearnView: View {
                             NavigationLink(destination: LearnPronunciation()) {
                                 ModuleDisplay(
                                     moduleName: ModulePronunciation.MATERIAL_TITLE,
+                                    moduleNameIT: ModulePronunciation.MATERIAL_TITLE_IT,
                                     moduleIcon: ModulePronunciation.ICON_NAME
                                 )
                             }
@@ -61,6 +74,7 @@ struct LearnView: View {
                             NavigationLink(destination: LearnAskingQuestions()) {
                                 ModuleDisplay(
                                     moduleName: ModuleAskingQuestions.MATERIAL_TITLE,
+                                    moduleNameIT: ModuleAskingQuestions.MATERIAL_TITLE_IT,
                                     moduleIcon: ModuleAskingQuestions.ICON_NAME
                                 )
                             }
@@ -70,6 +84,7 @@ struct LearnView: View {
                                     // Material name is not the same as the displayed
                                     // Title in LearnView
                                     moduleName: "Common Verbs & Conjugations",
+                                    moduleNameIT: ModuleConjugation.MATERIAL_TITLE_IT,
                                     moduleIcon: ModuleConjugation.ICON_NAME
                                 )
                             }
@@ -77,6 +92,7 @@ struct LearnView: View {
                             NavigationLink(destination: LearnPossession()) {
                                 ModuleDisplay(
                                     moduleName: ModulePossession.MATERIAL_TITLE,
+                                    moduleNameIT: ModulePossession.MATERIAL_TITLE_IT,
                                     moduleIcon: ModulePossession.ICON_NAME
                                 )
                             }
@@ -84,6 +100,7 @@ struct LearnView: View {
                             NavigationLink(destination: LearnTime()) {
                                 ModuleDisplay(
                                     moduleName: ModuleTime.MATERIAL_TITLE,
+                                    moduleNameIT: ModuleTime.MATERIAL_TITLE_IT,
                                     moduleIcon: ModuleTime.ICON_NAME
                                 )
                             }
@@ -91,6 +108,7 @@ struct LearnView: View {
                             NavigationLink(destination: LearnDirections()) {
                                 ModuleDisplay(
                                     moduleName: ModuleDirections.MATERIAL_TITLE,
+                                    moduleNameIT: ModuleDirections.MATERIAL_TITLE_IT,
                                     moduleIcon: ModuleDirections.ICON_NAME
                                 )
                             }
@@ -102,7 +120,7 @@ struct LearnView: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment:.leading)
                 .padding([.leading, .trailing], 20)
             }
-            .navigationTitle("Modules")
+            .navigationTitle(ItalianTranslation())
         }
     }
 }
@@ -112,20 +130,32 @@ struct LearnView: View {
 /// <remarks> inpired by
 /// https://assets.justinmind.com/wp-content/webp-express/webp-images/uploads/2019/10/list-ui-design-category-listing.png.webp </remarks>
 struct ModuleDisplay : View {
+    @AppStorage("languageItalian") var languageItalian : Bool?
+
     let moduleName : String
+    let moduleNameIT : String?
     let moduleIcon : String
     
     // Should be var if expanded
     // Deprecated because no logic is implemented for complete badges
     let moduleCompleted : Bool = false
     let completedIconSize : CGFloat = 22
+    
+    // TODO: Refactor
+    func ItalianTranslation() -> String {
+        if(languageItalian ?? false) {
+            return moduleNameIT ?? moduleName
+        } else {
+            return moduleName
+        }
+    }
 
     var body: some View {
         VStack {
             Image(systemName: moduleIcon)
                 .font(.system(size: 30))
                 .padding(.bottom, 4)
-            Text(moduleName)
+            Text(ItalianTranslation())
                 .font(.system(size: 18))
                 .bold()
                 .padding([.trailing, .leading], 10)
@@ -161,7 +191,7 @@ struct ModuleDisplay_Previews: PreviewProvider {
             Color("PrimaryColor")
                 .ignoresSafeArea()
             
-            ModuleDisplay(moduleName: "Hey there i am just programming my wayout of here", moduleIcon: "plus")
+            ModuleDisplay(moduleName: "Hey there i am just programming my wayout of here", moduleNameIT: "Italian name", moduleIcon: "plus")
         }
     }
 }

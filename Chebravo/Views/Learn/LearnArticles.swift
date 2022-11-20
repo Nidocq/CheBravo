@@ -12,9 +12,10 @@ import SwiftUI
 // article. like lo and gli are together and il and i are together
 /// <summary> Articles as "The, a, an" and how to use them in Italian </summary>
 struct ModuleArticles : ILearning {
-    var id: UUID = UUID()
     
+    var id: UUID = UUID()
     static let MATERIAL_TITLE : String = "Articles"
+    static var MATERIAL_TITLE_IT: String = "Gli Articoli"
     static let ICON_NAME : String = "textformat.subscript"
     let paddingLeftRight : CGFloat = 14
     let titleSize : CGFloat = 22

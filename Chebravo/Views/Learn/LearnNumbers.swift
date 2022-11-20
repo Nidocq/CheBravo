@@ -10,10 +10,10 @@ import AVFoundation
 
 /// <summary> All the numbers is the learning material for this view </summary>
 struct ModuleNumbers: ILearning {
-
     var id = UUID()
     
     static let MATERIAL_TITLE : String = "Numbers"
+    static var MATERIAL_TITLE_IT: String = "I Numeri"
     static let ICON_NAME : String = "textformat.123"
     
 
