@@ -20,7 +20,13 @@ struct SettingsView: View {
         // Making the styling fit the theme (overwriting apples own styling)
         UITableView.appearance().separatorStyle = .singleLine
         //UITableViewCell.appearance().backgroundColor = UIColor(Color("SecondaryColor"))
+        UITableView.appearance().backgroundColor = .clear
         UITableView.appearance().backgroundColor = UIColor(Color("PrimaryColor"))
+        
+        let navBarAppearance = UINavigationBar.appearance()
+        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor(Color("SecondaryColor"))]
+        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor(Color("SecondaryColor"))]
+
         
     }
     
@@ -34,36 +40,45 @@ struct SettingsView: View {
     
     var body: some View {
         NavigationView {
-            Form {
-                Section {
-                    Text("Words translated \(String(wordsCreated ?? 0))")
-                    Text("Words you know: \(String(words.count))")
-                } header: {
-                    Text("Translation")
-                        .foregroundColor(Color("SecondaryColor"))
-                        .fontWeight(.heavy)
-                        .font(.system(size: 18))
-                        .offset(x:-12)
-                }
-                
-                Section {
-                    Toggle("Switch language to Italian 🇮🇹", isOn: $languageItalian)
-                    Toggle("Show translation on examples", isOn: $Buttonhaha)
-                } header: {
-                    Text("Configuration")
-                        .foregroundColor(Color("SecondaryColor"))
-                        .fontWeight(.heavy)
-                        .font(.system(size: 18))
-                        .offset(x:-12)
-                }
-                Section {
-                    Text("Version 1.0.0")
-                } header: {
-                    Text("Translation")
-                        .foregroundColor(Color("SecondaryColor"))
-                        .fontWeight(.heavy)
-                        .font(.system(size: 18))
-                        .offset(x:-12)
+            ZStack {
+                Color("PrimaryColor")
+                    .ignoresSafeArea()
+                if #available(iOS 16.0, *) {
+                    Form {
+                        Section {
+                            Text("Words translated \(String(wordsCreated ?? 0))")
+                            Text("Words you know: \(String(words.count))")
+                        } header: {
+                            Text("Translation")
+                                .foregroundColor(Color("SecondaryColor"))
+                                .fontWeight(.heavy)
+                                .font(.system(size: 18))
+                                .offset(x:-12)
+                        }
+                        
+                        Section {
+                            Toggle("Switch language to Italian 🇮🇹", isOn: $languageItalian)
+                            Toggle("Show translation on examples", isOn: $Buttonhaha)
+                        } header: {
+                            Text("Configuration")
+                                .foregroundColor(Color("SecondaryColor"))
+                                .fontWeight(.heavy)
+                                .font(.system(size: 18))
+                                .offset(x:-12)
+                        }
+                        Section {
+                            Text("Version 1.0.0")
+                        } header: {
+                            Text("Translation")
+                                .foregroundColor(Color("SecondaryColor"))
+                                .fontWeight(.heavy)
+                                .font(.system(size: 18))
+                                .offset(x:-12)
+                        }
+                    }
+                    .scrollContentBackground(.hidden)
+                } else {
+                  
                 }
             }
             .navigationTitle("Settings")
