@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+// TODO: Make the article transitions with an animation
+// TODO: Make the masculine info graphic side by side with their representive
+// article. like lo and gli are together and il and i are together
 /// <summary> Articles as "The, a, an" and how to use them in Italian </summary>
 struct ModuleArticles : ILearning {
     var id: UUID = UUID()
@@ -45,9 +48,11 @@ struct ModuleArticles : ILearning {
                         
                         VStack {
                             Text("Article \"la\" is used for every feminine article, unless there is a vovel then we use \"l\'\". If you talk about several nouns, \"le\" is the article to describe the plural")
-                                .font(.system(size: 18))
-                        }
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                            Text("Remember that the end character \'a\' changes to \'e\' in the pluaral form")
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                        }
+                        .font(.system(size: 18))
                     }
                     .padding(.bottom, 20)
                     .font(.system(size: 40))
@@ -76,13 +81,14 @@ struct ModuleArticles : ILearning {
                             Article: "le",
                             SingularOrPlural: AnyView(SuperscriptPlural),
                             ExampleIT: "le mattine",
-                            ExampleEN: "The mornings"
-                            // TODO: Optional argument paramaeter for le isole
+                            ExampleEN: "The mornings",
+                            SecondaryExampleIT: "le isole",
+                            SecondaryExampleEN: "The islands"
                         )
                         
                         ShowButton(
-                            DefiniteIndefinite: $DefiniteIndefinite,
                             isDefinite: $isDefinite,
+                            DefiniteIndefinite: $DefiniteIndefinite,
                             cornerRadiusAmount: cornerRadiusAmount
                         )
                         
@@ -91,7 +97,7 @@ struct ModuleArticles : ILearning {
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                 }
             } else {
-                // la l' le
+                // una un'
                 VStack {
                     VStack {
                         Text("♀")
@@ -134,12 +140,11 @@ struct ModuleArticles : ILearning {
                             ExampleIT: "le mattine",
                             ExampleEN: "The mornings",
                             isHidden: true
-                            // TODO: Optional argument paramaeter for le isole
                         )
                         
                         ShowButton(
-                            DefiniteIndefinite: $DefiniteIndefinite,
                             isDefinite: $isDefinite,
+                            DefiniteIndefinite: $DefiniteIndefinite,
                             cornerRadiusAmount: cornerRadiusAmount
                         )
                         
@@ -151,64 +156,143 @@ struct ModuleArticles : ILearning {
         }
         .foregroundColor(Color("SecondaryColor"))
         .padding([.leading, .trailing], paddingLeftRight)
-        // TODO: Make toggle button for the indefinite (uno una un etc) articles
-        // removing the plural and chaning la and l' to una un' as well as the examples.
         
         VStack(spacing:0) {
             Seperator()
                 .padding(.bottom, 20)
                 .padding(.top, 40)
-            VStack {
-                Text("♂")
-                Text("Masculine articles")
-                    .font(.system(size: titleSize))
-                    .bold()
-                VStack {
-                    Text("lo and")
-                        .font(.system(size: 18))
-                }
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-                
-            }
-                .padding(.bottom, 20)
-                .font(.system(size: 40))
             
-            // Individual infographics for the Articles for masculine
-            VStack {
-                Text(DefiniteIndefinite)
-                    .italic()
-                    .font(.system(size: 16))
+            if (self.isDefinite) {
+                // il, i, lo, gli
+                VStack {
+                    VStack {
+                        Text("♂")
+                        Text("Masculine articles")
+                            .font(.system(size: titleSize))
+                            .bold()
+                        VStack {
+                            Text("il is the singular of the masculine article. \'i\' is the plural of \"il\". The msculine article have a second article: \"lo\", which is used when the begining of the noun is")
+                            Text("x, y, z, gn, pn, ps, st")
+                            Text("The plural form of \"lo\" is \"gli\" [pronounced jli]")
+                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                        }
+                        .font(.system(size: 18))
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                        
+                    }
+                    .padding(.bottom, 20)
+                    .font(.system(size: 40))
+                    
+                    // Individual infographics for the Articles for masculine
+                    VStack {
+                        Text(DefiniteIndefinite)
+                            .italic()
+                            .font(.system(size: 16))
+                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                        ArticleType (
+                            Article: "il",
+                            SingularOrPlural: AnyView(SuperscriptSingular),
+                            ExampleIT: "il libro",
+                            ExampleEN: "The book"
+                        )
+                        
+                        ArticleType(
+                            Article: "i",
+                            SingularOrPlural: AnyView(SuperscriptPlural),
+                            ExampleIT: "i libri",
+                            ExampleEN: "The books"
+                        )
+                        
+                        ArticleType(
+                            Article: "lo",
+                            SingularOrPlural: AnyView(SuperscriptSingular),
+                            ExampleIT: "lo",
+                            ExampleEN: "The studente"
+                        )
+                        
+                        ArticleType(
+                            Article: "gli",
+                            SingularOrPlural: AnyView(SuperscriptPlural),
+                            ExampleIT: "gli studenti",
+                            ExampleEN: "The students"
+                        )
+                        
+                        ShowButton(
+                            isDefinite: $isDefinite,
+                            DefiniteIndefinite: $DefiniteIndefinite,
+                            cornerRadiusAmount: cornerRadiusAmount
+                        )
+                        
+                    }
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-                ArticleType (
-                    Article: "il",
-                    SingularOrPlural: AnyView(SuperscriptSingular),
-                    ExampleIT: "",
-                    ExampleEN: ""
-                )
-                
-                ArticleType(
-                    Article: "i",
-                    SingularOrPlural: AnyView(SuperscriptPlural),
-                    ExampleIT: "",
-                    ExampleEN: ""
-                )
-                
-                ArticleType(
-                    Article: "lo",
-                    SingularOrPlural: AnyView(SuperscriptSingular),
-                    ExampleIT: "",
-                    ExampleEN: ""
-                )
-                
-                ArticleType(
-                    Article: "gli",
-                    SingularOrPlural: AnyView(SuperscriptPlural),
-                    ExampleIT: "le mattine",
-                    ExampleEN: "The mornings"
-                )
-                
+                }
+            } else {
+                // Uno, un
+                VStack {
+                    VStack {
+                        Text("♂")
+                        Text("Masculine articles")
+                            .font(.system(size: titleSize))
+                            .bold()
+                        VStack {
+                            Text("Every indefinite masculine article has the \"uno\" article in front of them, unless a vowel is in the beginning of the next word")
+                                .font(.system(size: 18))
+                        }
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                        
+                    }
+                    .padding(.bottom, 20)
+                    .font(.system(size: 40))
+                    
+                    // Individual infographics for the Articles for masculine
+                    VStack {
+                        Text(DefiniteIndefinite)
+                            .italic()
+                            .font(.system(size: 16))
+                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                        ArticleType (
+                            Article: "uno",
+                            SingularOrPlural: AnyView(SuperscriptSingular),
+                            ExampleIT: "uno studente",
+                            ExampleEN: "A student",
+                            SecondaryExampleIT: "uno libro",
+                            SecondaryExampleEN: "A book"
+                        )
+                        
+                        ArticleType(
+                            Article: "un",
+                            SingularOrPlural: AnyView(SuperscriptPlural),
+                            ExampleIT: "un zanito",
+                            ExampleEN: "??"
+                        )
+                        
+                        ArticleType(
+                            Article: "lo",
+                            SingularOrPlural: AnyView(SuperscriptSingular),
+                            ExampleIT: "",
+                            ExampleEN: "",
+                            isHidden: true
+                        )
+                        
+                        ArticleType(
+                            Article: "gli",
+                            SingularOrPlural: AnyView(SuperscriptPlural),
+                            ExampleIT: "le mattine",
+                            ExampleEN: "The mornings",
+                            isHidden: true
+                        )
+                        
+                        ShowButton(
+                            isDefinite: $isDefinite,
+                            DefiniteIndefinite: $DefiniteIndefinite,
+                            cornerRadiusAmount: cornerRadiusAmount
+                        )
+                        
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                }
             }
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+
         }
         .foregroundColor(Color("SecondaryColor"))
         .padding([.leading, .trailing], paddingLeftRight)
@@ -232,6 +316,8 @@ struct ArticleType: View {
     var SingularOrPlural : AnyView
     var ExampleIT : String
     var ExampleEN : String
+    var SecondaryExampleIT : String? = nil
+    var SecondaryExampleEN : String? = nil
     let paddingAllAround : CGFloat = 14
     var isHidden : Bool = false
     var body: some View {
@@ -253,6 +339,14 @@ struct ArticleType: View {
                 TextSize: 16
             )
             .padding(10)
+            if (SecondaryExampleEN != nil && SecondaryExampleIT != nil) {
+                LearningExample(
+                    ItalianExample: SecondaryExampleIT ?? "",
+                    EnglishTranslation: SecondaryExampleEN ?? "",
+                    TextSize: 16
+                )
+                .padding([.leading, .trailing, .bottom], 10)
+            }
         }
         .foregroundColor(Color("PrimaryColor"))
         .border(Color("SecondaryColor"), width: 2)
@@ -267,8 +361,8 @@ struct ArticleType: View {
 }
 
 struct ShowButton : View {
-    @Binding var DefiniteIndefinite : String
     @Binding var isDefinite : Bool
+    @Binding var DefiniteIndefinite : String
     func GetInverse() -> String {
         if (self.DefiniteIndefinite == "Definite") {
             return "Indefinite"
@@ -280,8 +374,11 @@ struct ShowButton : View {
     let cornerRadiusAmount : CGFloat
     var body: some View {
         Button {
-            self.DefiniteIndefinite = GetInverse()
-            self.isDefinite.toggle()
+            withAnimation {
+                self.DefiniteIndefinite = GetInverse()
+                self.isDefinite.toggle()
+                
+            }
         } label: {
             Text("Show \(GetInverse()) articles")
                 .bold()
