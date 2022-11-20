@@ -171,11 +171,14 @@ struct ModuleArticles : ILearning {
                             .font(.system(size: titleSize))
                             .bold()
                         VStack {
-                            Text("il is the singular of the masculine article. \'i\' is the plural of \"il\". The msculine article have a second article: \"lo\", which is used when the begining of the noun is")
+                            Text("il is the singular of the masculine article. \'i\' is the plural of \"il\". The masculine article have a second article: \"lo\", which is used when the begining of the noun is")
+                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                             Text("x, y, z, gn, pn, ps, st")
+                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                             Text("The plural form of \"lo\" is \"gli\" [pronounced jli]")
                             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                         }
+                        .fixedSize(horizontal: false, vertical: true)
                         .font(.system(size: 18))
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                         
