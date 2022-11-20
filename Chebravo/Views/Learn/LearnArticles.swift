@@ -298,7 +298,7 @@ struct ModuleArticles : ILearning {
 
         }
         .foregroundColor(Color("SecondaryColor"))
-        .padding([.leading, .trailing], paddingLeftRight)
+        .padding([.leading, .trailing, .bottom], paddingLeftRight)
         
     }
 }
