@@ -18,12 +18,15 @@ import SwiftUI
 /// <param name="width, height"> size of the component, usually needs to be same height and width </param>
 /// <param name="color"> color of the component </param>
 struct NavigationBarIconView : View {
+    @AppStorage("languageItalian") var languageItalian : Bool?
+    
     @ObservedObject var viewRouter : ViewRouterController
     var Haptic = UIImpactFeedbackGenerator(style: .light)
     
 
     var systemIconName: String
-    let description: String
+    var description: String
+    let italianDescription : String
     var assignedPage: Page
     let width, height: CGFloat
     let color: Color
@@ -41,6 +44,14 @@ struct NavigationBarIconView : View {
             return .regular
         }
     }
+    
+    private func ItalianTranslation() -> String {
+        if (languageItalian ?? false) {
+            return self.italianDescription
+        } else {
+            return self.description
+        }
+    }
 
     var body: some View {
         VStack {
@@ -50,7 +61,7 @@ struct NavigationBarIconView : View {
                 .frame(width: width, height: height)
                 .padding(.top, topPadding)
                 .foregroundColor(color)
-            Text(description)
+            Text(ItalianTranslation())
                 .font(.system(size: 11))
                 .fontWeight(UpdateBoldText())
                 .foregroundColor(color)
@@ -66,7 +77,7 @@ struct NavigationBarIconView : View {
 
 struct NagivationBarIconView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationBarIconView(viewRouter: ViewRouterController(), systemIconName: "plus", description: "something", assignedPage: .YourExamples, width: 30, height: 30, color: .blue)
+        NavigationBarIconView(viewRouter: ViewRouterController(), systemIconName: "plus", description: "something", italianDescription: "qualcosa", assignedPage: .YourExamples, width: 30, height: 30, color: .blue)
             .border(.green)
     }
 }
