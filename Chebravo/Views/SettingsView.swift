@@ -20,7 +20,7 @@ struct SettingsView: View {
         // Making the styling fit the theme (overwriting apples own styling)
         UITableView.appearance().separatorStyle = .singleLine
         //UITableViewCell.appearance().backgroundColor = UIColor(Color("SecondaryColor"))
-       UITableView.appearance().backgroundColor = UIColor(Color("PrimaryColor"))
+        UITableView.appearance().backgroundColor = UIColor(Color("PrimaryColor"))
         
     }
     
@@ -48,7 +48,6 @@ struct SettingsView: View {
                 
                 Section {
                     Toggle("Switch language to Italian 🇮🇹", isOn: $languageItalian)
-                    Text(String(languageItalian))
                     Toggle("Show translation on examples", isOn: $Buttonhaha)
                 } header: {
                     Text("Configuration")
