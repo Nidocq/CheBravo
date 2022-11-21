@@ -24,7 +24,8 @@ struct LearnPossession : View {
     var body: some View {
         LearningMaterialBoilerPlate(
             ModuleContent: AnyView(ModuleConjugation()),
-            MATERIAL_TITLE: ModulePossession.MATERIAL_TITLE
+            MATERIAL_TITLE: ModulePossession.MATERIAL_TITLE,
+            MATERIAL_TITLE_IT: ModulePossession.MATERIAL_TITLE_IT
         )
     }
 }

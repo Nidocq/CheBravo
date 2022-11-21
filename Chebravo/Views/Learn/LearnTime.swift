@@ -26,7 +26,9 @@ struct LearnTime : View {
     var body: some View {
         LearningMaterialBoilerPlate(
             ModuleContent: AnyView(ModuleTime()),
-            MATERIAL_TITLE: ModuleTime.MATERIAL_TITLE)
+            MATERIAL_TITLE: ModuleTime.MATERIAL_TITLE,
+            MATERIAL_TITLE_IT: ModuleTime.MATERIAL_TITLE_IT
+        )
     }
 }
 

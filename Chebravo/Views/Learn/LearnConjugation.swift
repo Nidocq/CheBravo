@@ -27,8 +27,10 @@ struct ModuleConjugation: ILearning {
 struct LearnConjugation : View {
     var body: some View {
         LearningMaterialBoilerPlate(
-        ModuleContent: AnyView(ModuleConjugation()),
-        MATERIAL_TITLE: ModuleConjugation.MATERIAL_TITLE)
+            ModuleContent: AnyView(ModuleConjugation()),
+            MATERIAL_TITLE: ModuleConjugation.MATERIAL_TITLE,
+            MATERIAL_TITLE_IT: ModuleConjugation.MATERIAL_TITLE_IT
+        )
     }
 }
 

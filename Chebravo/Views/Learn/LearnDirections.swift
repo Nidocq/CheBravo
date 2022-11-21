@@ -32,7 +32,8 @@ struct LearnDirections : View {
     var body: some View {
         LearningMaterialBoilerPlate(
             ModuleContent: AnyView(ModuleDirections()),
-            MATERIAL_TITLE: ModuleDirections.MATERIAL_TITLE
+            MATERIAL_TITLE: ModuleDirections.MATERIAL_TITLE,
+            MATERIAL_TITLE_IT: ModuleDirections.MATERIAL_TITLE_IT
         )
     }
 }

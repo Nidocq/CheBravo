@@ -92,11 +92,11 @@ struct ModuleNumbers: ILearning {
 
 // MARK: Main body
 struct LearnNumbers: View {
-    
     var body: some View {
         LearningMaterialBoilerPlate(
             ModuleContent: AnyView(ModuleNumbers()),
-            MATERIAL_TITLE: ModuleNumbers.MATERIAL_TITLE
+            MATERIAL_TITLE: ModuleNumbers.MATERIAL_TITLE,
+            MATERIAL_TITLE_IT: ModuleNumbers.MATERIAL_TITLE_IT
         )
     }
 }

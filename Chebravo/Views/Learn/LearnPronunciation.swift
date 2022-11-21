@@ -237,7 +237,8 @@ struct LearnPronunciation : View {
     var body: some View {
         LearningMaterialBoilerPlate(
             ModuleContent: AnyView(ModulePronunciation()),
-            MATERIAL_TITLE: ModulePronunciation.MATERIAL_TITLE
+            MATERIAL_TITLE: ModulePronunciation.MATERIAL_TITLE,
+            MATERIAL_TITLE_IT: ModulePronunciation.MATERIAL_TITLE_IT
         )
     }
 }

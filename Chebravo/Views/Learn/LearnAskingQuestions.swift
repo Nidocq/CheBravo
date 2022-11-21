@@ -34,8 +34,10 @@ struct LearnAskingQuestions : View {
     var body: some View {
         LearningMaterialBoilerPlate(
             ModuleContent: AnyView(ModuleAskingQuestions()),
-            MATERIAL_TITLE: ModuleAskingQuestions.MATERIAL_TITLE)
-        }
+            MATERIAL_TITLE: ModuleAskingQuestions.MATERIAL_TITLE,
+            MATERIAL_TITLE_IT: ModuleAskingQuestions.MATERIAL_TITLE_IT
+        )
+    }
 }
 
 

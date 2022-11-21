@@ -43,13 +43,25 @@ enum ViewOptions: String, CaseIterable {
 /// </param>
 /// <param name="MATERIAL_TITLE"> The name of the module </param>
 struct LearningMaterialBoilerPlate : View {
+    @AppStorage("languageItalian") var languageItalian : Bool?
+
     @Environment(\.dismiss) var dismiss
     var ModuleContent : AnyView
     let MATERIAL_TITLE : String 
+    let MATERIAL_TITLE_IT : String
     
-    init(ModuleContent : AnyView, MATERIAL_TITLE : String) {
+    init(ModuleContent : AnyView, MATERIAL_TITLE : String, MATERIAL_TITLE_IT : String) {
         self.ModuleContent = ModuleContent
         self.MATERIAL_TITLE = MATERIAL_TITLE
+        self.MATERIAL_TITLE_IT = MATERIAL_TITLE_IT
+    }
+    
+    func ItalianTranslation() -> String {
+        if (self.languageItalian ?? false) {
+            return self.MATERIAL_TITLE_IT
+        } else {
+            return self.MATERIAL_TITLE
+        }
     }
     
     var body: some View {
@@ -57,6 +69,7 @@ struct LearningMaterialBoilerPlate : View {
             Color("PrimaryColor")
                 .ignoresSafeArea()
             VStack {
+                // Prevent the title overlapping
                 Text("")
                 ScrollView {
                     // Embed the module here
@@ -89,7 +102,7 @@ struct LearningMaterialBoilerPlate : View {
             }
         }
         .navigationBarBackButtonHidden(true)
-        .navigationTitle(self.MATERIAL_TITLE)
+        .navigationTitle(ItalianTranslation())
     }
 }
 

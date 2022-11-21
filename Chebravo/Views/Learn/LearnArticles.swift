@@ -310,7 +310,8 @@ struct LearnArticles: View {
     var body: some View {
         LearningMaterialBoilerPlate(
             ModuleContent: AnyView(ModuleArticles()),
-            MATERIAL_TITLE: ModuleArticles.MATERIAL_TITLE
+            MATERIAL_TITLE: ModuleArticles.MATERIAL_TITLE,
+            MATERIAL_TITLE_IT: ModuleArticles.MATERIAL_TITLE_IT
         )
     }
 }
