@@ -10,6 +10,7 @@ import SwiftUI
 
 /// <summary> The representing screen right when you open the app after it has been closed </summary>
 struct SplashView: View {
+    // TODO: Make the splash view able to be disabled
     @State var isSplashActive = true
     @StateObject private var CDController = CoreDataController()
     @StateObject var ViewRouter = ViewRouterController()

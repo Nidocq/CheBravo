@@ -56,6 +56,7 @@ struct TutorialView: View {
     }
 }
 
+// TODO: Translate strings from this view
 struct InfoGraph : View {
     var symbol : String
     var header : String
