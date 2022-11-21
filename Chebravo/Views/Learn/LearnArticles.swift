@@ -12,7 +12,6 @@ import SwiftUI
 // article. like lo and gli are together and il and i are together
 /// <summary> Articles as "The, a, an" and how to use them in Italian </summary>
 struct ModuleArticles : ILearning {
-    
     var id: UUID = UUID()
     static let MATERIAL_TITLE : String = "Articles"
     static var MATERIAL_TITLE_IT: String = "Gli Articoli"
@@ -291,12 +290,12 @@ struct ModuleArticles : ILearning {
                             DefiniteIndefinite: $DefiniteIndefinite,
                             cornerRadiusAmount: cornerRadiusAmount
                         )
-                        
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                 }
             }
-
+            questionAsked
+                .padding()
         }
         .foregroundColor(Color("SecondaryColor"))
         .padding([.leading, .trailing, .bottom], paddingLeftRight)
@@ -419,6 +418,12 @@ extension ModuleArticles {
         .offset(y: -12)
     }
     
+    private var questionAsked : some View {
+        HStack {
+            Text("But how do i know which article is which gender?")
+            Image(systemName: "questionmark.circle")
+        }
+    }
 }
 
 struct LearnArticles_Previews: PreviewProvider {

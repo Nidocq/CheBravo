@@ -11,7 +11,6 @@ import SwiftUI
 /// Clicking on one of the modules will take you to the specific module
 /// </summary>
 struct LearnView: View {
-    // TODO: When emphazise words with an apostroph to indicate
     @AppStorage("languageItalian") var languageItalian : Bool?
 
     init() {
