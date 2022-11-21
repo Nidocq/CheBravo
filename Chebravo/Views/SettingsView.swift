@@ -75,6 +75,10 @@ struct SettingsView: View {
                                 .font(.system(size: 18))
                                 .offset(x:-12)
                         }
+                        
+                        //TODO: Make credit page for
+                        // Sarah Guerin
+                        // https://www.theitalianexperiment.com/learn-italian/possessive-adjectives
                     }
                     .scrollContentBackground(.hidden)
                 } else {

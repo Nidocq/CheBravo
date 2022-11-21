@@ -16,4 +16,6 @@ protocol ILearning : View, Identifiable {
     static var MATERIAL_TITLE : String { get }
     static var MATERIAL_TITLE_IT : String { get }
     static var ICON_NAME : String { get }
+    // TODO: add paddingOnTheSides to have an equal size on the sides
+    // TODO: Add font sizes so every fontsize is equal
 }
