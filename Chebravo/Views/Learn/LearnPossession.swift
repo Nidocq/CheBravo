@@ -32,7 +32,7 @@ struct ModulePossession: ILearning {
             )
             
             PossessiveInfographic(
-                isMasculine: true,
+                isMasculine: false,
                 isPlural: false,
                 my: "mia",
                 yours: "tua",

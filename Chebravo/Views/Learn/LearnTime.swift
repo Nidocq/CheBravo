@@ -16,7 +16,16 @@ struct ModuleTime: ILearning {
     
     var body: some View {
         VStack {
-            Text(" hihihii")
+            Text("tardi - late")
+            Text("presto - early")
+            Text("")
+            Text("Sempre - Always")
+            Text("Mai - Never")
+            Text("Adesso - Now")
+            Text("A volte - Sometimes")
+            Text("Adesso - Now")
+            Text("")
+            
         }
         .foregroundColor(Color("SecondaryColor"))
     }
