@@ -41,13 +41,13 @@ struct ModuleNumbers: ILearning {
         // 0-30
         VStack {
             NumberWheelView(numberFromHeader: "0 - 30", CurrentNumber: $CurrentNumberFirst)
-            LearningHeading()
-            LearningExample(
-                ItalianExample: "Oggi è ventotto trentuno gradi!",
-                EnglishTranslation: "Today is twenty-two degrees!")
-            LearningExample(
-                ItalianExample: "Quanto costa il gilato?",
-                EnglishTranslation: "How much does the ice cream cost?")
+//            LearningHeading()
+//            LearningExample(
+//                ItalianExample: "Oggi è ventotto trentuno gradi!",
+//                EnglishTranslation: "Today is twenty-two degrees!")
+//            LearningExample(
+//                ItalianExample: "Quanto costa il gilato?",
+//                EnglishTranslation: "How much does the ice cream cost?")
             
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
@@ -58,14 +58,14 @@ struct ModuleNumbers: ILearning {
         // 30 - 100
         VStack {
             NumberWheelView(numberFromHeader: "30 - 100", CurrentNumber: $CurrentNumberSecond)
-            LearningHeading()
-            LearningExample(
-                // TODO: Examples for 30 - 100
-                ItalianExample: "Oggi è trentuno gradi!",
-                EnglishTranslation: "Today is thirty-one degrees!")
-            LearningExample(
-                ItalianExample: "Quanto costa il gilato?",
-                EnglishTranslation: "How much does the ice cream cost?")
+//            LearningHeading()
+//            LearningExample(
+//                // TODO: Examples for 30 - 100
+//                ItalianExample: "Oggi è trentuno gradi!",
+//                EnglishTranslation: "Today is thirty-one degrees!")
+//            LearningExample(
+//                ItalianExample: "Quanto costa il gilato?",
+//                EnglishTranslation: "How much does the ice cream cost?")
             
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
@@ -75,8 +75,8 @@ struct ModuleNumbers: ILearning {
         
         // 100 - 1 000 000
         VStack {
-            NumberWheelView(numberFromHeader: "100 - 1 000 000", CurrentNumber: $CurrentNumberThird)
-            LearningHeading()
+            //NumberWheelView(numberFromHeader: "100 - 1 000 000", CurrentNumber: $CurrentNumberThird)
+            //LearningHeading()
             LearningExample(
                 ItalianExample: "Oggi è trentuno gradi!",
                 EnglishTranslation: "I won 1 200 000 € in the lottery today")
@@ -145,8 +145,8 @@ struct NumberWheelView : View {
                         
                     }
                 }
+                    .pickerStyle(WheelPickerStyle())
             }
-            .pickerStyle(WheelPickerStyle())
             
             // Pronunciation button
             Button {
