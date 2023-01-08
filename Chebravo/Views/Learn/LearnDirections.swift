@@ -18,11 +18,25 @@ struct ModuleDirections: ILearning {
     var body: some View {
         VStack {
             HStack {
-                Text("Sinistra")
+                VStack {
+                    Image(systemName: "arrowshape.turn.up.left")
+                    Text("Sinistra")
+                        .bold()
+                }
                 Spacer()
-                Text("Destra")
+                VStack {
+                    Image(systemName: "arrowshape.turn.up.right")
+                    Text("Destra")
+                        .bold()
+                    
+                }
             }
-            .padding(15)
+            .font(.system(size: 20))
+            .padding(20)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+            .border(Color("SecondaryColor"))
+            .padding([.leading, .trailing], 50)
+            
         }
         .foregroundColor(Color("SecondaryColor"))
     }
